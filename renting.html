@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Rental Landing Page</title>
+  <link rel="stylesheet" href="renting.css">
+</head>
+<body>
+
+  <div class="hero">
+    <h1>Find Your Perfect Rental Car</h1>
+    <p>Search and filter to find the best car that suits your journey.</p>
+    <div class="search-container">
+      <input type="text" id="search" placeholder="Search for car model...">
+      <select id="filter" onchange="filterCars()">
+        <option value="all">All Types</option>
+        <option value="SUV">SUV</option>
+        <option value="Sedan">Sedan</option>
+        <option value="Sport">Sport</option>
+      </select>
+    </div>
+  </div>
+
+  <section class="cars-section">
+    <div id="cars-container" class="cars-container"></div>
+  </section>
+  
+  <div class="overlay hidden">
+     <div id="rentPopup" class="popup ">
+    <div class="popup-content">
+      <span id="closePopup" class="close">&times;</span>
+      <div class="car-info">
+        <img id="carImage" src="" alt="Car Image">
+        <div class="car-details">
+          <h2 id="carTitle">Car Model</h2>
+          <p id="carDetails">Details about the car...</p>
+          <p id="carPrice">Price: $0 / day</p>
+        </div>
+      </div>
+      <div class="checkout">
+        <h3>Checkout Information</h3>
+        <label for="location">Pickup Location</label>
+        <input type="text" id="location" placeholder="Enter location">
+        <label for="payment">Payment Method</label>
+        <select id="payment">
+          <option value="card">Credit Card</option>
+          <option value="wallet">Digital Wallet</option>
+        </select>
+        <button id="rentButton">Confirm & Rent Now</button>
+      </div>
+    </div>
+  </div>
+  </div>
+ 
+  
+  
+  <footer>
+    <h1>Follow Us:</h1>
+    <nav>
+        <ul>
+            <li><a href="facebook.com">Facebook</a></li>
+            <li><a href="Instagram.com">| Instagram |</a></li>
+            <li><a href="Twitter.com">Twitter</a></li>
+        </ul>
+    </nav>
+</footer>
+
+  <script src="renting.js"></script>
+</body>
+</html>
