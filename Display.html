@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <link rel="stylesheet" href="Display.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <img class="logo" src="images/229-2297494_porsche-white-logo-emblem.png" alt="Logo">
+            <ul>
+                <li><a href="#aboutUs-section">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <a href="index-login.html"><button class="button type1">
+                <span class="btn-txt">Log In</span>
+            </button></a>
+        </nav>
+    </header>
+    
+    <section id="hero" class="hero">
+        <h2>Welcome to the Virtual Showroom</h2>
+        <p>Explore Porsche's most exciting cars, built for the road and the track.</p>
+    </section>
+
+    <section id="cars" class="cars-section">
+        <!-- Slider Section -->
+        <div class="slider-container">
+            <div class="slider" id="slider">
+                <!-- Slides will be dynamically added via JavaScript -->
+            </div>
+            <button class="slider-btn prev" id="prev-btn">&#10094;</button>
+            <button class="slider-btn next" id="next-btn">&#10095;</button>
+        </div>
+
+        <!-- Cars Grid -->
+        <div id="car-cards" class="car-cards">
+            <!-- Car cards will be dynamically added here -->
+        </div>
+    </section>
+    <div id="car-details-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <img src="" alt=""  id="modal-img">
+            <h2 id="modal-title">Car Model</h2>
+            <p id="modal-description">Details about the car will appear here.</p>
+            <p><strong>Price:</strong> <span id="modal-price"></span></p>
+        </div>
+    </div>
+    <footer>
+        <h1>Follow Us:</h1>
+        <nav>
+            <ul>
+                <li><a href="facebook.com">Facebook</a></li>
+                <li><a href="Instagram.com">| Instagram |</a></li>
+                <li><a href="Twitter.com">Twitter</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="Display.js"></script>
+</body>
+</html>
