@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Porsche</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<header>
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="imgs/white-logo-final.png" class="logo">
+      <h1 class="porsche-nav">Porsche</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#cards-section">Features</a></li>
+      <li class="services">
+        <a href="#services-section">
+          Services
+          <img src="imgs/arrow-icon.png" alt="Down Arrow" class="arrow">
+        </a>
+        <ul class="dropdown">
+          <li>
+            <div class="dropdown-item">
+              <img src="images/customize-icon.png" alt="Customize Icon">
+              <div class="dropdown-text">
+                <span class="dropdown-title">Customize</span>
+                <span class="dropdown-subtext">Personalize your ride</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown-item">
+              <img src="images/rent-icon.png" alt="Rent Icon">
+              <div class="dropdown-text">
+                <span class="dropdown-title">Rent</span>
+                <span class="dropdown-subtext">Drive for a day</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown-item">
+              <img src="images/buy-icon.png" alt="Purchase Icon">
+              <div class="dropdown-text">
+                <span class="dropdown-title">Purchase</span>
+                <span class="dropdown-subtext">Own your dream car</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#porsche-models-section">Explore</a></li>
+      <li><a href="#footer">Contact Us</a></li>
+    </ul>
+    <div class="navbar-right">
+      <a href="index-login.html" class="login-btn button type1">Log In</a>
+      <a href="#" id="cart-icon">🛒 Cart (<span id="cart-count">0</span>)</a>
+      <div id="cart-dropdown" class="dropdown hidden">
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+          <p>Total: $<span id="cart-total">0</span></p>
+          <button onclick="checkout()" class="checkout-btn">Checkout</button>
+        </div>
+      </div>
+      <input type="checkbox" class="theme-checkbox" id="theme-toggle" />
+    </div>
+    
+  </nav>
+</header>
+
+
+<body>
+  <div class="background-section">
+    <img src="imgs/bg-top2.jpg" alt="top car image" class="car-image-top">
+    <h1>Porsche 911 GT3 RS</h1>
+  </div>
+  <section id="tranding">
+    <div class="divcontainer">
+      <div class="swiper tranding-slider">
+        <div class="swiper-wrapper">
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="imgs/Porsche1-removebg-preview.png" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <div class="tranding-slide-content-bottom">
+                <h2>Dark Blue</h2>
+                <a href="#targetDiv" class="scroll-btn" data-car="darkBlue">Learn More</a>
+                <h3 class="car-rating">
+                  <span>4.5</span>
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="imgs/porsche2-removebg-preview.png" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <div class="tranding-slide-content-bottom">
+                <h2>Sky Blue</h2>
+                <a href="" class="scroll-btn" data-car="skyBlue">Learn More</a>
+                <h3 class="car-rating">
+                  <span>5</span>
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="imgs/porsche3-removebg-preview.png" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <div class="tranding-slide-content-bottom">
+                <h2>Blood Red</h2>
+                <a href="#targetDiv" class="scroll-btn" data-car="bloodRed">Learn More</a>
+                <h3 class="car-rating">
+                  <span>4.75</span>
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="imgs/porsche4-removebg-preview.png" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <div class="tranding-slide-content-bottom">
+                <h2>Forest Green</h2>
+                <a href="#targetDiv" class="scroll-btn" data-car="forestGreen" class=".learn-btn">Learn More</a>
+                <h3 class="car-rating">
+                  <span>4.5</span>
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="imgs/porsche5-removebg-preview.png" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <div class="tranding-slide-content-bottom">
+                <h2>Soothing Beige</h2>
+                <a href="#targetDiv" class="scroll-btn" data-car="soothingBeige" class=".learn-btn">Learn More</a>
+                <h3 class="car-rating">
+
+                  <span>4.5</span>
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="targetDiv">
+    <div class="container" id="container">
+      <div class="form-container register-container">
+        <form action="#">
+
+          <h1> 911 GT3RS</h1>
+          <div class="carinfo"></div>
+        </form>
+      </div>
+
+      <div class="form-container login-container selected-cars">
+        <form action="#" id="selected-cars-container">
+          <div id="selected-cars-container"></div>
+
+        </form>
+      </div>
+
+      <div class="overlay-container">
+        <div class="overlay">
+
+          <div class="overlay-panel overlay-left">
+            <h1>Start your experience here!</h1>
+            <p>Create your dream porsche</p>
+            <button class="ghost" id="login">customize</button>
+          </div>
+
+          <div class="overlay-panel overlay-right">
+            <img src="imgs/porsche-logo-removebg-preview.png" alt="">
+            <button class="ghost styled-button" id="register">Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="engine-sound-container" style="position: relative; text-align: center; color: white;">
+    <img src="imgs/BAZ_2954-1drift.webp" alt="Car Image" style="width: 100%; border-radius: 10px;">
+    <h1 class="bold-engine" style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); font-size: 2.5rem;">
+      Engine Sound</h1>
+    <p
+      style="position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); font-size: 1.5rem;color:black;">
+      Still emotional: the unmistakable sound of the 6-cylinder high-revving naturally-aspirated engine.</p>
+    <button id="hold-sound-btn"
+      style="position: absolute; bottom: 10%; left: 50%; transform: translate(-50%, 0); padding: 10px 20px; font-size: 1rem; background: white; border: 1px solid black; border-radius: 5px; cursor: pointer;">
+      ▶ Hold for sound
+    </button>
+    <audio id="engine-sound" src="911-gt3-enginesound.mp3"></audio>
+  </div>
+  <audio id="page-sound" src="your-sound-file.mp3"></audio>
+
+</body>
+<footer class="footer">
+  <div class="footer-links">
+    <a href="#facebook" class="glow-link">
+      <ion-icon name="logo-facebook"></ion-icon> Facebook
+    </a>
+    <a href="#twitter" class="glow-link">
+      <ion-icon name="logo-twitter"></ion-icon> Twitter
+    </a>
+    <a href="#instagram" class="glow-link">
+      <ion-icon name="logo-instagram"></ion-icon> Instagram
+    </a>
+    <a href="#linkedin" class="glow-link">
+      <ion-icon name="logo-linkedin"></ion-icon> LinkedIn
+    </a>
+  </div>
+</footer>
+
+</html>
