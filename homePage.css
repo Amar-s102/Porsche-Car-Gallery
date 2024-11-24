@@ -1067,3 +1067,7 @@ body, html {
         flex: 1;
     }
 }
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
+    color: inherit; /* Use the inherited color from JavaScript */
+    font-family: inherit; /* Ensure font-family is consistent */
+}

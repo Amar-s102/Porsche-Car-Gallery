@@ -327,3 +327,240 @@ div#car-cards {
 .car-card .btn:hover {
     background: #444;
 }
+footer {
+    background-color: #000000;
+    color: #fff;
+}
+
+footer h4 {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+footer a {
+    color: #a8a8a8;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer a:hover {
+    color: #fff;
+}
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 20px 0; 
+}
+
+.footer-left {
+    flex: 1;
+    margin-right: 60px;
+}
+
+.footer-logo img {
+    width: 180px;
+    height: auto;
+    margin-bottom: 20px; 
+    display: block;
+}
+
+.footer-left p {
+    font-size: 16px;
+    margin: 10px 0 0; 
+    line-height: 1.6; 
+}
+
+.footer-links {
+    flex: 4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 180px;
+    padding: 0 10px; 
+}
+
+.footer-column h4 {
+    margin-bottom: 15px; 
+    font-size: 16px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px; 
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px; 
+    text-align: center;
+    width: 100%;
+    padding-top: 20px; 
+    border-top: 1px solid #333; 
+}
+
+.footer-bottom p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #a8a8a8;
+}
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
+    color: inherit; 
+    font-family: inherit; 
+}
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    transition: background 0.3s ease;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.porsche-nav {
+    font-family: 'Ultra911', sans-serif;
+    font-size: 1.0rem;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+    padding: 1.5vw;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #b91111;
+}
+
+.services {
+    position: relative;
+}
+
+.services .arrow {
+    width: 16px;
+    transition: transform 0.3s ease;
+}
+
+.services:hover .arrow {
+    transform: rotate(-180deg);
+}
+
+.dropdown {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    list-style: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    min-width: 250px;
+    cursor: pointer;
+}
+
+.services:hover .dropdown {
+    display: flex;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    transition: background 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background: #1a1a1a;
+    border-radius: 5px;
+}
+
+.dropdown-item img {
+    width: 40px;
+    height: 40px;
+}
+.dropdown-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.dropdown-title {
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+.dropdown-subtext {
+    font-size: 1rem;
+    color: #ccc;
+}
+.button {
+    padding: 15px 55px;
+    font-size: 1.1rem;
+    border: 2px solid #b91111;
+    background: transparent;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: fadeInUp 2s ease;
+}
+
+.button:hover {
+    background: #b91111;
+    color: #fff;
+    border-color: #b91111;
+}

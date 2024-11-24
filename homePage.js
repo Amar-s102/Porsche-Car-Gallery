@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Add interactive hover effects
     const buttons = document.querySelectorAll('.button');
     buttons.forEach(button => {
         button.addEventListener('mouseover', () => {
@@ -65,34 +64,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     observer.observe(nextSection);
 });
-// Select the theme toggle checkbox
 const themeToggle = document.getElementById('theme-toggle');
 
-// Add an event listener to the checkbox
 themeToggle.addEventListener('change', () => {
-    // Toggle the light theme class on the body
     document.body.classList.toggle('light-theme');
 });
-// Select the Back to Top button
 const backToTopBtn = document.querySelector('.backToTop-btn');
 
-// Add an event listener for scrolling
 window.addEventListener('scroll', () => {
-    // Show the button when scrolled down 200px, hide when at the top
     if (window.scrollY > 200) {
-        backToTopBtn.style.display = 'block'; // Show the button
-        backToTopBtn.style.opacity = '1'; // Fade in
+        backToTopBtn.style.display = 'block'; 
+        backToTopBtn.style.opacity = '1';
     } else {
-        backToTopBtn.style.opacity = '0'; // Fade out
+        backToTopBtn.style.opacity = '0'; 
         setTimeout(() => {
-            backToTopBtn.style.display = 'none'; // Hide completely
-        }, 300); // Matches the fade-out duration
+            backToTopBtn.style.display = 'none'; 
+        }, 300); 
     }
 });
 
-// Add an event listener for the button click
 backToTopBtn.addEventListener('click', () => {
-    // Smoothly scroll back to the top
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -103,3 +94,41 @@ function toggleMenu() {
     navLinks.classList.toggle('active');
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.querySelector(".theme-checkbox");
+    const footer = document.getElementById("main-footer");
+
+    themeToggle.addEventListener("change", () => {
+        if (themeToggle.checked) {
+            footer.style.backgroundColor = "#ffffff"; 
+            footer.style.color = "#000000"; 
+
+            const headings = footer.querySelectorAll("h1, h2, h3, h4, h5, h6");
+            headings.forEach(heading => {
+                heading.style.color = "#000000"; 
+            });
+
+            const links = footer.querySelectorAll("a"); 
+            links.forEach(link => {
+                link.style.color = "#000000"; 
+                link.addEventListener("mouseover", () => link.style.color = "#555555"); 
+                link.addEventListener("mouseout", () => link.style.color = "#000000"); 
+            });
+        } else {
+            footer.style.backgroundColor = "#000000";
+            footer.style.color = "#ffffff"; 
+
+            const headings = footer.querySelectorAll("h1, h2, h3, h4, h5, h6");
+            headings.forEach(heading => {
+                heading.style.color = "#ffffff";
+            });
+
+            const links = footer.querySelectorAll("a"); 
+            links.forEach(link => {
+                link.style.color = "#a8a8a8"; // Set link color to light gray
+                link.addEventListener("mouseover", () => link.style.color = "#ffffff"); 
+                link.addEventListener("mouseout", () => link.style.color = "#a8a8a8"); 
+            });
+        }
+    });
+});
