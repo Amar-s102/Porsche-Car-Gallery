@@ -153,14 +153,19 @@ input, textarea {
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: #cbc3c3;
+  background-color: #e7dede;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
+/* Style for the payment method logos */
+.payment-logo {
+  width: 40px; /* Adjust the size of the logos */
+  height: auto;
+  vertical-align: middle; /* Align logo with the text */
+}
 .receipt-container h3 {
   border-top: 1px solid #ddd;
   padding-top: 10px;
@@ -404,28 +409,26 @@ input, textarea {
 .theme-checkbox:checked {
   background-position: 100%;
 }
-
-/* Light Theme Styles */
-.light-theme {
+/* Light Theme */
+body.light-theme {
   background-color: #ffffff;
-  /* Background turns white */
   color: #000000;
-  /* Text turns black */
 }
 
-.light-theme .navbar {
+.navbar {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+body.light-theme .navbar {
   background: rgba(255, 255, 255, 0.9);
-  color: #000;
 }
 
-.light-theme .nav-links li a {
-  color: #000;
-  /* Nav links turn black */
+.nav-links li a {
+  color: #fff;
 }
 
-.light-theme .nav-links li a:hover {
-  color: #b91111;
-  /* Maintain hover color */
+body.light-theme .nav-links li a {
+  color: #000;
 }
 .image-gallery {
   display: flex;
@@ -441,9 +444,6 @@ input, textarea {
   border-radius: 10px;
   cursor: pointer;
   flex: 1;
-  background-color: #ddd;
-  display: flex;
-
 }
 
 .image-container img {
@@ -456,106 +456,46 @@ input, textarea {
 
 .image-container.active {
   z-index: 2;
+  transform: scale(1.1);
 }
 
 .image-container:not(.active) {
-  filter: blur(5px);
+  /* filter: blur(5px); */
+  transform: scale(0.9);
 }
 
-/* Carousel Container */
-.carousel-container {
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamic column size */
+  gap: 20px; /* Space between grid items */
+  padding: 20px;
+}
+
+.video-item {
   position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(to bottom, #000, #111);
   overflow: hidden;
+  border-radius: 10px;
 }
 
-/* Title */
-.carousel-title {
-  position: absolute;
-  top: 10%;
-  font-family: 'Arial', sans-serif;
-  font-size: 4rem;
-  color: white;
-  z-index: 10;
-  text-align: center;
-}
-
-/* Carousel */
-.carousel {
-  position: relative;
-  display: flex;
+.video-item video {
   width: 100%;
-  max-width: 80%;
-  height: 50vh;
-  perspective: 1000px;
-  overflow: hidden;
-  justify-content: center;
-  align-items: center;
+  max-height: 300px; /* Restrict the video height */
+  object-fit: cover; /* Makes video fill the grid cell proportionally */
+  border-radius: 10px;
 }
 
-/* Carousel Items */
-.carousel-item {
+.video-title {
   position: absolute;
-  width: 30%;
-  height: 100%;
-  transform-origin: center;
-  transition: transform 1s ease, opacity 1s ease;
-  opacity: 0; /* Hidden by default */
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
-.carousel-item video {
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-  object-fit: cover;
-}
-
-/* Animations */
-@keyframes carouselEffect {
-  0% {
-    transform: translateX(-150%) scale(0.8);
-    opacity: 0;
+@media (min-width: 1024px) {
+  .video-item video {
+    max-height: 250px; /* Adjust for larger screens */
   }
-  25% {
-    transform: translateX(-50%) scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: translateX(0%) scale(1.2);
-    opacity: 1;
-  }
-  75% {
-    transform: translateX(50%) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(150%) scale(0.8);
-    opacity: 0;
-  }
-}
-
-.carousel-item:nth-child(1) {
-  animation: carouselEffect 12s infinite;
-  animation-delay: 0s;
-}
-
-.carousel-item:nth-child(2) {
-  animation: carouselEffect 12s infinite;
-  animation-delay: 3s;
-}
-
-.carousel-item:nth-child(3) {
-  animation: carouselEffect 12s infinite;
-  animation-delay: 6s;
-}
-
-.carousel-item:nth-child(4) {
-  animation: carouselEffect 12s infinite;
-  animation-delay: 9s;
 }
