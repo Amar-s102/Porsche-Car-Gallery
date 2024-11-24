@@ -6,173 +6,21 @@
   <title>Purchase Page</title>
   <link rel="stylesheet" href="purchase.css">
 </head>
-<header>
-  <nav class="navbar">
-    <div class="logo-container">
-      <img src="imgs/white-logo-final.png" class="logo">
-      <h1 class="porsche-nav">Porsche</h1>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#cards-section">Features</a></li>
-      <li class="services">
-        <a href="#services-section">
-          Services
-          <img src="imgs/arrow-icon.png" alt="Down Arrow" class="arrow">
-        </a>
-        <ul class="dropdown">
-          <li>
-            <div class="dropdown-item">
-              <img src="images/customize-icon.png" alt="Customize Icon">
-              <div class="dropdown-text">
-                <span class="dropdown-title">Customize</span>
-                <span class="dropdown-subtext">Personalize your ride</span>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="dropdown-item">
-              <img src="images/rent-icon.png" alt="Rent Icon">
-              <div class="dropdown-text">
-                <span class="dropdown-title">Rent</span>
-                <span class="dropdown-subtext">Drive for a day</span>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="dropdown-item">
-              <img src="images/buy-icon.png" alt="Purchase Icon">
-              <div class="dropdown-text">
-                <span class="dropdown-title">Purchase</span>
-                <span class="dropdown-subtext">Own your dream car</span>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </li>
-      <li><a href="#porsche-models-section">Explore</a></li>
-      <li><a href="#footer">Contact Us</a></li>
-    </ul>
-    <div class="navbar-right">
-      <input type="checkbox" class="theme-checkbox" id="theme-toggle" />
-    </div>
-    
-  </nav>
-</header>
 <body>
-  <!-- <div class="background-img">
-    <img src="imgs/940283ce3af529805de22a4c55e0c70b.jpg" alt="">
-  </div> -->
-  <div class="image-gallery">
-    <div class="image-container">
-      <img src="imgs/940283ce3af529805de22a4c55e0c70b.jpg" alt="Image 1" />
-    </div>
-    <div class="image-container">
-      <img src="imgs/red2.jpg" alt="Image 2" />
-    </div>
-    <div class="image-container">
-      <img src="imgs/940283ce3af529805de22a4c55e0c70b.jpg" alt="Image 3" />
-    </div>
-  
-  </div>
-  
-
-  <div class="container">
-  <div class="customer-info-container">
-    <h2>Customer Information</h2>
-    <form id="customer-info-form">
-      <!-- Left Column -->
-      <div class="left-column">
-        <div class="form-group">
-          <label for="customer-name">Full Name:</label>
-          <input type="text" id="customer-name" name="customer-name" placeholder="Enter your full name" required>
-          <textarea id="customer-name" name="customer-name" placeholder="Enter your full name" rows="1" required></textarea>
-        </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email" required>
-          <textarea id="email" name="email" placeholder="Enter your email" rows="1" required></textarea>
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone Number:</label>
-          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-          <textarea id="phone" name="phone" placeholder="Enter your phone number" rows="1" required></textarea>
-        </div>
-      </div>
-
-      <!-- Right Column -->
-      <div class="right-column">
-        <div class="form-group">
-          <label for="address">Address:</label>
-          <textarea id="address" name="address" placeholder="Enter your address" rows="3" required></textarea>
-        </div>
-        <div class="form-group">
-          <h3>Payment Method</h3>
-          <div class="payment-methods">
-            <label class="container">Credit Card
-              <input type="radio" id="credit-card" name="payment-method" value="Credit Card" required>
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">PayPal
-              <input type="radio" id="paypal" name="payment-method" value="PayPal">
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">Bank Transfer
-              <input type="radio" id="bank-transfer" name="payment-method" value="Bank Transfer">
-              <span class="checkmark"></span>
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <!-- Full-width Submit Button -->
-      <div class="full-width">
-        <button type="submit" class="submit-btn">Proceed with Purchase</button>
-      </div>
-    </form>
-  </div>
-
   <div class="purchase-container">
+    <!-- Image Div -->
+    <div class="image-container">
+      <img src="imgs/purchase-side.jpg" alt="Car Image" id="car-image">
+    </div>
 
-    <!-- Receipt Container -->
+    <!-- Receipt Div -->
+     <div class="background-div">
     <div class="receipt-container" id="purchase-container">
-      <h3>Order Summary</h3>
-      <div id="receipt-items">
-        <!-- Receipt items will be dynamically added here -->
-        <p>Item: 20-/21-inch Carrera Exclusive Design Wheels</p>
-        <p>Price: $4000.00</p>
-      </div>
-      <h3>Total: $304000.00</h3>
+      <!-- Receipt info will be populated dynamically -->
+       
     </div>
   </div>
-</div>
-<div class="carousel-container">
-  <div class="carousel">
-    <div class="carousel-item">
-      <video autoplay muted loop>
-        <source src="imgs/9647022c.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="carousel-item">
-      <video autoplay muted loop>
-        <source src="imgs/9647022c.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="carousel-item">
-      <video autoplay muted loop>
-        <source src="imgs/9647022c.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="carousel-item">
-      <video autoplay muted loop>
-        <source src="imgs/9647022c.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
   </div>
-</div>
 
   <script src="purcahse.js"></script>
 </body>

@@ -12,12 +12,23 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <script src="script.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const loginButton = document.querySelector('#loginButton'); // Replace with the ID of the login button
+        if (localStorage.getItem('isLoggedIn') === 'true') {
+            if (loginButton) {
+                loginButton.style.display = 'none';
+            }
+        }
+    });
+</script>
+
 </head>
 <header>
   <nav class="navbar">
     <div class="logo-container">
-      <img src="imgs/white-logo-final.png" class="logo">
-      <h1 class="porsche-nav">Porsche</h1>
+     <a href="homepage.html"><img src="imgs/white-logo-final.png" class="logo"></a> 
+     <a href="homepage.html"> <h1 class="porsche-nav">Porsche</h1></a>
     </div>
     <ul class="nav-links">
       <li><a href="#cards-section">Features</a></li>
@@ -60,7 +71,7 @@
       <li><a href="#footer">Contact Us</a></li>
     </ul>
     <div class="navbar-right">
-      <a href="index-login.html" class="login-btn button type1">Log In</a>
+      <a href="login.html" id="loginButton" class="login-btn button type1">Log In</a>
       <a href="#" id="cart-icon">🛒 Cart (<span id="cart-count">0</span>)</a>
       <div id="cart-dropdown" class="dropdown hidden">
         <div id="cart-items"></div>

@@ -508,6 +508,7 @@ input {
 .logo {
     width: 50px; 
     padding-top: 5px;
+    cursor: pointer;
 }
 .overlay-container {
     position: absolute;
@@ -1023,6 +1024,8 @@ input {
   font-size: 1.0rem;
   color: #fff;
   letter-spacing: 2px;
+  cursor: pointer;
+
 }
 
 /* Navigation Links */
