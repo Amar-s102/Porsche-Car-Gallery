@@ -23,3 +23,58 @@ if (cartData.length > 0) {
 } else {
   purchaseContainer.innerHTML = '<p>Your cart is empty.</p>';
 }
+document.addEventListener('DOMContentLoaded', () => {
+  const paymentMethods = document.getElementsByName('payment-method');
+  const creditCardInfo = document.getElementById('credit-card-info');
+
+  paymentMethods.forEach((method) => {
+    method.addEventListener('change', () => {
+      if (method.value === 'Credit Card') {
+        creditCardInfo.classList.remove('hidden');
+      } else {
+        creditCardInfo.classList.add('hidden');
+      }
+    });
+  });
+
+  // Handle form submission
+  document.getElementById('customer-info-form').addEventListener('submit', (event) => {
+    event.preventDefault();
+    alert('Your purchase information has been submitted successfully!');
+  });
+});
+
+const video = document.getElementById('porsche-video');
+
+// Play or pause the video when clicked
+video.addEventListener('click', () => {
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
+});
+// Select all image containers and the gallery
+const gallery = document.querySelector('.image-gallery');
+const containers = document.querySelectorAll('.image-container');
+
+// Add event listeners to each image container
+containers.forEach((container) => {
+  container.addEventListener('click', (e) => {
+    // Remove active class from all images
+    containers.forEach((c) => c.classList.remove('active'));
+    // Add active class to the clicked image
+    container.classList.add('active');
+    // Add blurred class to the gallery
+    gallery.classList.add('blurred');
+    // Prevent event propagation to the gallery
+    e.stopPropagation();
+  });
+});
+
+// Add an event listener to the gallery to clear the active/blurred state
+document.addEventListener('click', () => {
+  // Remove active class and blurred state
+  containers.forEach((c) => c.classList.remove('active'));
+  gallery.classList.remove('blurred');
+});

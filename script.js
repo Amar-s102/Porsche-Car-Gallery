@@ -115,19 +115,21 @@ function openCustomizationDiv(option, carName) {
           <img src="imgs/wheel1.jpg" alt="Sport Wheels" style="width: 150px; height: 150px; border-radius: 10px;">
           <p>Sport Wheels</p>
              <p style ="color:black;"><strong>Price:</strong>4500$</p>
-             <button class="add-to-cart-btn" onclick="addToCart('Sport Wheels', 4000)">Add to Cart</button>
+             <button class="add-to-cart-btn" onclick="addToCart('20-/21-inch RS Spyder wheels Vanadium Grey Metallic (high-gloss)', 4000)">Add to Cart</button>
         </div>
         <div class="wheel-option" style="text-align: center;">
           <img src="imgs/wheel2.jpg" alt="Luxury Wheels" style="width: 150px; height: 150px; border-radius: 10px;">
           <p>Luxury Wheels</p>
           <p style ="color:black;"><strong>Price:</strong>4000$</p>
-          <button class="add-to-cart-btn" onclick="addToCart('Sport Wheels', 4000)">Add to Cart</button>
+          <button class="add-to-cart-btn" onclick="addToCart('20-/21-inch Carrera Exclusive Design Wheels with Carbon Blades
+
+', 4000)">Add to Cart</button>
         </div>
         <div class="wheel-option" style="text-align: center;">
           <img src="imgs/wheel3.jpg" alt="Performance Wheels" style="width: 150px; height: 150px; border-radius: 10px;">
           <p>Performance Wheels</p>
           <p style ="color:black;"><strong>Price:</strong>5000$</p>
-          <button class="add-to-cart-btn" onclick="addToCart('Sport Wheels', 4000)">Add to Cart</button>
+          <button class="add-to-cart-btn" onclick="addToCart('20-/21-inch Carrera Exclusive Design Wheels', 4000)">Add to Cart</button>
         </div>
       </div>
     `;
@@ -174,13 +176,13 @@ function openCustomizationDiv(option, carName) {
           <img src="imgs/engine1.png" alt="Engine" style="width: 150px; height: 150px; border-radius: 10px;">
           <p><strong>8-speed Porsche Doppelkupplung (PDK) </strong></p>
           <p style ="color:black;font-size: 1rem; margin:8px;"><strong>Price:</strong>30,000$</p>
-        <button class="add-to-cart-btn" onclick="addToCart('Sport Wheels', 4000)">Add to Cart</button>
+        <button class="add-to-cart-btn" onclick="addToCart(' 4.0-litre high revving naturally aspirated 525 PS (386 kW) engine', 4000)">Add to Cart</button>
           </div>
         <div class="Engine-option" style="text-align: center;">
           <img src="imgs/engine2.png" alt="Luxury Wheels" style="width: 150px; height: 150px; border-radius: 10px;">
           <p><strong>4-speed Porsche (PDK)</strong></p>
                <p style ="color:black;font-size: 1rem; margin:8px;"><strong>Price:</strong>45,000$</p>
-                <button class="add-to-cart-btn" onclick="addToCart('Sport Wheels', 4000)">Add to Cart</button>
+                <button class="add-to-cart-btn" onclick="addToCart(' 6.0-litre high revving naturally aspirated 525 PS (386 kW) engine', 4000)">Add to Cart</button>
                </div>
     `;
   }else if (option === 'seats') {
@@ -191,13 +193,13 @@ function openCustomizationDiv(option, carName) {
           <img src="imgs/seat1.png" alt="Sport seats" style="width: 150px; height: 150px; border-radius: 10px;">
           <p>All Grey</p>
           <p style ="color:black;font-size: 1rem; margin:8px;"><strong>Price:</strong>55,000$</p>
-          <button class="add-to-cart-btn" onclick="addToCart('Sport Wheels', 4000)">Add to Cart</button>
+          <button class="add-to-cart-btn" onclick="addToCart('Smooth dessert grey interior', 4000)">Add to Cart</button>
         </div>
         <div class="seat-option" style="text-align: center;">
           <img src="imgs/seat2.png" alt="Sport seats" style="width: 150px; height: 150px; border-radius: 10px;">
           <p>A Hint of Red</p>
           <p style ="color:black;font-size: 1rem; margin:8px;"><strong>Price:</strong>62,000$</p>
-          <button class="add-to-cart-btn" onclick="addToCart('Sport Wheels', 4000)">Add to Cart</button>
+          <button class="add-to-cart-btn" onclick="addToCart('Racer red with a hint of grey interior', 4000)">Add to Cart</button>
         </div>
     `;
   }
@@ -249,31 +251,31 @@ function updateCarInfo(car) {
     darkBlue: {
       name: 'Dark Blue',
       description: 'This car has a stunning dark blue exterior with a sleek design and powerful engine.',
-      specs: 'Engine: 4.0L V8 Turbo, Horsepower: 500HP, Price: $330,000',
+      specs: 'Engine: 4.0L V8 Turbo, Horsepower: 500HP, Price: $300,000',
       color: '#1E11A6'
     },
     skyBlue: {
       name: 'Sky Blue',
       description: 'The sky blue Porsche offers unmatched performance and style.',
-      specs: 'Engine: 4.0L V6, Horsepower: 510HP, Price:  $330,000',
+      specs: 'Engine: 4.0L V6, Horsepower: 510HP, Price:  $300,000',
       color: '#1E98EB'
     },
     bloodRed: {
       name: 'Blood Red',
       description: 'The Blood Red Porsche offers an elegant exterior and top-notch performance.',
-      specs: 'Engine: 3.8L V6, Horsepower: 450HP, Price:  $330,000',
+      specs: 'Engine: 3.8L V6, Horsepower: 450HP, Price:  $300,000',
       color: '#99151D'
     },
     forestGreen: {
       name: 'Forest Green',
       description: 'With forest green, the GT3 RS takes on a rugged, earthy appeal.',
-      specs: 'Engine: 4.0L V8 Turbo, Horsepower: 520HP, Price: $330,000',
+      specs: 'Engine: 4.0L V8 Turbo, Horsepower: 520HP, Price: $300,000',
       color: '#23572E'
     },
     soothingBeige: {
       name: 'Soothing Beige',
       description: 'The Porsche in beige brings an understated elegance to this sports car.',
-      specs: 'Engine: 4.0L V8, Horsepower: 500HP, Price:  $330,000',
+      specs: 'Engine: 4.0L V8, Horsepower: 500HP, Price:  $300,000',
       color: '#F5F5DC'
     }
   };
