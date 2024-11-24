@@ -46,7 +46,6 @@ let currentIndex = 0;
 
 const carsContainer = document.getElementById("cars-container");
 
-// Display a single car in the slider
 function displayCar(index) {
   carsContainer.innerHTML = "";
   const car = cars[index];
@@ -66,13 +65,11 @@ function displayCar(index) {
   carsContainer.appendChild(carBox);
 }
 
-// Navigate through cars
 function navigate(direction) {
   currentIndex = (currentIndex + direction + cars.length) % cars.length;
   displayCar(currentIndex);
 }
 
-// Show rental popup
 function showPopup(carId) {
   const car = cars.find((c) => c.id === carId);
   document.getElementById("carImage").src = car.image;
@@ -83,16 +80,13 @@ function showPopup(carId) {
   document.querySelector(".overlay").classList.remove("hidden");
 }
 
-// Close popup
 document.getElementById("closePopup").onclick = () => {
   document.querySelector(".overlay").classList.remove("show");
   document.querySelector(".overlay").classList.add("hidden");
 };
 
-// Initialize the slider
 displayCar(currentIndex);
 
-// Confirm rental action
 document.getElementById("rentButton").addEventListener("click", () => {
   document.querySelector(".overlay").classList.remove("show");
   document.querySelector(".overlay").classList.add("hidden");
