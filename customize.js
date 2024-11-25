@@ -20,19 +20,19 @@ var TrandingSlider = new Swiper('.tranding-slider', {
   }
 });
 
-// Event listener for "Learn More" buttons in the carousel
+// "Learn More" buttons in the carousel
 document.querySelectorAll('.scroll-btn').forEach(button => {
   button.addEventListener('click', function () {
     const carItem = this.closest('.tranding-slide'); // Get the parent car container
     const carImage = carItem.querySelector('img').src; // Get car image
     const carName = carItem.querySelector('h2').textContent; // Get car name
 
-    // Find or create the container for selected cars
+    //container for selected cars
     const selectedCarsContainer = document.getElementById('selected-cars-container');
     let existingCar = selectedCarsContainer.querySelector(`[data-car-name="${carName}"]`);
 
     if (existingCar) {
-      // Remove the car if it's already displayed
+      // Remove  car if it's already there
       existingCar.remove();
     } else {
       // Create a new div for the selected car
