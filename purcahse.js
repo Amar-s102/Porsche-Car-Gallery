@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const receiptItemsContainer = document.getElementById('receipt-items');
 
   if (cartData.length > 0) {
-    let total = 300000; // Add base price (example)
-    receiptItemsContainer.innerHTML = ''; // Clear previous content
+    let total = 300000; 
+    receiptItemsContainer.innerHTML = ''; 
 
-    // Iterate through cart data and create receipt items
+
     cartData.forEach(item => {
       const itemDiv = document.createElement('div');
       itemDiv.className = 'receipt-item';
@@ -20,8 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
       receiptItemsContainer.appendChild(itemDiv);
       total += item.price;
     });
-
-    // Display total price
     const totalDiv = document.createElement('div');
     totalDiv.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
     receiptItemsContainer.appendChild(totalDiv);
@@ -43,12 +41,18 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+});
+document.getElementById('customer-info-form').addEventListener('submit', (event) => {
+  const nameField = document.getElementById('customer-name');
+  const emailField = document.getElementById('email');
+  const phoneField = document.getElementById('phone');
+  const addressField = document.getElementById('address');
+  const paymentMethod = document.querySelector('input[name="payment-method"]:checked');
 
-  // Handle form submission
-  document.getElementById('customer-info-form').addEventListener('submit', (event) => {
-    event.preventDefault();
-    alert('Your purchase information has been submitted successfully!');
-  });
+  if (!nameField.value || !emailField.value || !phoneField.value || !addressField.value || !paymentMethod) {
+    alert('Please fill out all fields and select a payment method.');
+    event.preventDefault(); // Prevent form submission
+  }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -95,31 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  const themeToggle = document.getElementById('theme-toggle');
-
-  if (themeToggle) {
-    // Check and apply saved theme
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-      document.body.classList.add('light-theme');
-      themeToggle.checked = true;
-    }
-
-    // Toggle theme on checkbox change
-    themeToggle.addEventListener('change', () => {
-      if (themeToggle.checked) {
-        document.body.classList.add('light-theme');
-        localStorage.setItem('theme', 'light');
-      } else {
-        document.body.classList.remove('light-theme');
-        localStorage.setItem('theme', 'dark');
-      }
-    });
-  } else {
-    console.error('Theme toggle checkbox not found');
-  }
-});
 
 //   const totalDiv = document.createElement('div');
 //   totalDiv.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;

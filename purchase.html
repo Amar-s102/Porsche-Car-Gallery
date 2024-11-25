@@ -6,6 +6,7 @@
   <title>Purchase Page</title>
   <link rel="stylesheet" href="purchase.css">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.min.js"></script>
+<<<<<<< Updated upstream
   <script>
     document.addEventListener('DOMContentLoaded', function () {
         const loginButton = document.querySelector('#loginButton'); // Replace with the ID of the login button
@@ -16,7 +17,60 @@
         }
     });
 </script>
+=======
+>>>>>>> Stashed changes
 </head>
+<header>
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="imgs/white-logo-final.png" class="logo">
+      <h1 class="porsche-nav">Porsche</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#cards-section">Features</a></li>
+      <li class="services">
+        <a href="#services-section">
+          Services
+          <img src="imgs/arrow-icon.png" alt="Down Arrow" class="arrow">
+        </a>
+        <ul class="dropdown">
+          <li>
+            <div class="dropdown-item">
+              <img src="images/customize-icon.png" alt="Customize Icon">
+              <div class="dropdown-text">
+                <span class="dropdown-title">Customize</span>
+                <span class="dropdown-subtext">Personalize your ride</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown-item">
+              <img src="images/rent-icon.png" alt="Rent Icon">
+              <div class="dropdown-text">
+                <span class="dropdown-title">Rent</span>
+                <span class="dropdown-subtext">Drive for a day</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown-item">
+              <img src="images/buy-icon.png" alt="Purchase Icon">
+              <div class="dropdown-text">
+                <span class="dropdown-title">Purchase</span>
+                <span class="dropdown-subtext">Own your dream car</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#porsche-models-section">Explore</a></li>
+      <li><a href="#footer">Contact Us</a></li>
+    </ul>
+    <div class="navbar-right">
+      <input type="checkbox" class="theme-checkbox" id="theme-toggle" />
+    </div>
+  </nav>
+</header>
 <body>
   <div class="image-gallery">
     <div class="image-container">
@@ -29,66 +83,53 @@
       <img src="imgs/940283ce3af529805de22a4c55e0c70b.jpg" alt="Image 3">
     </div>
   </div>
-
-  
-
   <div class="customer-info-container">
     <h2>Customer Information</h2>
     <form id="customer-info-form">
-      <!-- Existing customer info fields -->
-      <div class="left-column">
-        <!-- Full Name Field -->
-        <div class="form-group">
-          <label for="customer-name">Full Name:</label>
-          <input type="text" id="customer-name" name="customer-name" placeholder="Enter your full name" required>
-        </div>
-        <!-- Email Field -->
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        </div>
-        <!-- Phone Number Field -->
-        <div class="form-group">
-          <label for="phone">Phone Number:</label>
-          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-        </div>
+      <div class="form-group">
+        <label for="customer-name">
+          Full Name:
+        </label>
+        <input type="text" id="customer-name" name="customer-name" placeholder="Enter your full name" required>
       </div>
-  
-      <div class="right-column">
-        <!-- Address Field -->
-        <div class="form-group">
-          <label for="address">Address:</label>
-          <textarea id="address" name="address" placeholder="Enter your address" rows="3" required></textarea>
-        </div>
-        <!-- Payment Methods -->
-        <div class="form-group">
-          <h3>Payment Method</h3>
-          <label class="container">
-            <img src="imgs/atm-card.png" alt="credit card" class="payment-logo">
-            Credit Card
-            <input type="radio" id="credit-card" name="payment-method" value="Credit Card" required>
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">
-            <img src="imgs/paypal.png" alt="paypal" class="payment-logo">
-            PayPal
-            <input type="radio" id="paypal" name="payment-method" value="PayPal" class="payment-logo">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">
-            <img src="imgs/smartphone.png" alt="bank transfer"class="payment-logo" >
-            Bank Transfer
-            <input type="radio" id="bank-transfer" name="payment-method" value="Bank Transfer">
-            <span class="checkmark"></span>
-          </label>
-        </div>
+      <div class="form-group">
+        <label for="email">
+          Email:
+        </label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
       </div>
-  
-      <div class="full-width">
-        <button type="submit" class="submit-btn">Proceed with Purchase</button>
+      <div class="form-group">
+        <label for="phone">
+          Phone Number:
+        </label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
       </div>
+      <div class="form-group">
+        <label for="address">
+          Address:
+        </label>
+        <textarea id="address" name="address" placeholder="Enter your address" rows="3" required></textarea>
+      </div>
+      <div class="form-group">
+        <h3>Payment Method</h3>
+        <label class="container">
+          <img src="imgs/atm-card.png" alt="credit card" class="payment-logo">
+          <span>Credit Card</span>
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">
+          <img src="imgs/paypal.png" alt="paypal" class="payment-logo">
+          <span>PayPal</span>
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">
+          <img src="imgs/smartphone.png" alt="bank transfer" class="payment-logo">
+          <span>Bank Transfer</span>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <button type="submit" class="submit-btn">Proceed with Purchase</button>
     </form>
-    
   </div>
   </div>
 
@@ -121,7 +162,6 @@
     </video>
     <div class="video-title">Top Right</div>
   </div>
-
   <!-- Bottom Left Video -->
   <div class="video-item">
     <video autoplay muted loop>
@@ -138,22 +178,8 @@
       Your browser does not support the video tag.
     </video>
     <div class="video-title">Bottom Right</div>
-  <div class="purchase-container">
-    <!-- Image Div -->
-    <div class="image-container">
-      <img src="imgs/purchase-side.jpg" alt="Car Image" id="car-image">
-    </div>
-
-    <!-- Receipt Div -->
-     <div class="background-div">
-    <div class="receipt-container" id="purchase-container">
-      <!-- Receipt info will be populated dynamically -->
-       
-    </div>
   </div>
-  </div>
-
-
+</div>
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script src="purcahse.js"></script>
 </body>
