@@ -1434,7 +1434,7 @@ footer h6 {
   font-family: inherit;
 }
 
- footer {
+footer {
   background-color: #000000;
   color: #fff;
 }
@@ -1540,108 +1540,174 @@ footer h6 {
   color: inherit;
   font-family: inherit;
 }
+
 @media (max-width: 1171px) {
+
   /* Navbar Adjustments */
   .navbar {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
   }
 
   .logo-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
   }
 
   .navbar-right {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
   }
 
   /* Navigation Links Hidden */
   .nav-links {
-      display: none; /* Hide navbar links */
+    display: none;
+    /* Hide navbar links */
   }
 
   /* Show Burger Menu */
   .menu-toggle {
-      display: block; /* Show menu toggle */
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 24px;
-      cursor: pointer;
+    display: block;
+    /* Show menu toggle */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
   }
 
   /* Menu Active State */
   .nav-links.active {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-      background: rgba(0, 0, 0, 0.9);
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      padding: 15px;
-      border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 8px;
   }
 
   .nav-links.active li {
-      display: block;
+    display: block;
   }
 
   /* Models Section Responsive */
   .models-gallery {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
   }
 
   .row {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
 
   .box {
-      width: 100%;
-      height: auto;
+    width: 100%;
+    height: auto;
   }
 }
 
 /* Restore for Larger Screens */
 @media (min-width: 901px) {
   .menu-toggle {
-      display: none; /* Hide the burger menu */
+    display: none;
+    /* Hide the burger menu */
   }
 
   .nav-links {
-      display: flex; /* Restore navbar links */
+    display: flex;
+    /* Restore navbar links */
   }
 
   .navbar-right {
-      display: flex;
+    display: flex;
   }
 
   .models-gallery .row {
-      display: flex;
-      gap: 15px;
+    display: flex;
+    gap: 15px;
   }
 
   .box {
-      flex: 1;
+    flex: 1;
   }
+}
+
+.background-section {
+  position: relative;
+  height: 100vh;
+  background: url('imgs/bg-top2.jpg') no-repeat center center/cover;
+}
+
+.counter-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 150px;
+  color: white;
+}
+
+.counter-item {
+  margin: 30px 0;
+
+}
+
+.counter {
+  font-size: 6rem;
+  font-weight: bold;
+  color: white;
+}
+
+.unit {
+  font-size: 1.8rem;
+  margin-left: 5px;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #ccc;
+  width: 170px;
+}
+@font-face {
+  font-family: 'Parkinsans';
+  src: url('Parkinsans-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.introPage-p p {
+  font-family: 'Parkinsans', sans-serif;
+  max-width: 60px;
+  color: #fff;
+  font-size: 6rem;
+  font-weight: bold;
+  padding: 0;
+  line-height: 1.5;
+  text-align: right;
+  margin-left: 65vw;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
