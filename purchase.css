@@ -24,6 +24,7 @@ body {
   background-color: black;
   color:white;
   height:50px;
+  cursor: pointer;
 }
 .submit-btn:hover{
   background-color: rgb(55, 53, 53);
@@ -249,10 +250,11 @@ text-align: center;
 .theme-checkbox {
   width:4.5em;
   height:2.6em;
-  background-color: #767070;
-  border-radius: 5px;
+  background-color: #767070 !important;
+  border-radius: 10px;
   position: relative;
   cursor: pointer;
+
 }
 
 .theme-checkbox::before {
@@ -265,7 +267,7 @@ text-align: center;
   background: linear-gradient(to right, #2a2a2a 50%, #efefef 50%) no-repeat;
   background-size: 205%;
   background-position: 100%;
-  border-radius: 50%;
+  border-radius: 10px;
   margin: 0;
   transition: 0.4s;
 }
@@ -349,14 +351,14 @@ text-align: center;
   object-fit:cover;
   border-radius: 9px;
 }
-.container input{
+.container input:not(.theme-checkbox){
   position: absolute;
   opacity: 0;
   cursor: pointer;
   height:0;
   width:0;
 }
-.container{
+.container:not(.theme-checkbox){
   display: flex;
   align-items: center;
   position: relative;
@@ -379,7 +381,7 @@ text-align: center;
   box-shadow: 3px 3px 5px #c5c5c5, -3px -3px 5px #ffffff;
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
-.container input:checked ~ .checkmark {
+.container input:not(.theme-checkbox):checked ~ .checkmark {
   background-color: #525852; 
   box-shadow: inset 3px 3px 5px #c5c5c5, inset -3px -3px 5px #ffffff;
 }
@@ -396,6 +398,6 @@ text-align: center;
   opacity: 0; 
   transition: opacity 0.3s ease;
 }
-.container input:checked ~ .checkmark:after{
+.container input:not(.theme-checkbox):checked ~ .checkmark:after{
   opacity:1;
 }
