@@ -132,3 +132,41 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const loginButton = document.querySelector('.login-btn');
+    const logoutButton = document.createElement('button');
+    const navbarRight = document.querySelector('.navbar-right');
+
+
+    logoutButton.textContent = 'Log Out';
+    logoutButton.className = 'button logout-btn';
+    logoutButton.style.display = 'none';
+    navbarRight.appendChild(logoutButton);
+
+
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+        loginButton.style.display = 'none';
+        logoutButton.style.display = 'block';
+    } else {
+        loginButton.style.display = 'block';
+        logoutButton.style.display = 'none';
+    }
+
+    loginButton.addEventListener('click', () => {
+
+        localStorage.setItem('isLoggedIn', 'true');
+        loginButton.style.display = 'none';
+        logoutButton.style.display = 'block';
+    });
+
+
+    logoutButton.addEventListener('click', () => {
+        localStorage.setItem('isLoggedIn', 'false');
+        loginButton.style.display = 'block';
+        logoutButton.style.display = 'none';
+
+        window.location.href = 'index.html';
+    });
+});
+
+

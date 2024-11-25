@@ -3,8 +3,10 @@
     font-family: 'Ultra911';
     src: url('Ultra911-ow8rA.otf') format('opentype');
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 
 
 .fira-sans-bold {
@@ -51,21 +53,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    /* Align content to the bottom */
 }
 
 .image-section h2 {
     position: absolute;
-    /* Position relative to the section */
     bottom: 90px;
-    /* Place it slightly above the bottom */
     left: 50%;
-    /* Center horizontally */
     transform: translateX(-50%);
-    /* Exact centering */
     font-family: 'Parkinsans', sans-serif;
     font-size: 2rem;
-    /* Adjust font size */
     font-weight: 550;
     background: linear-gradient(90deg, #9f9f9f, #fff, #868686);
     -webkit-background-clip: text;
@@ -73,13 +69,10 @@ body {
     background-size: 200%;
     animation: shine 3s infinite linear;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-    /* Adds depth */
     margin: 0;
-    /* Ensure no extra spacing */
     text-align: center;
 }
 
-/* Shine Animation */
 @keyframes shine {
     0% {
         background-position: 0%;
@@ -95,34 +88,26 @@ body {
 }
 
 
-/* Ensure visibility on scroll */
 .image-section h2.visible {
     opacity: 1;
-    /* Fully visible when in viewport */
     transform: translateX(-50%);
 }
 
-/* Scroll Text */
 .scroll-text {
     font-size: 2.5rem;
     font-weight: 600;
     color: white;
     text-align: center;
     opacity: 0;
-    /* Hidden by default */
     transform: translateY(50px);
-    /* Positioned below initial state */
     transition: opacity 1s ease, transform 1s ease;
-    /* Smooth appearance */
 }
 
-/* Hidden State */
 .hidden {
     opacity: 0;
     transform: translateY(50px);
 }
 
-/* Visible State */
 .visible {
     opacity: 1;
     transform: translateY(0);
@@ -133,7 +118,6 @@ body {
 .image-overlay {
     position: absolute;
     bottom: 20px;
-    /* Position at the bottom */
     width: 100%;
     text-align: center;
     padding: 10px 20px;
@@ -167,14 +151,11 @@ body {
     letter-spacing: 2px;
 }
 
-/* Navigation Links */
 .nav-links {
     display: flex;
     justify-content: center;
-    /* Centered the nav */
     align-items: center;
     gap: 40px;
-    /* Increased space between items */
     list-style: none;
     padding: 1.5vw;
 }
@@ -182,54 +163,43 @@ body {
 .nav-links li a {
     text-decoration: none;
     font-size: 1.5rem;
-    /* Increased font size */
     color: #fff;
     display: flex;
     align-items: center;
     gap: 5px;
-    /* Spacing for the arrow */
     transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
     color: #b91111;
-    /* Red hover color */
 }
 
-/* Dropdown Menu */
 .services {
     position: relative;
 }
 
 .services .arrow {
     width: 16px;
-    /* Adjust arrow size */
     transition: transform 0.3s ease;
 }
 
 .services:hover .arrow {
     transform: rotate(-180deg);
-    /* Rotate arrow upwards */
 }
 
 .dropdown {
     position: absolute;
     top: 120%;
-    /* Added space between nav and dropdown */
     left: 0;
-    background: rgba(0, 0, 0, 0.7);
-    /* Semi-transparent */
+    background: rgba(0, 0, 0, 1);
     padding: 10px;
     display: none;
     flex-direction: column;
     gap: 15px;
-    /* Space between dropdown items */
     list-style: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    /* Rounded corners */
     min-width: 250px;
-    /* Dropdown width */
     cursor: pointer;
 }
 
@@ -242,7 +212,7 @@ body {
     align-items: center;
     gap: 15px;
     padding: 10px;
-    transition: background 0.3s ease;
+    transition: background 0.7s ease;
 }
 
 .dropdown-item:hover {
@@ -252,7 +222,6 @@ body {
 
 .dropdown-item img {
     width: 40px;
-    /* Icon size */
     height: 40px;
 }
 
@@ -293,7 +262,6 @@ body {
     position: absolute;
     top: 50%;
     left: 5%;
-    /* Reduced padding */
     transform: translateY(-50%);
     z-index: 2;
     text-align: left;
@@ -303,9 +271,7 @@ body {
 .porsche-title {
     font-family: 'Ultra911', sans-serif;
     font-size: 5rem;
-    /* Larger Porsche title */
     color: #b91111;
-    /* Red color */
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
     margin-bottom: 20px;
 }
@@ -313,7 +279,6 @@ body {
 .headline {
     font-family: 'Parkinsans', sans-serif;
     font-size: 5.5rem;
-    /* Larger than original example */
     font-weight: 700;
     color: #fff;
     line-height: 1.2;
@@ -321,11 +286,9 @@ body {
     margin-bottom: 20px;
 }
 
-/* Subhead */
 .subhead {
     font-family: 'Parkinsans', sans-serif;
     font-size: 2rem;
-    /* Subhead styling */
     font-weight: 400;
     color: #ddd;
     line-height: 1.5;
@@ -333,18 +296,14 @@ body {
 }
 
 
-/* Button Styling */
 .button {
     padding: 15px 55px;
-    /* Increased padding */
     font-size: 1.1rem;
     border: 2px solid #b91111;
-    /* Red border */
     background: transparent;
     color: #fff;
     text-transform: uppercase;
     border-radius: 50px;
-    /* More rounded */
     text-decoration: none;
     transition: all 0.3s ease;
     animation: fadeInUp 2s ease;
@@ -388,23 +347,9 @@ body {
     text-align: center;
 }
 
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        transform: translateY(30px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
 .next-section {
     height: auto;
     background: #111;
-    /* Dark gray */
     padding: 50px;
 }
 
@@ -438,9 +383,7 @@ body {
     left: -5px;
     margin: auto;
     width: 410px;
-    /* Matches the card's width */
     height: 610px;
-    /* Matches the card's height */
     border-radius: 8px;
     background: linear-gradient(-45deg, #be0a0d 0%, #0d2a86 100%);
     z-index: -10;
@@ -455,7 +398,6 @@ body {
     background: linear-gradient(-45deg, #b21919 0%, #0d479f 100%);
     transform: scale(0.95);
     filter: blur(20px);
-    /* Creates the glowing blur */
     z-index: -1;
     pointer-events: none;
     transition: filter 0.6s ease, transform 0.6s ease;
@@ -484,22 +426,17 @@ body {
 
 .card:hover::after {
     filter: blur(40px);
-    /* Enhanced glow effect */
     transform: scale(1);
     transition: filter 1.5s ease;
-    /* Matches rotation timing */
 }
 
 .card:hover::before {
     transform: rotate(-180deg) scale(1.05);
     filter: brightness(1.5);
-    /* Enhances the glow */
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    /* Slower transition */
 }
 
-/*Moving slider*/
-/* Section Styling */
+
 .porsche-models-section {
     display: flex;
     flex-direction: column;
@@ -518,7 +455,6 @@ body {
     border-radius: 8px;
     width: 600px;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-    /* Open-ended shadow */
 
 }
 
@@ -564,7 +500,6 @@ body {
 .row {
     display: flex;
     gap: 15px;
-    /* Increased for larger boxes */
     overflow: hidden;
 }
 
@@ -575,9 +510,7 @@ body {
 .box {
     flex: none;
     width: 600px;
-    /* Increased size */
     height: 300px;
-    /* Increased size */
     overflow: hidden;
     position: relative;
     border-radius: 8px;
@@ -613,7 +546,6 @@ body {
     width: 6em;
     height: 3.125em;
     background: linear-gradient(to right, #2a2a2a 50%, #c3c3c3 50%) no-repeat;
-    /* Switched colors */
     background-size: 205%;
     background-position: 0;
     transition: 0.4s;
@@ -632,7 +564,6 @@ body {
     top: 0.438em;
     left: 0.438em;
     background: linear-gradient(to right, #2a2a2a 50%, #efefef 50%) no-repeat;
-    /* Switched colors */
     background-size: 205%;
     background-position: 100%;
     border-radius: 50%;
@@ -648,12 +579,9 @@ body {
     background-position: 100%;
 }
 
-/* Light Theme Styles */
 .light-theme {
     background-color: #ffffff;
-    /* Background turns white */
     color: #000000;
-    /* Text turns black */
 }
 
 .light-theme .navbar {
@@ -663,20 +591,15 @@ body {
 
 .light-theme .nav-links li a {
     color: #000;
-    /* Nav links turn black */
 }
 
 .light-theme .nav-links li a:hover {
     color: #b91111;
-    /* Maintain hover color */
 }
 
-/* Adjust porsche-models-section */
 .light-theme .porsche-models-section {
     background-color: #ffffff;
-    /* Background turns white */
     color: #000000;
-    /* Text turns black */
 }
 
 .light-theme .porsche-models-section .models-text h1,
@@ -685,28 +608,21 @@ body {
 .light-theme .porsche-nav,
 .light-theme .button {
     color: #000;
-    /* Text and button text turn black */
 }
 
 .light-theme .porsche-models-section .customize-button {
     border-color: #000;
-    /* Button border turns black */
 }
 
 .light-theme .porsche-models-section .customize-button:hover {
     background: #000;
-    /* Button hover background turns black */
     color: #fff;
-    /* Button hover text turns white */
 }
 
 .backToTop-btn {
     position: fixed;
-    /* Keeps the button fixed as you scroll */
     bottom: 80px;
-    /* Adjust this value for spacing from the bottom */
     right: 20px;
-    /* Adjust this value for spacing from the right */
     width: 140px;
     height: 56px;
     overflow: hidden;
@@ -714,13 +630,10 @@ body {
     color: #fff;
     background: none;
     z-index: 1000;
-    /* Ensures it stays above other elements */
     display: none;
-    /* Initially hidden */
     padding-bottom: 2em;
     cursor: pointer;
     transition: opacity 0.3s ease;
-    /* Smooth show/hide */
 }
 
 
@@ -790,7 +703,6 @@ button:hover .clone> :nth-child(2) {
     transition-delay: 0.3s;
 }
 
-/* icon style and hover */
 .backToTop-btn svg {
     width: 20px;
     right: 0;
@@ -803,54 +715,50 @@ button:hover .clone> :nth-child(2) {
     transform: translateY(-50%) rotate(-90deg);
 }
 
-/* Footer Container */
 .footer-container {
     display: flex;
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
     justify-content: space-between;
-    gap: 40px; /* Add spacing between columns and logo */
-    padding: 20px 0; /* Add vertical spacing for the whole footer container */
+    gap: 40px;
+    padding: 20px 0;
 }
 
-/* Footer Logo Section */
 .footer-left {
     flex: 1;
-    margin-right: 60px; /* Increase margin to create more space from columns */
+    margin-right: 60px;
 }
 
-/* Footer Logo */
 .footer-logo img {
-    width: 180px; /* Set the width to make it smaller */
-    height: auto; /* Maintain proportions */
-    margin-bottom: 20px; /* Add spacing below the logo */
-    display: block; /* Ensure proper alignment */
+    width: 180px;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
 }
 
 .footer-left p {
     font-size: 16px;
-    margin: 10px 0 0; /* Space below text */
-    line-height: 1.6; /* Improve readability */
+    margin: 10px 0 0;
+    line-height: 1.6;
 }
 
-/* Footer Links Section */
 .footer-links {
     flex: 4;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 40px; /* Increase spacing between columns */
+    gap: 40px;
 }
 
 .footer-column {
     flex: 1;
-    min-width: 180px; /* Increase minimum width for better layout */
-    padding: 0 10px; /* Add horizontal padding to each column */
+    min-width: 180px;
+    padding: 0 10px;
 }
 
 .footer-column h4 {
-    margin-bottom: 15px; /* Add more spacing below headers */
+    margin-bottom: 15px;
     font-size: 16px;
 }
 
@@ -861,20 +769,19 @@ button:hover .clone> :nth-child(2) {
 }
 
 .footer-column ul li {
-    margin-bottom: 10px; /* Increase spacing between list items */
+    margin-bottom: 10px;
 }
 
-/* Footer Bottom Section */
 .footer-bottom {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 40px; /* Increase spacing above the bottom section */
+    margin-top: 40px;
     text-align: center;
     width: 100%;
-    padding-top: 20px; /* Add padding for separation */
-    border-top: 1px solid #333; /* Optional: Add a subtle border at the top */
+    padding-top: 20px;
+    border-top: 1px solid #333;
 }
 
 .footer-bottom p {
@@ -883,12 +790,11 @@ button:hover .clone> :nth-child(2) {
     color: #a8a8a8;
 }
 
-/* Social Icons */
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 30px; /* Add more space between social icons */
-    margin-top: 10px; /* Space above the icons */
+    gap: 30px;
+    margin-top: 10px;
 }
 
 .social-icons a img {
@@ -898,10 +804,8 @@ button:hover .clone> :nth-child(2) {
 }
 
 .social-icons a img:hover {
-    transform: scale(1.2); /* Increase scale for a better hover effect */
+    transform: scale(1.2);
 }
-
-/* Dark Mode */
 footer {
     background-color: #000000;
     color: #fff;
@@ -945,18 +849,23 @@ body.light-mode footer a:hover {
 body.light-mode .footer-bottom p {
     color: #333;
 }
-body, html {
+
+body,
+html {
     margin: 0;
     padding: 0;
     width: 100%;
     overflow-x: hidden;
 }
 
-.navbar, .video-section, .image-section, .models-gallery {
-    width: 100%; /* Ensure sections span full width */
+.navbar,
+.video-section,
+.image-section,
+.models-gallery {
+    width: 100%;
 }
+
 @media (max-width: 1171px) {
-    /* Navbar Adjustments */
     .navbar {
         display: flex;
         flex-direction: column;
@@ -964,7 +873,8 @@ body, html {
         justify-content: center;
         padding: 10px 20px;
     }
-
+    
+   
     .logo-container {
         display: flex;
         flex-direction: column;
@@ -980,26 +890,11 @@ body, html {
         gap: 10px;
         margin-top: 10px;
     }
-
-    /* Navigation Links Hidden */
-    .nav-links {
-        display: none; /* Hide navbar links */
+    .services:hover ~ .navbar-right .button {
+        display: none;
     }
-
-    /* Show Burger Menu */
-    .menu-toggle {
-        display: block; /* Show menu toggle */
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background: none;
-        border: none;
-        color: #fff;
-        font-size: 24px;
-        cursor: pointer;
-    }
-
-    /* Menu Active State */
+    
+    
     .nav-links.active {
         display: flex;
         flex-direction: column;
@@ -1013,11 +908,8 @@ body, html {
         border-radius: 8px;
     }
 
-    .nav-links.active li {
-        display: block;
-    }
 
-    /* Models Section Responsive */
+
     .models-gallery {
         display: flex;
         flex-direction: column;
@@ -1037,31 +929,12 @@ body, html {
     }
 }
 
-/* Restore for Larger Screens */
-@media (min-width: 901px) {
-    .menu-toggle {
-        display: none; /* Hide the burger menu */
-    }
-
-    .nav-links {
-        display: flex; /* Restore navbar links */
-    }
-
-    .navbar-right {
-        display: flex;
-    }
-
-    .models-gallery .row {
-        display: flex;
-        gap: 15px;
-    }
-
-    .box {
-        flex: 1;
-    }
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6 {
+    color: inherit;
+    font-family: inherit;
 }
-footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
-    color: inherit; 
-    font-family: inherit; 
-}
-
