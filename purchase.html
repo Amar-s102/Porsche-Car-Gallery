@@ -8,58 +8,6 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.min.js"></script>
 
 </head>
-<header>
-  <nav class="navbar">
-    <div class="logo-container">
-      <img src="imgs/white-logo-final.png" class="logo">
-      <h1 class="porsche-nav">Porsche</h1>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#cards-section">Features</a></li>
-      <li class="services">
-        <a href="#services-section">
-          Services
-          <img src="imgs/arrow-icon.png" alt="Down Arrow" class="arrow">
-        </a>
-        <ul class="dropdown">
-          <li>
-            <div class="dropdown-item">
-              <img src="images/customize-icon.png" alt="Customize Icon">
-              <div class="dropdown-text">
-                <span class="dropdown-title">Customize</span>
-                <span class="dropdown-subtext">Personalize your ride</span>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="dropdown-item">
-              <img src="images/rent-icon.png" alt="Rent Icon">
-              <div class="dropdown-text">
-                <span class="dropdown-title">Rent</span>
-                <span class="dropdown-subtext">Drive for a day</span>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="dropdown-item">
-              <img src="images/buy-icon.png" alt="Purchase Icon">
-              <div class="dropdown-text">
-                <span class="dropdown-title">Purchase</span>
-                <span class="dropdown-subtext">Own your dream car</span>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </li>
-      <li><a href="#porsche-models-section">Explore</a></li>
-      <li><a href="#footer">Contact Us</a></li>
-    </ul>
-    <div class="navbar-right">
-      <input type="checkbox" class="theme-checkbox" id="theme-toggle" />
-    </div>
-    
-  </nav>
-</header>
 <body>
   <div class="image-gallery">
     <div class="image-container">
@@ -181,8 +129,20 @@
       Your browser does not support the video tag.
     </video>
     <div class="video-title">Bottom Right</div>
+  <div class="purchase-container">
+    <!-- Image Div -->
+    <div class="image-container">
+      <img src="imgs/purchase-side.jpg" alt="Car Image" id="car-image">
+    </div>
+
+    <!-- Receipt Div -->
+     <div class="background-div">
+    <div class="receipt-container" id="purchase-container">
+      <!-- Receipt info will be populated dynamically -->
+       
+    </div>
   </div>
-</div>
+  </div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>

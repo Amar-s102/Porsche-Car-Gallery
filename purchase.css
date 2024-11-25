@@ -3,142 +3,27 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   background-color: #050505;
 }
 
-.customer-info-container {
-  margin: 60px auto;
-  margin-top: 90px;
-  padding: 20px;
-  background-color: #f9f9f9;
+/* Main Container */
+.purchase-container {
+  display: flex;
+  width: 80%;
+  max-width: 1200px;
+  height: 600px; /* Fixed height for both divs */
+  background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 100vh;
-  text-align: left;
-  height:82%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-
-.customer-info-container h2 {
-  font-size: 2rem;
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.customer-info-container form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-/* Form Groups for Left and Right Columns */
-.left-column, .right-column {
-  flex: 1 1 48%;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-/* Full-width fields (e.g., address and submit button) */
-.full-width {
-  flex: 1 1 100%;
-}
-
-/* Input and Textarea Styles */
-input, textarea {
-  display: block; /* Ensure fields are visible */
-  width: 90%; /* Adjust width to fit the container */
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box; /* Ensure padding doesn't affect width */
-  background-color: #fff; /* Ensure inputs are visible against a light background */
-  color: #333; /* Text color */
-  outline: 1px solid red;
-}
-
-/* Hide the default radio button */
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-/* Radio Button Container */
-.container {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  gap:20px;
-  position: relative;
-  cursor: pointer;
-  font-size: 16px;
-  user-select: none;
-  margin-bottom: 10px;
-  padding-left: 2.5em; /* Space for the custom checkmark */
-  line-height: 1.5em; /* Align the text with the checkmark */
-}
-
-/* Create a custom radio button */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 1.3em;
-  width: 1.3em;
-  background-color: #e8e8e8;
-  border-radius: 100%;
-  box-shadow: 3px 3px 5px #c5c5c5,
-              -3px -3px 5px #ffffff;
-  transition: box-shadow 0.5s ease;
-}
-
-/* Style when the radio button is selected */
-.container input:checked ~ .checkmark {
-  box-shadow: inset 3px 3px 5px #120606,
-              inset -3px -3px 5px #a69d9d;
-}
-
-/* Checkmark tick appearance */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  left: 0.45em;
-  top: 0.25em;
-  width: 0.25em;
-  height: 0.5em;
-  border: solid darkgray;
-  border-width: 0 0.15em 0.15em 0;
-  transform: rotate(45deg);
-  opacity: 0;
-}
-
-/* Show the tick when checked */
-.container input:checked ~ .checkmark:after {
-  opacity: 1;
-}
-
-/* Submit Button */
-.submit-btn {
-  background-color: #000;
-  color: #fff;
-  padding: 12px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
-}
-
-.submit-btn:hover {
-  background-color: #333;
-}
 /* Image Container */
-.image-container2 {
+.image-container {
   flex: 1;
   background-color: #ddd;
   display: flex;
@@ -165,20 +50,51 @@ input, textarea {
   width: 40px; /* Adjust the size of the logos */
   height: auto;
   vertical-align: middle; /* Align logo with the text */
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  height:100vh;
+}
+
+/* Receipt Container */
+.receipt-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  height: 400px; /* Adjust height as needed */
+  margin-top: 63px;
+  
+}
+#purchase-container {
+  margin-bottom: 20px;
 }
 .receipt-container h3 {
   border-top: 1px solid #ddd;
   padding-top: 10px;
   font-size: 1.5rem;
   color: #333;
-  font-weight: bolder;
 }
-
+.background-div{
+  width:50%;
+}
 .receipt-container p {
   font-size: 1.22rem;
   color: #0b0b0b;
   margin: 5px 0;
-  font-weight: bold;
 }
 
 .receipt-container strong {

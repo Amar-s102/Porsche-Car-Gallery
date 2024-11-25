@@ -1,0 +1,654 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Parkinsans", sans-serif;
+    height: 100vh;
+    background-image: url(images/Screenshot\ 2024-11-08\ 220153.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    position: relative;
+    width: 90% !important; /* Allow flexibility based on viewport width */
+    max-width: 1000px !important; /* Maximum width constraint */
+    height: 650px; /* Allow the height to adjust automatically */
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    margin: auto; /* Center the container */
+    transition: transform 0.6s ease-in-out;
+}
+
+
+.form-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center all elements vertically */
+    align-items: center; /* Center all elements horizontally */
+    padding: 20px; /* Add padding around elements */
+    gap: 20px; /* Space between elements */
+    text-align: center; /* Center-align text inside inputs */
+}
+
+
+.login-container {
+    left: 0;
+    z-index: 2;
+}
+
+.register-container {
+    left: 100%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.right-panel-active .register-container {
+    transform: translateX(-100%);
+    opacity: 1;
+    z-index: 5;
+}
+
+.container.right-panel-active .login-container {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+
+}
+
+.overlay {
+    color: #fff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.container.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+.overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transition: transform 0.6s ease-in-out;
+}
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-left {
+    transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+    transform: translateX(0);
+}
+
+.overlay-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+    transform: translateX(20%);
+}
+
+
+
+
+.button {
+    width: 150px;
+    height: 60px;
+    border: 3px solid #471515;
+    border-radius: 45px;
+    transition: all 0.3s;
+    cursor: pointer;
+    background: white;
+    font-size: 1.2em;
+    font-weight: 500;
+    align-items: center;
+}
+
+.button:hover {
+    background: #851922;
+    color: white;
+    font-size: 1.30em;
+    border: none;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: none;
+}
+
+.button.ghost {
+    background-color: rgba(225, 225, 225, 0.2);
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.button.ghost i {
+    position: absolute;
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+}
+
+.button.ghost i.register {
+    right: 70px;
+}
+
+.button.ghost i.login {
+    left: 70px;
+}
+
+.button.ghost:hover i.register {
+    right: 40px;
+    opacity: 1;
+}
+
+.button.ghost:hover i.login {
+    left: 40px;
+    opacity: 1;
+}
+
+form {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 ;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    
+}
+
+input {
+    background-color: #eee;
+    border-radius: 10px;
+    border: 1px solid rgba(105, 105, 105, 0.5);
+    padding: 15px 20px; /* Add padding inside input */
+    font-size: 1.0rem; /* Increase font size */
+    width: 70%; /* Make the input take up 80% of its parent container */
+    margin: 5px 0; /* Space between inputs */
+}
+
+
+.form-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center elements vertically */
+    align-items: flex-start; /* Align elements to the left */
+    padding: 0 40px; /* Adjust padding for less space on the left */
+    gap: 15px; /* Space between form elements */
+    text-align: left; /* Align text to the left */
+}
+
+
+.login-container {
+    width: 50%;
+    
+}
+
+.container.right-panel-active .login-container {
+    transform: translateX(100%);
+}
+
+.register-container {
+    left: 0;
+    width: 50%;
+    opacity: 1;
+    z-index: 1;
+}
+
+.container.right-panel-active .register-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s;
+}
+
+@keyframes show {
+
+    0%,
+    49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 1;
+        z-index: 1;
+    }
+}
+
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.container.right-panel-active .overlay-container {
+    transform: translate(-100%);
+}
+
+.overlay {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.overlay::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(to top,
+            rgba(46, 94, 109, 0.4) 40%,
+            rgba(46, 94, 109, 0));
+}
+
+.container.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+.overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+.overlay-panel h1{
+    margin-bottom:20px;
+}
+.overlay-panel p{
+    margin-bottom: 20px;
+}
+.overlay-left {
+    transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+    transform: translateX(0);
+}
+
+.overlay-right {
+    transform: translateX(0);
+    right: 0;
+}
+
+.container.right-panel-active .overlay-right {
+    transform: translateX(20%);
+}
+
+/* Hide form containers by default on mobile */
+.hidden {
+    display: none;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 550px;
+    background-color: #fff;
+    border-radius: 20px;
+    position: relative;
+    
+}
+
+.title {
+    font-size: 35px;
+    color: rgb(161, 29, 29);
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.title::before,
+.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: rgb(152, 18, 18);
+}
+
+.title::before {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(200, 48, 48);
+}
+
+.title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+}
+
+
+.flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+}
+
+.form-login label {
+    position: relative;
+}
+
+.form-login label .input {
+    width: 100%; /* Ensure the input does not overflow */
+    max-width: 400px; /* Restrict maximum width */
+    padding: 12px;
+    font-size: 1.5rem;
+    border: 1px solid rgba(105, 105, 105, 0.5);
+    border-radius: 10px;
+}
+
+
+.form-login label .input+span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 1.3em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+
+.submit {
+    border: none;
+    outline: none;
+    background-color: rgb(147, 24, 24);
+    padding: 10px;
+    border-radius: 45px;
+    color: #fff;
+    font-size: 22px;
+    transform: .3s ease;
+}
+
+.submit:hover {
+    background-color: rgb(125, 30, 30);
+    border: none;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+.backToHome-btn {
+    position: fixed; 
+    top: 30px; 
+    left: 40px; 
+    width: 140px; 
+    height: 56px; 
+    overflow: hidden;
+    border: none;
+    color: #fff;
+    background: none;
+    z-index: 1000; 
+    padding-bottom: 2em;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    text-decoration: none; 
+}
+
+.backToHome-btn:hover {
+    opacity: 0.8; 
+    transform: scale(1.1); 
+}
+
+.backToHome-btn:before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    background: currentColor;
+    transition: transform 0.25s ease-out;
+}
+
+.backToHome-btn:hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.backToHome-btn .clone>*,
+.backToHome-btn .text>* {
+    opacity: 1;
+    font-size: 1.3rem;
+    transition: 0.2s;
+    margin-left: 4px;
+}
+
+.backToHome-btn .clone>* {
+    transform: translateY(60px);
+}
+
+.backToHome-btn:hover .clone>* {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.backToHome-btn:hover .text>* {
+    opacity: 1;
+    transform: translateY(-60px);
+    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.backToHome-btn svg {
+    width: 20px;
+    left: 1;
+    top: 50%;
+    transform: translateY(-50%) rotate(-50deg);
+    transition: 0.2s ease-out;
+}
+
+.backToHome-btn:hover svg {
+    transform: translateY(-50%) rotate(-90deg);
+}
+.eye {
+    position: relative;
+    cursor: pointer;
+    font-size: 1em; /* Reduced size to make it smaller */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em; /* Explicit width for better control */
+    height: 1.5em; /* Explicit height for better control */
+  }
+.eye svg {
+    display: block;
+}
+
+.eye .eye-slash {
+    display: none;
+}
+
+.eye-button{
+    border: none;
+    background-color: transparent;
+}
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 2.5em; /* Adjust for the button's space */
+    font-size: 0.875rem;
+}
+
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 0.5em;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+.toggle-password:active {
+    transform: translateY(-50%); /* Prevent any movement */
+}
+.toggle-password .eye-slash {
+    display: none;
+}
+.eye {
+    position: relative;
+    cursor: pointer;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.toggle-password .eye {
+    display: inline-block;
+}
+
+.toggle-password .eye-slash {
+    display: none;
+}
+
+.eye svg {
+    display: block;
+}
+
+.eye .eye-slash {
+    display: none;
+}
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 2.5em; /* Space for the button */
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 0.5em;
+    transform: translateY(-50%); /* Align with input */
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+}
+
+.toggle-password:active {
+    transform: translateY(-50%); /* Prevent movement */
+}
+
+.toggle-password .eye-slash {
+    display: none;
+}

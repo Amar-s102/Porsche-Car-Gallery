@@ -120,3 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error('Theme toggle checkbox not found');
   }
 });
+
+//   const totalDiv = document.createElement('div');
+//   totalDiv.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
+//   purchaseContainer.appendChild(totalDiv);
+//  else {
+//   purchaseContainer.innerHTML = '<p>Your cart is empty.</p>';
+// }

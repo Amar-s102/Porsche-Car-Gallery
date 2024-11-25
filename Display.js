@@ -144,3 +144,41 @@ window.addEventListener("click", (e) => {
         modal.style.display = "none";
     }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const themeToggle = document.querySelector(".theme-checkbox");
+  const footer = document.getElementById("main-footer");
+
+  themeToggle.addEventListener("change", () => {
+      if (themeToggle.checked) {
+          footer.style.backgroundColor = "#ffffff"; 
+          footer.style.color = "#000000"; 
+
+          const headings = footer.querySelectorAll("h1, h2, h3, h4, h5, h6");
+          headings.forEach(heading => {
+              heading.style.color = "#000000"; 
+          });
+
+          const links = footer.querySelectorAll("a"); 
+          links.forEach(link => {
+              link.style.color = "#000000"; 
+              link.addEventListener("mouseover", () => link.style.color = "#555555"); 
+              link.addEventListener("mouseout", () => link.style.color = "#000000"); 
+          });
+      } else {
+          footer.style.backgroundColor = "#000000";
+          footer.style.color = "#ffffff"; 
+
+          const headings = footer.querySelectorAll("h1, h2, h3, h4, h5, h6");
+          headings.forEach(heading => {
+              heading.style.color = "#ffffff";
+          });
+
+          const links = footer.querySelectorAll("a"); 
+          links.forEach(link => {
+              link.style.color = "#a8a8a8"; // Set link color to light gray
+              link.addEventListener("mouseover", () => link.style.color = "#ffffff"); 
+              link.addEventListener("mouseout", () => link.style.color = "#a8a8a8"); 
+          });
+      }
+  });
+});

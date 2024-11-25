@@ -1,0 +1,1073 @@
+/* Import Modern Fonts */
+@font-face {
+    font-family: 'Ultra911';
+    src: url('Ultra911-ow8rA.otf') format('opentype');
+}
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+.fira-sans-regular {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.fira-sans-bold {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Parkinsans', sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.7);
+    /* Darker hue with transparency */
+    backdrop-filter: blur(5px);
+    /* Add a slight blur for a modern effect */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    transition: background 0.3s ease;
+    /* Smooth transition on changes */
+}
+
+.image-section {
+    position: relative;
+    /* Makes it a positioning context for absolute elements */
+    height: 100vh;
+    /* Full viewport height */
+    background: url('../images/img_14-1600x900.jpeg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* Align content to the bottom */
+}
+
+.image-section h2 {
+    position: absolute;
+    /* Position relative to the section */
+    bottom: 90px;
+    /* Place it slightly above the bottom */
+    left: 50%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    /* Exact centering */
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 2rem;
+    /* Adjust font size */
+    font-weight: 550;
+    background: linear-gradient(90deg, #9f9f9f, #fff, #868686);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200%;
+    animation: shine 3s infinite linear;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    /* Adds depth */
+    margin: 0;
+    /* Ensure no extra spacing */
+    text-align: center;
+}
+
+/* Shine Animation */
+@keyframes shine {
+    0% {
+        background-position: 0%;
+    }
+
+    50% {
+        background-position: 100%;
+    }
+
+    100% {
+        background-position: 0%;
+    }
+}
+
+
+/* Ensure visibility on scroll */
+.image-section h2.visible {
+    opacity: 1;
+    /* Fully visible when in viewport */
+    transform: translateX(-50%);
+}
+
+/* Scroll Text */
+.scroll-text {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    /* Hidden by default */
+    transform: translateY(50px);
+    /* Positioned below initial state */
+    transition: opacity 1s ease, transform 1s ease;
+    /* Smooth appearance */
+}
+
+/* Hidden State */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+/* Visible State */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.image-overlay {
+    position: absolute;
+    bottom: 20px;
+    /* Position at the bottom */
+    width: 100%;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.image-description {
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.porsche-nav {
+    font-family: 'Ultra911', sans-serif;
+    font-size: 1.0rem;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    /* Centered the nav */
+    align-items: center;
+    gap: 40px;
+    /* Increased space between items */
+    list-style: none;
+    padding: 1.5vw;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    /* Increased font size */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* Spacing for the arrow */
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #b91111;
+    /* Red hover color */
+}
+
+/* Dropdown Menu */
+.services {
+    position: relative;
+}
+
+.services .arrow {
+    width: 16px;
+    /* Adjust arrow size */
+    transition: transform 0.3s ease;
+}
+
+.services:hover .arrow {
+    transform: rotate(-180deg);
+    /* Rotate arrow upwards */
+}
+
+.dropdown {
+    position: absolute;
+    top: 120%;
+    /* Added space between nav and dropdown */
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent */
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    /* Space between dropdown items */
+    list-style: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    /* Rounded corners */
+    min-width: 250px;
+    /* Dropdown width */
+    cursor: pointer;
+}
+
+.services:hover .dropdown {
+    display: flex;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    transition: background 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background: #1a1a1a;
+    border-radius: 5px;
+}
+
+.dropdown-item img {
+    width: 40px;
+    /* Icon size */
+    height: 40px;
+}
+
+.dropdown-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.dropdown-title {
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+.dropdown-subtext {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.video-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-section video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    /* Reduced padding */
+    transform: translateY(-50%);
+    z-index: 2;
+    text-align: left;
+    color: #fff;
+}
+
+.porsche-title {
+    font-family: 'Ultra911', sans-serif;
+    font-size: 5rem;
+    /* Larger Porsche title */
+    color: #b91111;
+    /* Red color */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+}
+
+.headline {
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 5.5rem;
+    /* Larger than original example */
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+}
+
+/* Subhead */
+.subhead {
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 2rem;
+    /* Subhead styling */
+    font-weight: 400;
+    color: #ddd;
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+
+
+/* Button Styling */
+.button {
+    padding: 15px 55px;
+    /* Increased padding */
+    font-size: 1.1rem;
+    border: 2px solid #b91111;
+    /* Red border */
+    background: transparent;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 50px;
+    /* More rounded */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: fadeInUp 2s ease;
+}
+
+.button:hover {
+    background: #b91111;
+    color: #fff;
+    border-color: #b91111;
+}
+
+[data-animate] {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+[data-animate].visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.fade-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.fade-text {
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 3rem;
+    font-weight: 550;
+    color: #fff;
+    padding: 530px;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.next-section {
+    height: auto;
+    background: #111;
+    /* Dark gray */
+    padding: 50px;
+}
+
+.card-container {
+    display: flex;
+    gap: 5vw;
+    align-items: center;
+    justify-content: center;
+    padding: 5vw;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 12px;
+    gap: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    left: -5px;
+    margin: auto;
+    width: 410px;
+    /* Matches the card's width */
+    height: 610px;
+    /* Matches the card's height */
+    border-radius: 8px;
+    background: linear-gradient(-45deg, #be0a0d 0%, #0d2a86 100%);
+    z-index: -10;
+    pointer-events: none;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, #b21919 0%, #0d479f 100%);
+    transform: scale(0.95);
+    filter: blur(20px);
+    /* Creates the glowing blur */
+    z-index: -1;
+    pointer-events: none;
+    transition: filter 0.6s ease, transform 0.6s ease;
+}
+
+.heading {
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.card p:not(.heading) {
+    font-size: 45px;
+    padding-right: 2vw;
+}
+
+.h-card {
+    font-size: 25px;
+    color: rgb(144, 128, 249);
+}
+
+.card p:last-child {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.card:hover::after {
+    filter: blur(40px);
+    /* Enhanced glow effect */
+    transform: scale(1);
+    transition: filter 1.5s ease;
+    /* Matches rotation timing */
+}
+
+.card:hover::before {
+    transform: rotate(-180deg) scale(1.05);
+    filter: brightness(1.5);
+    /* Enhances the glow */
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Slower transition */
+}
+
+/*Moving slider*/
+/* Section Styling */
+.porsche-models-section {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    background-color: #000;
+    position: relative;
+    color: #fff;
+}
+
+.models-text {
+    position: absolute;
+    top: 120px;
+    left: 20px;
+    z-index: 10;
+    padding: 20px;
+    border-radius: 8px;
+    width: 600px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    /* Open-ended shadow */
+
+}
+
+.models-text h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.models-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    padding: 2vw;
+}
+
+.customize-button {
+    padding: 15px 55px;
+    font-size: 1.1rem;
+    border: 2px solid #b91111;
+    background: transparent;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: fadeInUp 2s ease;
+}
+
+.customize-button:hover {
+    background: #b91111;
+    color: #fff;
+    border-color: #b91111;
+}
+
+.models-gallery {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+    /* Increased for larger boxes */
+    overflow: hidden;
+}
+
+.row.reverse {
+    flex-direction: row-reverse;
+}
+
+.box {
+    flex: none;
+    width: 600px;
+    /* Increased size */
+    height: 300px;
+    /* Increased size */
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.row:hover .box {
+    transform: translateX(-45%);
+}
+
+.row.reverse:hover .box {
+    transform: translateX(45%);
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.theme-checkbox {
+    --toggle-size: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 6em;
+    height: 3.125em;
+    background: linear-gradient(to right, #2a2a2a 50%, #c3c3c3 50%) no-repeat;
+    /* Switched colors */
+    background-size: 205%;
+    background-position: 0;
+    transition: 0.4s;
+    border-radius: 99em;
+    position: relative;
+    cursor: pointer;
+    font-size: var(--toggle-size);
+    margin: 0;
+}
+
+.theme-checkbox::before {
+    content: "";
+    width: 2.25em;
+    height: 2.25em;
+    position: absolute;
+    top: 0.438em;
+    left: 0.438em;
+    background: linear-gradient(to right, #2a2a2a 50%, #efefef 50%) no-repeat;
+    /* Switched colors */
+    background-size: 205%;
+    background-position: 100%;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.theme-checkbox:checked::before {
+    left: calc(100% - 2.25em - 0.438em);
+    background-position: 0;
+}
+
+.theme-checkbox:checked {
+    background-position: 100%;
+}
+
+/* Light Theme Styles */
+.light-theme {
+    background-color: #ffffff;
+    /* Background turns white */
+    color: #000000;
+    /* Text turns black */
+}
+
+.light-theme .navbar {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+}
+
+.light-theme .nav-links li a {
+    color: #000;
+    /* Nav links turn black */
+}
+
+.light-theme .nav-links li a:hover {
+    color: #b91111;
+    /* Maintain hover color */
+}
+
+/* Adjust porsche-models-section */
+.light-theme .porsche-models-section {
+    background-color: #ffffff;
+    /* Background turns white */
+    color: #000000;
+    /* Text turns black */
+}
+
+.light-theme .porsche-models-section .models-text h1,
+.light-theme .porsche-models-section .models-text p,
+.light-theme .porsche-models-section .customize-button,
+.light-theme .porsche-nav,
+.light-theme .button {
+    color: #000;
+    /* Text and button text turn black */
+}
+
+.light-theme .porsche-models-section .customize-button {
+    border-color: #000;
+    /* Button border turns black */
+}
+
+.light-theme .porsche-models-section .customize-button:hover {
+    background: #000;
+    /* Button hover background turns black */
+    color: #fff;
+    /* Button hover text turns white */
+}
+
+.backToTop-btn {
+    position: fixed;
+    /* Keeps the button fixed as you scroll */
+    bottom: 80px;
+    /* Adjust this value for spacing from the bottom */
+    right: 20px;
+    /* Adjust this value for spacing from the right */
+    width: 140px;
+    height: 56px;
+    overflow: hidden;
+    border: none;
+    color: #fff;
+    background: none;
+    z-index: 1000;
+    /* Ensures it stays above other elements */
+    display: none;
+    /* Initially hidden */
+    padding-bottom: 2em;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    /* Smooth show/hide */
+}
+
+
+.backToTop-btn>div,
+.backToTop-btn>svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.backToTop-btn:before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    background: currentColor;
+    transition: transform 0.25s ease-out;
+}
+
+.backToTop-btn:hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.backToTop-btn .clone>*,
+.backToTop-btn .text>* {
+    opacity: 1;
+    font-size: 1.3rem;
+    transition: 0.2s;
+    margin-left: 4px;
+}
+
+.backToTop-btn .clone>* {
+    transform: translateY(60px);
+}
+
+.backToTop-btn:hover .clone>* {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.backToTop-btn:hover .text>* {
+    opacity: 1;
+    transform: translateY(-60px);
+    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.backToTop-btn:hover .clone> :nth-child(1) {
+    transition-delay: 0.15s;
+}
+
+button:hover .clone> :nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.backToTop-btn:hover .clone> :nth-child(3) {
+    transition-delay: 0.25s;
+}
+
+.backToTop-btn:hover .clone> :nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+/* icon style and hover */
+.backToTop-btn svg {
+    width: 20px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(-50deg);
+    transition: 0.2s ease-out;
+}
+
+.backToTop-btn:hover svg {
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+    gap: 40px; /* Add spacing between columns and logo */
+    padding: 20px 0; /* Add vertical spacing for the whole footer container */
+}
+
+/* Footer Logo Section */
+.footer-left {
+    flex: 1;
+    margin-right: 60px; /* Increase margin to create more space from columns */
+}
+
+/* Footer Logo */
+.footer-logo img {
+    width: 180px; /* Set the width to make it smaller */
+    height: auto; /* Maintain proportions */
+    margin-bottom: 20px; /* Add spacing below the logo */
+    display: block; /* Ensure proper alignment */
+}
+
+.footer-left p {
+    font-size: 16px;
+    margin: 10px 0 0; /* Space below text */
+    line-height: 1.6; /* Improve readability */
+}
+
+/* Footer Links Section */
+.footer-links {
+    flex: 4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px; /* Increase spacing between columns */
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 180px; /* Increase minimum width for better layout */
+    padding: 0 10px; /* Add horizontal padding to each column */
+}
+
+.footer-column h4 {
+    margin-bottom: 15px; /* Add more spacing below headers */
+    font-size: 16px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px; /* Increase spacing between list items */
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px; /* Increase spacing above the bottom section */
+    text-align: center;
+    width: 100%;
+    padding-top: 20px; /* Add padding for separation */
+    border-top: 1px solid #333; /* Optional: Add a subtle border at the top */
+}
+
+.footer-bottom p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #a8a8a8;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Add more space between social icons */
+    margin-top: 10px; /* Space above the icons */
+}
+
+.social-icons a img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.2); /* Increase scale for a better hover effect */
+}
+
+/* Dark Mode */
+footer {
+    background-color: #000000;
+    color: #fff;
+}
+
+footer h4 {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+footer a {
+    color: #a8a8a8;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* Light Mode Support */
+body.light-mode footer {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+body.light-mode footer h4 {
+    color: #000;
+}
+
+body.light-mode footer a {
+    color: #555;
+}
+
+body.light-mode footer a:hover {
+    color: #000;
+}
+
+body.light-mode .footer-bottom p {
+    color: #333;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.navbar, .video-section, .image-section, .models-gallery {
+    width: 100%; /* Ensure sections span full width */
+}
+@media (max-width: 1171px) {
+    /* Navbar Adjustments */
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 20px;
+    }
+
+    .logo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 5px;
+    }
+
+    .navbar-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    /* Navigation Links Hidden */
+    .nav-links {
+        display: none; /* Hide navbar links */
+    }
+
+    /* Show Burger Menu */
+    .menu-toggle {
+        display: block; /* Show menu toggle */
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /* Menu Active State */
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .nav-links.active li {
+        display: block;
+    }
+
+    /* Models Section Responsive */
+    .models-gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .box {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Restore for Larger Screens */
+@media (min-width: 901px) {
+    .menu-toggle {
+        display: none; /* Hide the burger menu */
+    }
+
+    .nav-links {
+        display: flex; /* Restore navbar links */
+    }
+
+    .navbar-right {
+        display: flex;
+    }
+
+    .models-gallery .row {
+        display: flex;
+        gap: 15px;
+    }
+
+    .box {
+        flex: 1;
+    }
+}
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
+    color: inherit; /* Use the inherited color from JavaScript */
+    font-family: inherit; /* Ensure font-family is consistent */
+}
