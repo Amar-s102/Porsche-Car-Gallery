@@ -6,7 +6,16 @@
   <title>Purchase Page</title>
   <link rel="stylesheet" href="purchase.css">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.min.js"></script>
-
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const loginButton = document.querySelector('#loginButton'); // Replace with the ID of the login button
+            if (localStorage.getItem('isLoggedIn') === 'true') {
+            if (loginButton) {
+                loginButton.style.display = 'none';
+            }
+        }
+    });
+</script>
 </head>
 <body>
   <div class="image-gallery">

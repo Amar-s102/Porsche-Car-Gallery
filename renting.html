@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Car Rental Landing Page</title>
   <link rel="stylesheet" href="renting.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const loginButton = document.querySelector('#loginButton'); // Replace with the ID of the login button
+            if (localStorage.getItem('isLoggedIn') === 'true') {
+            if (loginButton) {
+                loginButton.style.display = 'none';
+            }
+        }
+    });
+</script>
 </head>
 <body>
 
