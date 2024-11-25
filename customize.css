@@ -453,28 +453,28 @@ h1 {
   color: #ffffff;
 }
 
-button {
-  border-radius: 20px;
-  border: 1px solid #000;
-  background-color: #000;
+.button {
+  padding: 15px 55px;
+  /* Increased padding */
+  font-size: 1.1rem;
+  border: 2px solid #b91111;
+  /* Red border */
+  background: transparent;
   color: #fff;
-  font-size: 0.875rem;
-  font-weight: 700;
-  padding: 12px 45px;
-  letter-spacing: 1px;
-  transition: 0.3s ease-in-out;
-  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 50px;
+  /* More rounded */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  animation: fadeInUp 2s ease;
 }
 
-button.ghost {
-  background-color: transparent;
-  border-color: #fff;
+.button:hover {
+  background: #b91111;
+  color: #fff;
+  border-color: #b91111;
 }
 
-button:hover {
-  color: white;
-  font-size: 1.30em;
-}
 
 button:active {
   transform: scale(0.95);
@@ -800,18 +800,6 @@ input {
   src: url('Ultra911-ow8rA.otf') format('opentype');
 }
 
-.background-section h1 {
-  font-family: 'Ultra911', sans-serif;
-  /* Apply the font only to this h1 */
-  font-size: 3rem;
-  font-weight: bold;
-  color: white;
-  text-shadow: 3px 3px 15px rgba(101, 99, 99, 0.8), 0 0 25px rgba(225, 225, 225, 0.6);
-  position: absolute;
-  top: 20%;
-  z-index: 2;
-}
-
 
 .car-image-top {
   width: 100%;
@@ -1118,10 +1106,9 @@ input {
 
 
 .navbar {
-  position: sticky !important;
+  position: fixed !important;
   z-index: 1000;
   background: rgba(0, 0, 0, 0.7);
-  /* Darker hue with transparency */
   backdrop-filter: blur(5px);
   /* Add a slight blur fora a modern effect */
   display: flex;
@@ -1154,13 +1141,13 @@ input {
 }
 
 .logo {
-  height: 50px;
+  height: 70px;
   width: auto;
 }
 
 .porsche-nav {
   font-family: 'Ultra911', sans-serif;
-  font-size: 1.0rem;
+  font-size: 1.3rem;
   color: #fff;
   letter-spacing: 2px;
   cursor: pointer;
@@ -1180,7 +1167,7 @@ input {
 
 .nav-links li a {
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 2rem;
   /* Increased font size */
   color: #fff;
   display: flex;
@@ -1272,26 +1259,6 @@ input {
   color: #ccc;
 }
 
-/* Button Styling */
-.button {
-  padding: 15px 35px;
-  font-size: 1.2rem;
-  border: 2px solid #b91111;
-  background: transparent;
-  color: #fff;
-  text-transform: uppercase;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  animation: fadeInUp 2s ease;
-  margin: 0;
-}
-
-.button:hover {
-  background: #b91111;
-  color: #fff;
-  border-color: #b91111;
-}
 
 .theme-checkbox {
   --toggle-size: 16px;
@@ -1467,7 +1434,7 @@ footer h6 {
   font-family: inherit;
 }
 
-/* footer {
+ footer {
   background-color: #000000;
   color: #fff;
 }
@@ -1572,4 +1539,109 @@ footer h5,
 footer h6 {
   color: inherit;
   font-family: inherit;
+}
+@media (max-width: 1171px) {
+  /* Navbar Adjustments */
+  .navbar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+  }
+
+  .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 5px;
+  }
+
+  .navbar-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+  }
+
+  /* Navigation Links Hidden */
+  .nav-links {
+      display: none; /* Hide navbar links */
+  }
+
+  /* Show Burger Menu */
+  .menu-toggle {
+      display: block; /* Show menu toggle */
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+  }
+
+  /* Menu Active State */
+  .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      background: rgba(0, 0, 0, 0.9);
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      padding: 15px;
+      border-radius: 8px;
+  }
+
+  .nav-links.active li {
+      display: block;
+  }
+
+  /* Models Section Responsive */
+  .models-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 0 10px;
+  }
+
+  .row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+  }
+
+  .box {
+      width: 100%;
+      height: auto;
+  }
+}
+
+/* Restore for Larger Screens */
+@media (min-width: 901px) {
+  .menu-toggle {
+      display: none; /* Hide the burger menu */
+  }
+
+  .nav-links {
+      display: flex; /* Restore navbar links */
+  }
+
+  .navbar-right {
+      display: flex;
+  }
+
+  .models-gallery .row {
+      display: flex;
+      gap: 15px;
+  }
+
+  .box {
+      flex: 1;
+  }
 }
