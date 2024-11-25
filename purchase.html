@@ -6,19 +6,6 @@
   <title>Purchase Page</title>
   <link rel="stylesheet" href="purchase.css">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.min.js"></script>
-<<<<<<< Updated upstream
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const loginButton = document.querySelector('#loginButton'); // Replace with the ID of the login button
-            if (localStorage.getItem('isLoggedIn') === 'true') {
-            if (loginButton) {
-                loginButton.style.display = 'none';
-            }
-        }
-    });
-</script>
-=======
->>>>>>> Stashed changes
 </head>
 <header>
   <nav class="navbar">
@@ -113,16 +100,19 @@
       <div class="form-group">
         <h3>Payment Method</h3>
         <label class="container">
+          <input type="radio" name="payment-method" value="Credit Card" required>
           <img src="imgs/atm-card.png" alt="credit card" class="payment-logo">
           <span>Credit Card</span>
           <span class="checkmark"></span>
         </label>
         <label class="container">
+          <input type="radio" name="payment-method" value="PayPal" required>
           <img src="imgs/paypal.png" alt="paypal" class="payment-logo">
           <span>PayPal</span>
           <span class="checkmark"></span>
         </label>
         <label class="container">
+          <input type="radio" name="payment-method" value="Bank Transfer" required>
           <img src="imgs/smartphone.png" alt="bank transfer" class="payment-logo">
           <span>Bank Transfer</span>
           <span class="checkmark"></span>
