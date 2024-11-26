@@ -90,4 +90,29 @@ $(document).ready(function () {
     });
     
     });
+    document.addEventListener('DOMContentLoaded', function () {
+        const loginButton = document.querySelector('.login-btn');
+        const logoutButton = document.createElement('button');
+    
+        if (!loginButton) return;
+    
+        logoutButton.textContent = 'Log Out';
+        logoutButton.classList.add('button', 'logout-btn');
+        logoutButton.style.marginLeft = '20px';
+        logoutButton.style.display = 'none';
+        loginButton.parentNode.appendChild(logoutButton);
+    
+        if (localStorage.getItem('isLoggedIn') === 'true') {
+            loginButton.style.display = 'none';
+            logoutButton.style.display = 'block';
+        }
+    
+        logoutButton.addEventListener('click', function () {
+            localStorage.setItem('isLoggedIn', 'false');
+            loginButton.style.display = 'block';
+            logoutButton.style.display = 'none';
+            alert('You have logged out.');
+            window.location.href = 'index.html'; // Redirect to home page
+        });
+    });
     
