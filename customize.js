@@ -78,56 +78,50 @@ function openOuterDiv(carName, carImage) {
     document.body.appendChild(outerDiv);
   }
 
-  // Populate the outer div with car details and customization options
   outerDiv.innerHTML = `
     <button style="float: right; padding: 10px; background-color: red; color: white; border: none; border-radius: 5px; cursor: pointer;" onclick="document.getElementById('outer-div').remove()">Close</button>
     <h1>${carName}</h1>
     <img id="car-image" src="${carImage}" alt="${carName}" style="width: 90%; max-height: 400px; object-fit: cover; margin-top: 20px; border-radius: 10px;">
-    <p style="font-size: 18px; margin-top: 20px;">Customize your ${carName} below.</p>
-    <div style="margin-top: 20px; display: flex; gap: 10px;">
-      <button class="customization-btn" data-option="color">Color</button>
+    <p style="font-size: 18px; margin-top: 20px; color:black;">Customize your ${carName} 911 GT3 RS Porsche below.</p>
+    <div>
+      <button class="customization-btn" data-option="color" >Color</button>
       <button class="customization-btn" data-option="wheels">Wheels</button>
       <button class="customization-btn" data-option="Engine">Engine</button>
-      <button class="customization-btn" data-option="seats">Seats</button>
+      <button class="customization-btn" data-option="seats">Interior</button>
     </div>
     <div id="customization-details" style="margin-top: 20px; padding: 10px; border-top: 1px solid #ccc;"></div>
   `;
-
-  // Add event listeners for customization buttons
   document.querySelectorAll('.customization-btn').forEach(button => {
     button.addEventListener('click', function () {
       const option = this.getAttribute('data-option');
-      openCustomizationDiv(option, carName); // Open customization div
+      openCustomizationDiv(option, carName); 
     });
   });
 }
-
-// Function to open a specific customization div
 function openCustomizationDiv(option, carName) {
   const customizationDetails = document.getElementById('customization-details');
   let content = '';
   if (option === 'wheels') {
-    // Create content for wheels
     content = `
       <h3>${carName} - Wheel Options</h3>
       <div style="display: flex; gap: 20px; flex-wrap: wrap;">
         <div class="wheel-option" style="text-align: center;">
-          <img src="imgs/wheel1.jpg" alt="Sport Wheels" style="width: 150px; height: 150px; border-radius: 10px;">
-          <p>Sport Wheels</p>
+          <img src="imgs/wheel1.jpg" alt="Sport Wheels" style="width: 180px; height: 150px; border-radius: 10px;">
+          <p style="color:black;">Silver Rim Wheels</p>
              <p style ="color:black;"><strong>Price:</strong>4500$</p>
-             <button class="add-to-cart-btn" onclick="addToCart('Sport Wheels', 4000)">Add to Cart</button>
+             <button class="add-to-cart-btn" onclick="addToCart('Silver Rim Wheels', 4000)">Add to Cart</button>
         </div>
         <div class="wheel-option" style="text-align: center;">
-          <img src="imgs/wheel2.jpg" alt="Luxury Wheels" style="width: 150px; height: 150px; border-radius: 10px;">
-          <p>Luxury Wheels</p>
+          <img src="imgs/wheel2.jpg" alt="Luxury Wheels" style="width: 180px; height: 150px; border-radius: 10px;">
+          <p style ="color:black;">Luxury Black Wheels</p>
           <p style ="color:black;"><strong>Price:</strong>4000$</p>
-          <button class="add-to-cart-btn" onclick="addToCart('Sport Wheels', 4000)">Add to Cart</button>
+          <button class="add-to-cart-btn" onclick="addToCart('Luxury Black Wheels', 4000)">Add to Cart</button>
         </div>
         <div class="wheel-option" style="text-align: center;">
-          <img src="imgs/wheel3.jpg" alt="Performance Wheels" style="width: 150px; height: 150px; border-radius: 10px;">
-          <p>Performance Wheels</p>
+          <img src="imgs/wheel3.jpg" alt="Performance Wheels" style="width: 180px; height: 150px; border-radius: 10px;">
+          <p style ="color:black;">Spider Webbed Wheels</p>
           <p style ="color:black;"><strong>Price:</strong>5000$</p>
-          <button class="add-to-cart-btn" onclick="addToCart('Sport Wheels', 4000)">Add to Cart</button>
+          <button class="add-to-cart-btn" onclick="addToCart('Spider Webbed Wheels', 4000)">Add to Cart</button>
         </div>
       </div>
     `;
@@ -135,52 +129,50 @@ function openCustomizationDiv(option, carName) {
     content = `
       <h3>${carName} - Exterior Colors</h3>
       <div class="color-options">
-       "
-       <div class="color-options">
   <div class="color-item">
     <button class="color-box" data-color="skyBlue" style="background-color: #1E98EB;" title="Sky Blue"></button>
-     <p style ="color:black;font-size: 1rem; margin:8px;"><strong>Price:</strong>10,000$</p>
+     <p><strong>Price:</strong>10,000$</p>
     <button class="add-to-cart-btn" onclick="addToCart('Sky Blue', 2000)">Add to Cart</button>
   </div>
   <div class="color-item">
     <button class="color-box" data-color="darkBlue" style="background-color: #00308F;" title="Dark Blue"></button>
-     <p style ="color:black;font-size: 1rem; margin:8px;"><strong>Price:</strong>12,000$</p>
+     <p style ="color:black;"><strong>Price:</strong>12,000$</p>
     <button class="add-to-cart-btn" onclick="addToCart('Dark Blue', 2100)">Add to Cart</button>
   </div>
   <div class="color-item">
     <button class="color-box" data-color="bloodRed" style="background-color: #99151D;" title="Blood Red"></button>
-     <p style ="color:black;font-size: 1rem; margin:8px;"><strong>Price:</strong>8,000$</p>
-    <button class="add-to-cart-btn" onclick="addToCart('Blood Red', 2200)">Add to Cart</button>
+     <p style ="color:black;"><strong>Price:</strong>8,000$</p>
+    <button class="add-to-cart-btn" onclick="addToCart('Blood Red', 2200)"  >Add to Cart</button>
   </div>
   <div class="color-item">
     <button class="color-box" data-color="forestGreen" style="background-color: #23572E;" title="Forest Green"></button>
-     <p style ="color:black;font-size: 1rem; margin:8px;"><strong>Price:</strong>25,000$</p>
+     <p style ="color:black;"><strong>Price:</strong>25,000$</p>
     <button class="add-to-cart-btn" onclick="addToCart('Forest Green', 2450)">Add to Cart</button>
   </div>
   <div class="color-item">
     <button class="color-box" data-color="soothingBeige" style="background-color: #F5F5DC;" title="Soothing Beige"></button>
-     <p style ="color:black;font-size: 1rem; margin:8px;"><strong>Price:</strong>17,000$</p>
+     <p style ="color:black;"><strong>Price:</strong>17,000$</p>
     <button class="add-to-cart-btn" onclick="addToCart('Soothing Beige', 1000)">Add to Cart</button>
   </div>
 </div>
 
     `;
+    customizationDetails.innerHTML=content;
   } if (option === 'Engine') {
-    // Create content for wheels
     content = `
       <h3>${carName} - Engine Options</h3>
       <div style="display: flex; gap: 20px; flex-wrap: wrap;">
         <div class="Engine-option" style="text-align: center;">
-          <img src="imgs/engine1.png" alt="Engine" style="width: 150px; height: 150px; border-radius: 10px;">
-          <p><strong>8-speed Porsche Doppelkupplung (PDK) </strong></p>
-          <p style ="color:black;font-size: 1rem; margin:8px;"><strong>Price:</strong>30,000$</p>
-        <button class="add-to-cart-btn" onclick="addToCart('Sport Wheels', 4000)">Add to Cart</button>
+          <img src="imgs/engine1.png" alt="Engine" style="width: 200px; height: 150px; border-radius: 10px;">
+          <p style ="color:black;"><strong>8-speed Porsche Doppelkupplung (PDK) </strong></p>
+          <p style ="color:black;"><strong>Price:</strong>30,000$</p>
+        <button class="add-to-cart-btn" onclick="addToCart('4.0-liter high revving naturally aspirated 518 hp engine', 4000)">Add to Cart</button>
           </div>
         <div class="Engine-option" style="text-align: center;">
-          <img src="imgs/engine2.png" alt="Luxury Wheels" style="width: 150px; height: 150px; border-radius: 10px;">
-          <p><strong>4-speed Porsche (PDK)</strong></p>
-               <p style ="color:black;font-size: 1rem; margin:8px;"><strong>Price:</strong>45,000$</p>
-                <button class="add-to-cart-btn" onclick="addToCart('Sport Wheels', 4000)">Add to Cart</button>
+          <img src="imgs/engine2.png" alt="Luxury Wheels" style="width: 200px; height: 150px; border-radius: 10px;">
+          <p style ="color:black;"><strong>4-speed Porsche (PDK)</strong></p>
+               <p"><strong>Price:</strong>45,000$</p>
+                <button class="add-to-cart-btn" onclick="addToCart('6.0-liter high revving naturally aspirated 518 hp engine', 4000)">Add to Cart</button>
                </div>
     `;
   }else if (option === 'seats') {
@@ -188,38 +180,32 @@ function openCustomizationDiv(option, carName) {
       <h3>${carName} - Seat Options</h3>
       <div style="display: flex; gap: 20px; flex-wrap: wrap;">
         <div class="seat-option" style="text-align: center;">
-          <img src="imgs/seat1.png" alt="Sport seats" style="width: 150px; height: 150px; border-radius: 10px;">
-          <p>All Grey</p>
-          <p style ="color:black;font-size: 1rem; margin:8px;"><strong>Price:</strong>55,000$</p>
-          <button class="add-to-cart-btn" onclick="addToCart('Sport Wheels', 4000)">Add to Cart</button>
+          <img src="imgs/seat1.png" alt="Sport seats" style="width: 200px; height: 150px; border-radius: 10px;">
+          <p  style="color:black;">Ash Grey Interior</p>
+          <p style ="color:black;"><strong>Price:</strong>55,000$</p>
+          <button class="add-to-cart-btn" onclick="addToCart('Ash Grey Interior', 4000)">Add to Cart</button>
         </div>
         <div class="seat-option" style="text-align: center;">
-          <img src="imgs/seat2.png" alt="Sport seats" style="width: 150px; height: 150px; border-radius: 10px;">
-          <p>A Hint of Red</p>
-          <p style ="color:black;font-size: 1rem; margin:8px;"><strong>Price:</strong>62,000$</p>
-          <button class="add-to-cart-btn" onclick="addToCart('Sport Wheels', 4000)">Add to Cart</button>
+          <img src="imgs/seat2.png" alt="Sport seats" style="width: 200px; height: 150px; border-radius: 10px;">
+          <p style ="color:black;">Sleek Red Interior</p>
+          <p style ="color:black;"><strong>Price:</strong>62,000$</p>
+          <button class="add-to-cart-btn" onclick="addToCart('Sleek Red Interior', 4000)">Add to Cart</button>
         </div>
     `;
   }
-
-  // Display the selected customization options
   customizationDetails.innerHTML = content;
-
-  // Add event listeners for color boxes (only for the color option)
   if (option === 'color') {
     const colorBoxes = customizationDetails.querySelectorAll('.color-box');
     colorBoxes.forEach(box => {
       box.addEventListener('click', function () {
         const selectedColor = this.getAttribute('data-color');
-        updateCarImageColor(selectedColor); // Update the car image
+        updateCarImageColor(selectedColor); 
       });
     });
   }
 }
-
-// Function to update the car image based on the selected color
 function updateCarImageColor(color) {
-  const carImage = document.getElementById('car-image'); // Get the car image in the outer div
+  const carImage = document.getElementById('car-image');
 
   // Map color options to image paths
   const carImages = {

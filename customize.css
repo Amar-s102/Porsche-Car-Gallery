@@ -329,11 +329,13 @@ html {
   background-position: center;
   flex-wrap: wrap;
 }
-
+#container{
+  width:75%;
+}
 .container {
   position: relative;
-  width: 90%;
-  max-width: 150px;
+  width: 100%;
+  max-width: 500px;
   min-height: 600px;
   background-color: #fff;
   border-radius: 15px;
@@ -342,25 +344,16 @@ html {
   display: flex;
   transition: transform 0.6s ease-in-out;
 }
-
-#targetDiv .container {
-  width: 900px;
-  width: 700px;
-}
-
 .container.right-panel-active .register-container {
   transform: translateX(-100%);
-  /* opacity: 1; */
   z-index: 5;
 }
-
 .container.right-panel-active .login-container {
   transform: translateX(100%);
   opacity: 0;
 }
-
 .overlay-panel.overlay-left {
-  background-image: url('imgs/p-bg.jpg');
+  background-image: url('imgs/purchase-side.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   color: black;
@@ -369,15 +362,15 @@ html {
 }
 
 .overlay-panel.overlay-left h1 {
-  color: black;
+  color: black !important;
+  font-weight: bolder !important;
+  font-size: 30px;
 }
-
-.overlay-panel.overlay-left button {
-  font-size: 15px;
+.overlay-panel.overlay-left p{
+  color:black !important;
 }
-
 .overlay-panel.overlay-right {
-  background-image: url('imgs/p-bg.jpg');
+  background-image: url('imgs/purchase-side.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -386,7 +379,7 @@ html {
   position: absolute;
   top: 0;
   left: 50%;
-  width: 50%;
+  width: 70%;
   height: 100%;
   overflow: hidden;
   transition: transform 0.6s ease-in-out;
@@ -453,17 +446,15 @@ h1 {
   color: #ffffff;
 }
 
+
 .button {
   padding: 15px 55px;
-  /* Increased padding */
   font-size: 1.1rem;
   border: 2px solid #b91111;
-  /* Red border */
   background: transparent;
   color: #fff;
   text-transform: uppercase;
   border-radius: 50px;
-  /* More rounded */
   text-decoration: none;
   transition: all 0.3s ease;
   animation: fadeInUp 2s ease;
@@ -486,8 +477,14 @@ button:focus {
 
 button.ghost {
   background-color: rgba(225, 225, 225, 0.2);
-  border: 2px solid #fff;
-  color: #fff;
+  border: 2px solid #060606;
+  color: #100b0b !important;
+  border-radius: 5px;
+  height:30px;
+  width:100px;
+  cursor: pointer;
+  font-size: 20px !important;
+  margin-top: 5px;
 }
 
 button.ghost i {
@@ -565,13 +562,11 @@ input {
 .register-container {
   left: 0;
   width: 50%;
-  /* opacity: 1; */
   z-index: 1;
 }
 
 .container.right-panel-active .register-container {
   transform: translateX(100%);
-  /* opacity: 1; */
   z-index: 5;
   animation: show 0.6s;
 }
@@ -690,12 +685,11 @@ input {
 
   /* Show only the overlay container initially */
   .overlay-container {
-    width: 100%;
+    width: 800px;
     left: 0;
     transform: none;
   }
 
-  /* Overlay panel styling */
   .overlay {
     width: 100%;
     transform: none;
@@ -709,10 +703,10 @@ input {
   align-items: center;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.9);
-  /* Slight overlay for readability */
   background-size: cover;
   background-position: center;
   text-align: center;
+  width:900px;
 }
 
 .form-container.register-container img {
@@ -723,7 +717,6 @@ input {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  /* Push to the background */
 }
 
 .form-container.register-container h1 {
@@ -735,13 +728,11 @@ input {
   color: rgb(1, 1, 1);
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   z-index: 0;
-  /* Behind the content but above the image */
 }
 
 .carinfo {
   position: relative;
   z-index: 1;
-  /* Above the background elements */
   background-color: rgba(173, 173, 173, 0.8);
   color: white;
   border-radius: 10px;
@@ -876,14 +867,38 @@ input {
   align-items: center;
 
 }
-
+.customization-btn{
+  border-radius: 10px;
+  color:white;
+  background-color: black;
+  font-weight: bold;
+  width:130px;
+  height:30px;
+  gap:10px;
+  cursor: pointer;
+}
+.customization-btn:hover{
+  background-color: rgb(172, 7, 7);
+}
 .color-options div {
   text-align: center;
+
 }
-
-
-
-/* Cart Icon and Dropdown Styles */
+.add-to-cart-btn{
+  border-radius: 10px;
+  color:white;
+  background-color: #000;
+  width:100px;
+  height:30px;
+  cursor: pointer;
+}
+.add-to-cart-btn:hover{
+  background-color: rgb(172, 7, 7) ;
+}
+.color-item p{
+  font-size: 15px;
+  color:black;
+}
 #cart-icon {
   font-size: 16px;
   font-weight: bold;
@@ -891,7 +906,6 @@ input {
   color: #fff;
   text-decoration: none;
 }
-
 #cart-dropdown {
   display: none;
   /* Default: hidden */
