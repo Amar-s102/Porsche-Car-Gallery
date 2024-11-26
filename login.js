@@ -10,25 +10,20 @@ loginButton.addEventListener("click", () => {
     container.classList.remove("right-panel-active");
 });
 $(document).ready(function () {
-    // Simulate user storage with JSON in localStorage
     let users = JSON.parse(localStorage.getItem('users')) || [];
-
-    // Redirect function
     function redirectToPage(page) {
-        window.location.href = page; // Redirect to the specified page
+        window.location.href = page; 
     }
 
-    // Registration Form Submission
     $('#registerForm').on('submit', function (e) {
-        e.preventDefault(); // Prevent form refresh
+        e.preventDefault(); 
 
-        const firstName = $('#firstName').val().trim();
-        const lastName = $('#lastName').val().trim();
-        const email = $('#registerEmail').val().trim();
-        const password = $('#registerPassword').val();
-        const confirmPassword = $('#confirmPassword').val();
+        let firstName = $('#firstName').val().trim();
+        let lastName = $('#lastName').val().trim();
+        let email = $('#registerEmail').val().trim();
+        let password = $('#registerPassword').val();
+        let confirmPassword = $('#confirmPassword').val();
 
-        // Validate input fields
         if (!firstName || !lastName || !email || !password || !confirmPassword) {
             alert('All fields are required.');
             return;
@@ -39,60 +34,56 @@ $(document).ready(function () {
             return;
         }
 
-        // Check if email is already registered
-        const existingUser = users.find(user => user.email === email);
+        let existingUser = users.find(user => user.email === email);
         if (existingUser) {
             alert('Email is already registered.');
             return;
         }
 
-        // Add user to "database"
         users.push({ firstName, lastName, email, password });
         localStorage.setItem('users', JSON.stringify(users));
 
         alert('Registration successful!');
-        redirectToPage('index.html'); // Redirect to the homepage after registration
+        redirectToPage('customize.html'); 
     });
 
-    // Login Form Submission
     $('#loginForm').on('submit', function (e) {
-        e.preventDefault(); // Prevent form refresh
+        e.preventDefault(); 
 
-        const email = $('#loginEmail').val().trim();
-        const password = $('#loginPassword').val();
+        let email = $('#loginEmail').val().trim();
+        let password = $('#loginPassword').val().trim();
 
-        // Validate input fields
         if (!email || !password) {
             alert('Both fields are required.');
             return;
         }
 
-        // Check if user exists and password matches
-        const user = users.find(user => user.email === email && user.password === password);
+        let user = users.find(user => user.email === email && user.password === password);
         if (!user) {
             alert('Invalid email or password.');
             return;
         }
 
         alert(`Welcome back, ${user.firstName}!`);
-        redirectToPage('index.html'); // Redirect to the homepage after successful login
+        localStorage.setItem('isLoggedIn', 'true');
+        redirectToPage('customize.html'); 
     });
     $(document).ready(function () {
         $('.toggle-password').on('click', function () {
             console.log('Toggle button clicked');
-            const passwordInput = $(this).siblings('input');
-            const eyeIcon = $(this).find('.eye');
-            const eyeSlashIcon = $(this).find('.eye-slash');
+            let passwordInput = $(this).siblings('input');
+            let eyeIcon = $(this).find('.eye');
+            let eyeSlashIcon = $(this).find('.eye-slash');
     
             if (passwordInput.attr('type') === 'password') {
                 passwordInput.attr('type', 'text');
-                eyeIcon.hide();
-                eyeSlashIcon.show();
+                eyeIcon.show();
+                eyeSlashIcon.hide();
                 console.log('Password is now visible');
             } else {
                 passwordInput.attr('type', 'password');
-                eyeIcon.show();
-                eyeSlashIcon.hide();
+                eyeIcon.hide();
+                eyeSlashIcon.show();
                 console.log('Password is now hidden');
             }
         });
