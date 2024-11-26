@@ -51,7 +51,7 @@ document.getElementById('customer-info-form').addEventListener('submit', (event)
 
   if (!nameField.value || !emailField.value || !phoneField.value || !addressField.value || !paymentMethod) {
     alert('Please fill out all fields and select a payment method.');
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault(); 
   }
 });
 
@@ -60,9 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   purchaseButton.addEventListener("click", (event) => {
     event.preventDefault();
-
-    // Confetti burst effect
-    const duration = 4 * 1000; // 2 seconds
+    const duration = 4 * 1000; 
     const animationEnd = Date.now() + duration;
 
     const colors = ["#D7AE5D", "#5B8586", "#FF5733"];
@@ -86,23 +84,41 @@ document.addEventListener("DOMContentLoaded", () => {
         ticks: 100,
         scalar:3,
         origin: {
-          x: randomInRange(0.1, 0.9), // Randomize x-position
-          y: Math.random() - 0.2,     // Randomize y-position
+          x: randomInRange(0.1, 0.9),
+          y: Math.random() - 0.2,  
         },
         colors: colors,
       });
     }, 250);
-
-    // Display success message
     alert("Your order is being sent successfully!");
   });
 });
-
-
-
-//   const totalDiv = document.createElement('div');
-//   totalDiv.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
-//   purchaseContainer.appendChild(totalDiv);
-//  else {
-//   purchaseContainer.innerHTML = '<p>Your cart is empty.</p>';
+let ThemeToggle= document.getElementById('theme-toggle');
+let savedTheme = localStorage.getItem('theme');
+// let lightmodeImages ={
+//   img1:"imgs/lightmode1.jpg",
+//   img2:"imgs/lightmode1.jpg",
+//   img2:"imgs/lightmode1.jpg",
+// };
+// function updateGallery(mode){
+//   let images = document.querySelectorAll('.image-gallery');
+//   images.forEach((img)=>{
+//     let imgId = img.id;
+//     img.src= mode === 'light-theme'? lightmodeImages[imgId]
+//   })
 // }
+if(savedTheme){
+  document.body.classList.add(savedTheme);
+  ThemeToggle.checked = savedTheme === 'light-theme';
+}
+ThemeToggle.addEventListener('change',()=>{
+  if(ThemeToggle.checked){
+    document.body.classList.add('light-theme');
+    document.body.classList.remove('dark-theme');
+    localStorage.setItem('theme','dark-theme');
+  }else{
+    document.body.classList.add('dark-theme');
+    document.body.classList.remove('light-theme');
+    localStorage.setItem('theme','dark-theme');
+  }
+});
