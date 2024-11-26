@@ -261,6 +261,12 @@ margin-top: 40px;
 }
 .light-theme .light-mode{
   display: block;
+  margin-top:80px;
+  height:50vh;
+}
+.light-theme .dream-machine-section{
+  color:black;
+
 }
 .light-theme .dark-mode{
   display:none;
