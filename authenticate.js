@@ -23,6 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (loginButton) loginButton.style.display = 'block';
         logoutButton.style.display = 'none';
         alert('You have logged out.');
-        window.location.href = 'index.html'; 
+        window.location.href = 'homePage.html'; 
     });
 });
