@@ -1541,7 +1541,6 @@ footer h6 {
 
 @media (max-width: 1171px) {
 
-  /* Navbar Adjustments */
   .navbar {
     display: flex;
     flex-direction: column;
@@ -1549,10 +1548,15 @@ footer h6 {
     justify-content: center;
     padding: 10px 20px;
   }
-
+  .counter-overlay{
+    margin-top: 8vw;
+  }
+  .introPage-p p{
+    margin-left: 0.1vw;
+    margin-right: 25vw;
+  }
   .logo-container {
     display: flex;
-    flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 5px;
@@ -1572,21 +1576,7 @@ footer h6 {
     /* Hide navbar links */
   }
 
-  /* Show Burger Menu */
-  .menu-toggle {
-    display: block;
-    /* Show menu toggle */
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 24px;
-    cursor: pointer;
-  }
-
-  /* Menu Active State */
+  
   .nav-links.active {
     display: flex;
     flex-direction: column;
@@ -1630,7 +1620,9 @@ footer h6 {
     display: none;
     /* Hide the burger menu */
   }
-
+  .background-section{
+    font-size: ;
+  }
   .nav-links {
     display: flex;
     /* Restore navbar links */
@@ -1639,7 +1631,7 @@ footer h6 {
   .navbar-right {
     display: flex;
   }
-
+  
   .models-gallery .row {
     display: flex;
     gap: 15px;
@@ -1651,6 +1643,8 @@ footer h6 {
 }
 
 .background-section {
+  width: 100%;
+  flex-wrap: wrap;
   position: relative;
   height: 100vh;
   background: url('imgs/bg-top2.jpg') no-repeat center center/cover;
