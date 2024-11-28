@@ -379,23 +379,6 @@ function checkout() {
   // Redirect to a checkout page (if implemented)
   window.location.href = 'purchase.html';
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const holdSoundBtn = document.getElementById('hold-sound-btn');
 const engineSound = document.getElementById('engine-sound');
 
