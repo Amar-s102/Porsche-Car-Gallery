@@ -105,19 +105,19 @@ function openCustomizationDiv(option, carName) {
     content = `
       <h3>${carName} - Wheel Options</h3>
       <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-        <div class="wheel-option" style="text-align: center;">
+        <div class="wheel-option">
           <img src="imgs/wheel1.jpg" alt="Sport Wheels" style="width: 180px; height: 150px; border-radius: 10px;">
           <p style="color:black;">Silver Rim Wheels</p>
              <p style ="color:black;"><strong>Price:</strong>4500$</p>
              <button class="add-to-cart-btn" onclick="addToCart('Silver Rim Wheels', 4000)">Add to Cart</button>
         </div>
-        <div class="wheel-option" style="text-align: center;">
+        <div class="wheel-option">
           <img src="imgs/wheel2.jpg" alt="Luxury Wheels" style="width: 180px; height: 150px; border-radius: 10px;">
           <p style ="color:black;">Luxury Black Wheels</p>
           <p style ="color:black;"><strong>Price:</strong>4000$</p>
           <button class="add-to-cart-btn" onclick="addToCart('Luxury Black Wheels', 4000)">Add to Cart</button>
         </div>
-        <div class="wheel-option" style="text-align: center;">
+        <div class="wheel-option">
           <img src="imgs/wheel3.jpg" alt="Performance Wheels" style="width: 180px; height: 150px; border-radius: 10px;">
           <p style ="color:black;">Spider Webbed Wheels</p>
           <p style ="color:black;"><strong>Price:</strong>5000$</p>
@@ -397,9 +397,6 @@ holdSoundBtn.addEventListener('mouseup', () => {
 holdSoundBtn.addEventListener('mouseleave', () => {
   engineSound.pause(); // Pause sound
 });
-
-
-// Play the audio when the page loads
 window.addEventListener('load', () => {
   const audio = document.getElementById('page-sound');
   audio.play().catch((error) => {
@@ -407,37 +404,19 @@ window.addEventListener('load', () => {
   });
 });
 
-// Select the theme toggle checkbox
-let themeToggle = document.getElementById('theme-toggle');
-let navbar = document.querySelector('.navbar'); // Ensure this matches your navbar class
-let allTextElements = document.querySelectorAll('body *'); // Select all elements inside the body
-
-// Add an event listener to handle the toggle
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
 themeToggle.addEventListener('change', () => {
   if (themeToggle.checked) {
-    // Light mode: Change the navbar and body styles
-    document.body.style.backgroundColor = 'white';
-    document.body.style.color = 'black';
-    navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
-    allTextElements.forEach((el) => {
-      el.style.color = 'black'; // Change all text to visible in light mode
-    });
+    body.classList.add('light-theme');
   } else {
-    // Dark mode: Revert styles to dark theme
-    document.body.style.backgroundColor = 'black';
-    document.body.style.color = 'white';
-    navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-    allTextElements.forEach((el) => {
-      el.style.color = 'white'; // Change all text to visible in dark mode
-    });
+    body.classList.remove('light-theme'); 
   }
 });
-
-// Make the navbar sticky on scroll
 window.addEventListener('scroll', () => {
   navbar.style.position = 'sticky';
   navbar.style.top = '0';
-  navbar.style.zIndex = '1000'; // Ensure it stays above other elements
+  navbar.style.zIndex = '1000'; 
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -478,7 +457,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   });
 });
-document.addEventListener("DOMContentLoaded", () => {
+
   const counters = document.querySelectorAll('.counter');
 
   const animateCounter = (counter) => {
@@ -514,4 +493,3 @@ document.addEventListener("DOMContentLoaded", () => {
   counters.forEach(counter => {
       observer.observe(counter);
   });
-});
