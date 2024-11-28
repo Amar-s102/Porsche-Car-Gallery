@@ -773,40 +773,26 @@ input {
   position: relative;
   height: 100vh;
   width: 100%;
-  /* Ensure it spans the full width */
   background-position: center;
   background-size: cover;
-  /* Ensures the image covers the entire section */
   background-repeat: no-repeat;
-  /* Prevents repeating */
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-
 @font-face {
   font-family: 'Ultra911';
   src: url('Ultra911-ow8rA.otf') format('opentype');
 }
-
-
 .car-image-top {
   width: 100%;
-  /* Ensures the image covers the full width */
   height: auto;
-  /* Maintains the aspect ratio */
   object-fit: cover;
-  /* Ensures the image fills the space without distortion */
   z-index: 1;
   position: relative;
 }
-
-
-
-
-/* Ensure container styles are applied */
 #wheel-options-container {
   display: flex;
   gap: 20px;
@@ -815,8 +801,6 @@ input {
   align-items: flex-start;
   margin-top: 20px;
 }
-
-/* Ensure individual wheel option styles */
 .wheel-option {
   text-align: center;
   max-width: 200px;
