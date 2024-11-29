@@ -212,9 +212,21 @@
                 </div>
             </div>
         </div>
+        <button id="feedback-button" class="button">Give Feedback</button>
+
         <p class="footer-bottom">&copy; 2024 Porsche. All rights reserved.</p>
     </footer>
-
+    
+    <div class="hidden" id="feedback-popup">
+        <div class="feedback-container">
+            <button id="close-popup">x</button>
+            <h2>Give Feedback</h2>
+            <textarea placeholder="Your feedback..." id="feedback-text"></textarea>
+            <div class="feedback-actions">
+                <button id="submit-feedback">Submit</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

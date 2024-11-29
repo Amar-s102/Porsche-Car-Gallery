@@ -133,5 +133,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    let feedbackButton = document.getElementById("feedback-button");
+    let feedbackPopup = document.getElementById("feedback-popup");
+    let submitFeedback = document.getElementById("submit-feedback");
+    let feedbackText = document.getElementById("feedback-text");
+    let closePopup=document.getElementById("close-popup");
 
+    feedbackButton.addEventListener("click", () => {
+        feedbackPopup.classList.remove(".hidden");
+    });
+
+    closePopup.addEventListener("click", (event) => {
+        feedbackPopup.style.display='none';
+    });
+
+    feedbackPopup.addEventListener("click", (event) => {
+        if (event.target === feedbackPopup) {
+            feedbackPopup.style.display='none';
+        }
+    });
+
+    submitFeedback.addEventListener("click", () => {
+        let feedback = feedbackText.value.trim();
+        if (feedback) {
+            let feedbackList=JSON.parse(localStorage.getItem("feedback")) || [];
+            feedbackList.push(feedback);
+            localStorage.setItem("feedback",JSON.stringify(feedbackList));
+
+            alert("Thank you for your feedback!");
+            feedbackText.value = "";
+            feedbackPopup.classList.add("hidden");
+        }
+        else {
+            alert("Please enter your feedback before submiting!");
+        }
+    });
+});
 

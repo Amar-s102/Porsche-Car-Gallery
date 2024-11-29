@@ -3,12 +3,14 @@
     font-family: 'Ultra911';
     src: url('Ultra911-ow8rA.otf') format('opentype');
 }
-@font-face{
+
+@font-face {
     font-family: 'GT Walsheim Condensed';
     src: url(GT-Walsheim-font/GT-Walsheim-Condensed-Black-Trial-BF651b7fc6a5bf5.otf) format('opentype');
     font-weight: normal;
     font-style: normal
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
 
 * {
@@ -16,12 +18,19 @@
     padding: 0;
     box-sizing: border-box;
 }
-body, .image-description, .headline, .subhead, .fade-text {
+
+body,
+.image-description,
+.headline,
+.subhead,
+.fade-text {
     font-family: 'Parkinsans', sans-serif;
     color: #fff;
 }
 
-.nav-links li a, .dropdown-title, .footer a {
+.nav-links li a,
+.dropdown-title,
+.footer a {
     color: #fff;
     text-decoration: none;
 }
@@ -114,6 +123,7 @@ body, .image-description, .headline, .subhead, .fade-text {
     padding: 0 40px;
     transition: background 0.3s ease;
 }
+
 .logo-container {
     display: flex;
     align-items: center;
@@ -140,11 +150,13 @@ body, .image-description, .headline, .subhead, .fade-text {
     list-style: none;
     padding: 1.5vw;
 }
+
 .navbar-right {
     display: flex;
     align-items: center;
     gap: 17px;
 }
+
 .nav-links li a {
     font-size: 1.5rem;
     display: flex;
@@ -544,10 +556,10 @@ body, .image-description, .headline, .subhead, .fade-text {
     color: #000;
 }
 
-.light-theme .nav-links li a ,
+.light-theme .nav-links li a,
 .light-theme .login-btn,
 .light-theme .porsche-nav,
-.light-theme .customize-button{
+.light-theme .customize-button {
     color: #000;
 }
 
@@ -558,16 +570,19 @@ body, .image-description, .headline, .subhead, .fade-text {
 .light-theme .porsche-models-section {
     color: #000000;
 }
-.light-theme .image-section{
-    background:url(images/slider-images/car10.jpg) ;
+
+.light-theme .image-section {
+    background: url(images/slider-images/car10.jpg);
     background-position: center;
     background-size: cover;
 }
+
 .light-theme .image-section p {
     display: none;
 }
+
 .light-theme .image-section h2 {
-bottom: 50px;
+    bottom: 50px;
 }
 
 .light-theme .porsche-models-section .customize-button:hover {
@@ -683,7 +698,10 @@ button:hover .clone> :nth-child(2) {
     gap: 40px;
     padding: 20px 0;
 }
-
+footer #feedback-button{
+    align-items: center;
+    justify-content: center;
+}
 .footer-left {
     flex: 1;
     margin-right: 60px;
@@ -779,6 +797,121 @@ footer a:hover {
     width: 100%;
 }
 
+/* feedback box */
+#feedback-button {
+    padding: 15px 55px;
+    font-size: 1.1rem;
+    border: 2px solid #b91111;
+    background: transparent;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: fadeInUp 2s ease;
+
+}
+
+#feedback-button:hover {
+    background: #b91111;
+    color: #fff;
+    border-color: #b91111;
+}
+
+#submit-feedback {
+    position: static;
+    right: 2vw;
+    bottom: 2vw;
+    padding: 0.5vw 1vw;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(9, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#submit-feedback:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}
+
+#feedback-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.feedback-container {
+    background: white;
+    border-radius: 10px;
+    padding: 2vw;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    max-width: 90%;
+    text-align: center;
+    position: relative;
+    z-index: 1002;
+}
+
+.feedback-container h2 {
+    margin-bottom: 1.5vw;
+    color: #333;
+}
+
+.feedback-container textarea {
+    width: 100%;
+    height: 130px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    resize: none;
+}
+
+.feedback-actions button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.feedback-actions button:hover {
+    background-color: #0056b3;
+}
+
+#close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background-color: white;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
 @media (max-width: 1171px) {
     .navbar {
         display: flex;
@@ -787,6 +920,7 @@ footer a:hover {
         justify-content: center;
         padding: 10px 20px;
     }
+
     .logo-container {
         display: flex;
         flex-direction: column;
@@ -794,6 +928,7 @@ footer a:hover {
         text-align: center;
         gap: 5px;
     }
+
     .navbar-right {
         display: flex;
         justify-content: center;
@@ -801,9 +936,11 @@ footer a:hover {
         gap: 10px;
         margin-top: 10px;
     }
-    .services:hover ~ .navbar-right .button {
+
+    .services:hover~.navbar-right .button {
         display: none;
     }
+
     .nav-links.active {
         display: flex;
         flex-direction: column;
@@ -816,6 +953,7 @@ footer a:hover {
         padding: 15px;
         border-radius: 8px;
     }
+
     .models-gallery {
         display: flex;
         flex-direction: column;
