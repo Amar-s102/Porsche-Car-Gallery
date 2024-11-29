@@ -1,28 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const selectedCar = JSON.parse(localStorage.getItem('selectedCar')); 
+  const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
   const receiptItemsContainer = document.getElementById('receipt-items');
-  const basePrice = 300000; 
+  const basePrice = 300000;
 
   receiptItemsContainer.innerHTML = ''; 
 
-  if (selectedCar) {
-    const carDiv = document.createElement('div');
-    carDiv.className = 'receipt-item';
-    carDiv.innerHTML = `
-      <div>
-        <p><strong>Selected Car:</strong> ${selectedCar.name}</p>
-        <img src="${selectedCar.image}" alt="${selectedCar.name}" style="width: 300px; border-radius: 10px;">
-        <p><strong>Base Price:</strong> $${basePrice.toFixed(2)}</p>
-      </div>
-    `;
-    receiptItemsContainer.appendChild(carDiv);
+  if (cartData.length > 0) {
+    let total = basePrice; 
+
+    cartData.forEach(item => {
+      const itemDiv = document.createElement('div');
+      itemDiv.className = 'receipt-item';
+      itemDiv.innerHTML = `
+        <div>
+          <p><strong>Item:</strong> ${item.name}</p>
+          <p><strong>Price:</strong> $${item.price.toFixed(2)}</p>
+        </div>
+      `;
+      receiptItemsContainer.appendChild(itemDiv);
+      total += item.price; 
+    });
     const totalDiv = document.createElement('div');
-    totalDiv.innerHTML = `<h3>Total: $${basePrice.toFixed(2)}</h3>`;
+    totalDiv.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
     receiptItemsContainer.appendChild(totalDiv);
   } else {
-    receiptItemsContainer.innerHTML = '<p>No customization Selected.Please go back a customize you dream machine! </p>';
+    receiptItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
   }
 });
+
+
 document.getElementById('customer-info-form').addEventListener('submit', (event) => {
   event.preventDefault(); 
   const nameField = document.getElementById('customer-name').value.trim();
@@ -90,18 +96,6 @@ backToTopBtn.addEventListener('click', () => {
 }); 
 let ThemeToggle= document.getElementById('theme-toggle');
 let savedTheme = localStorage.getItem('theme');
-// let lightmodeImages ={
-//   img1:"imgs/lightmode1.jpg",
-//   img2:"imgs/lightmode1.jpg",
-//   img2:"imgs/lightmode1.jpg",
-// };
-// function updateGallery(mode){
-//   let images = document.querySelectorAll('.image-gallery');
-//   images.forEach((img)=>{
-//     let imgId = img.id;
-//     img.src= mode === 'light-theme'? lightmodeImages[imgId]
-//   })
-// }
 document.addEventListener('DOMContentLoaded', () => {
   const ThemeToggle = document.getElementById('theme-toggle'); 
   const savedTheme = localStorage.getItem('theme'); 
