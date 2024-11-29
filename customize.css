@@ -1,11 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins");
 @import url('https://fonts.googleapis.com/css2?family=Danfo&family=Playwrite+HR:wght@100..400&display=swap');
-
 body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 @font-face {
   font-family: 'GT-Walsheim';
   src: url('path-to-font/GT-Walsheim-Regular.woff2') format('woff2'),
@@ -25,7 +23,6 @@ body {
   font-weight: normal;
   font-style: normal;
 }
-
 *,
 *::before,
 *::after {
@@ -139,6 +136,7 @@ body {
   border-radius: 50%;
   left: 42%;
   transform: translateX(-42%);
+  filter: drop-shadow(0px 8px 24px rgba(248, 248, 253, 0.1));
 }
 .tranding-slider-control .swiper-pagination {
   position: relative;
@@ -164,6 +162,18 @@ body {
 #container{
   width:75%;
 }
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  min-height: 600px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
 .container.right-panel-active .register-container {
   transform: translateX(-100%);
   z-index: 5;
@@ -176,17 +186,18 @@ body {
   background-image: url('imgs/purchase-side.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  color: black;
-  font-size: 25px;
-  font-weight: bold;
 }
-.overlay-panel.overlay-left h1 {
-  color: black !important;
-  font-weight: bolder !important;
-  font-size: 30px;
+.overlay-panel h1{
+  color: #000;
+  font-weight: bolder;
+  font-size: 2.5rem;
+  margin-left: 10px;
 }
-.overlay-panel.overlay-left p{
-  color:black !important;
+.overlay-panel p{
+  color: #000;
+  font-weight: bolder;
+  font-size: 2.5rem;
+  margin: 30px;
 }
 .overlay-panel.overlay-right {
   background-image: url('imgs/purchase-side.jpg');
@@ -207,7 +218,6 @@ body {
   background: url(p-bg.jpg) no-repeat center center/cover;
   color: #fff;
   position: relative;
-  left: -100%;
   height: 100%;
   width: 200%;
   transform: translateX(0);
@@ -219,15 +229,16 @@ body {
 .overlay-panel {
   position: absolute;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   padding: 0 40px;
   text-align: center;
   top: 0;
   height: 100%;
   width: 50%;
   transition: transform 0.6s ease-in-out;
+  transform: translateX(0);
 }
 .overlay-left {
   transform: translateX(-20%);
@@ -246,8 +257,8 @@ body {
   padding: 15px 55px;
   font-size: 1.1rem;
   border: 2px solid #b91111;
-  background: transparent;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   text-transform: uppercase;
   border-radius: 50px;
   text-decoration: none;
@@ -317,13 +328,11 @@ input {
   background-color: #fff;
   border-radius: 25px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  overflow: hidden;
-  max-width: 100%;
   position: relative;
-  width: 100%;
-  min-height: 600px;
-  display: flex;
-  transition: transform 0.6s ease-in-out;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 500px;
 }
 .form-container {
   position: absolute;
@@ -420,22 +429,9 @@ input {
 .container.right-panel-active .overlay-right {
   transform: translateX(20%);
 }
-.form-container.register-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  width:900px;
-}
 .form-container.register-container img {
   position: absolute;
   top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -444,7 +440,8 @@ input {
 .form-container.register-container h1 {
   position: absolute;
   top: 6%;
-  left: 50%;
+   left: 50%; 
+   margin-left:0;
   transform: translateX(-50%);
   font-size: 3rem;
   color: rgb(1, 1, 1);
@@ -498,8 +495,6 @@ input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  flex-wrap: wrap;
 }
 .background-section{
   background: url('imgs/bg-top2.jpg') no-repeat center center/cover;
@@ -509,21 +504,45 @@ input {
   background: url('imgs/lightmode-customizationbg2.png') no-repeat center center/cover;
   background-size: contain;
 }
-.light-theme .background-section h1{color: #000;}
-
-.light-theme .background-section p{color: #000;}
-
-.light-theme .background-section span{color: #000;}
-
-.light-theme .btn-txt,
+.light-theme .background-section,
+.light-theme .background-section h1,
+.light-theme .background-section p,
+.light-theme .background-section span,
 .light-theme #cart-icon,
-.light-theme .porsche-nav{color: #000;}
+.light-theme .porsche-nav
+{
+  color: #000;
+}
+.light-theme .btn-text{
+  color: #000 !important;
+}
+.light-theme .navbar-right span{
+  color: #000;
+}
+.light-theme .tranding-slide-content-bottom{
+  color: #000;
+  font-size:16px;
+}
+.light-theme .scroll-btn{
+  color: #000;
+}
+.light-theme .scroll-btn:hover{
+  color: red;
+}
 .car-image-top {
   width: 100%;
   height: auto;
   object-fit: cover;
   z-index: 1;
   position: relative;
+}
+#car-image{
+  max-width: 60%;
+  max-height: 400px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
 }
 #wheel-options-container {
   display: flex;
@@ -556,6 +575,15 @@ input {
 .color-box:hover {
   transform: scale(1.1);
 }
+.color-box{
+  display: inline-block;
+  width: 100px;
+  height:30px;
+  border-radius: 5px;
+  border: 2px solid #000;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out,border-color 0.3s ease-in-out;
+}
 .Engine-option:hover {
   transform: scale(1.1);
 }
@@ -586,11 +614,18 @@ input {
 .add-to-cart-btn{
   width:100px;
   height:30px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  margin: 0;
+  margin-bottom: 20px;
+  box-sizing: border-box;
 }
 .customization-btn{
   width:130px;
   height:30px;
   gap:10px;
+  margin-bottom: 20px;
 }
 .add-to-cart-btn:hover,.customization-btn:hover{
   background-color: rgb(172, 7, 7) ;
@@ -998,6 +1033,14 @@ footer a {
 footer a:hover {
   color: #fff;
 }
+.background-section{
+  width: 100%;
+  flex-wrap: wrap;
+  position: relative;
+  height: 100vh;
+  background: no-repeat center center/cover;
+  background: url('imgs/bg-top2.jpg') no-repeat center center/cover;
+}
 
 .counter-overlay {
   position: absolute;
@@ -1040,7 +1083,7 @@ footer a:hover {
   margin-left: 65vw;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
-@media(minwidth:576px){
+@media(min-width:576px){
   .navbar{
   flex-direction: row;
   padding:15px;
@@ -1053,8 +1096,22 @@ footer a:hover {
     width:90%;
     height:auto;
   }
+  .overlay-panel h1{
+    font-size: 2rem;
+    color: white;
+  }
+  .overlay-panel p{
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  button.ghost{
+    height:35px;
+    width: 120px;
+    font-size: 16px;
+    background-color: white;
+  }
 }
-@media(mid-width:768px){
+@media(min-width:768px){
   .navbar{
     padding:20px
   }
@@ -1069,6 +1126,20 @@ footer a:hover {
   .content{
     padding:20px;
     margin: auto;
+  }
+  .overlay-panel h1{
+    font-size: 2rem;
+    color: white;
+  }
+  .overlay-panel p{
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  button.ghost{
+    height:35px;
+    width: 120px;
+    font-size: 16px;
+    background-color: white;
   }
 }
 @media(min-width:992px){
@@ -1085,4 +1156,5 @@ footer a:hover {
     width:60%;
     height: auto;
   }
+  
 }
