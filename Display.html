@@ -3,32 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display</title>
+    <title>Porsche Cars</title>
+    <link rel="icon" href="images/R.png" type="image/x-icon">
+
     <link rel="stylesheet" href="Display.css">
+    <script src="Display.js" defer></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="authenticate.js"></script>
+    
 </head>
 <body>
     <header class="navbar">
         <div class="logo-container">
-            <img src="images/229-2297494_porsche-white-logo-emblem.png" alt="Porsche Logo" class="logo">
+            <img src="img/white-logo-final.png" alt="Porsche Logo" class="logo">
             <span class="porsche-nav">Porsche</span>
-        </div>
-        
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    
-        <!-- Navigation Links -->
+        </div>   
         <nav>
             <ul class="nav-links">
                 <li><a href="#cards-section">Features</a></li>
                 <li class="services">
                     <a href="#services-section">
                         Services
-                        <img src="images/arrow.png" alt="Down Arrow" class="arrow">
+                        <img src="img/arrow-icon.png" alt="Down Arrow" class="arrow">
                     </a>
                     <ul class="dropdown">
                         <li>
                             <div class="dropdown-item">
-                                <img src="images/customize-icon.png" alt="Customize Icon">
+                                <img src="img/customize-icon.png" alt="Customize Icon">
                                 <div class="dropdown-text">
                                     <span class="dropdown-title">Customize</span>
                                     <span class="dropdown-subtext">Personalize your ride</span>
@@ -37,7 +42,7 @@
                         </li>
                         <li>
                             <div class="dropdown-item">
-                                <img src="images/rent-icon.png" alt="Rent Icon">
+                                <img src="img/rent-icon.png" alt="Rent Icon">
                                 <div class="dropdown-text">
                                     <span class="dropdown-title">Rent</span>
                                     <span class="dropdown-subtext">Drive for a day</span>
@@ -46,9 +51,9 @@
                         </li>
                         <li>
                             <div class="dropdown-item">
-                                <img src="images/buy-icon.png" alt="Purchase Icon">
+                                <img src="img/buy-icon.png" alt="Purchase Icon">
                                 <div class="dropdown-text">
-                                    <span class="dropdown-title">Purchase</span>
+                                    <a href="purchase.html"><span class="dropdown-title">Purchase</span></a>
                                     <span class="dropdown-subtext">Own your dream car</span>
                                 </div>
                             </div>
@@ -59,24 +64,28 @@
                 <li><a href="#footer">Contact Us</a></li>
             </ul>
         </nav>
+        <div class="navbar-right">
+            <a href="login.html" class="login-btn button type1">
+                <span class="btn-txt">Log In</span>
+            </a>
+            <input type="checkbox" class="theme-checkbox" id="theme-toggle" />
+        </div>
+    </header>
+   
     <section id="hero" class="hero">
         <h2>Welcome to the Virtual Showroom</h2>
         <p>Explore Porsche's most exciting cars, built for the road and the track.</p>
     </section>
 
     <section id="cars" class="cars-section">
-        <!-- Slider Section -->
         <div class="slider-container">
             <div class="slider" id="slider">
-                <!-- Slides will be dynamically added via JavaScript -->
             </div>
             <button class="slider-btn prev" id="prev-btn">&#10094;</button>
             <button class="slider-btn next" id="next-btn">&#10095;</button>
         </div>
 
-        <!-- Cars Grid -->
         <div id="car-cards" class="car-cards">
-            <!-- Car cards will be dynamically added here -->
         </div>
     </section>
     <div id="car-details-modal" class="modal">
@@ -88,17 +97,15 @@
             <p><strong>Price:</strong> <span id="modal-price"></span></p>
         </div>
     </div>
+
     <footer id="main-footer">
         <div class="footer-container">
-            <!-- Footer Logo -->
             <div class="footer-logo">
                 <a href="index.html">
-                    <img src="images/229-2297494_porsche-white-logo-emblem.png" alt="Porsche Logo">
+                    <img src="img/white-logo-final.png" alt="Porsche Logo">
                 </a>
             </div>
-            <!-- Footer Links -->
             <div class="footer-links">
-                <!-- Features Section -->
                 <div class="footer-column">
                     <h4>Features</h4>
                     <ul>
@@ -108,7 +115,6 @@
                         <li><a href="#cards-section">Purchase</a></li>
                     </ul>
                 </div>
-                <!-- Resources Section -->
                 <div class="footer-column">
                     <h4>Resources</h4>
                     <ul>
@@ -117,7 +123,6 @@
                         <li><a href="#">FAQs</a></li>
                     </ul>
                 </div>
-                <!-- Community Section -->
                 <div class="footer-column">
                     <h4>Community</h4>
                     <ul>
@@ -126,7 +131,6 @@
                         <li><a href="https://www.youtube.com/@Porsche">Visit Our YouTube</a></li>
                     </ul>
                 </div>
-                <!-- Company Section -->
                 <div class="footer-column">
                     <h4>Contact Us</h4>
                     <ul>
@@ -137,10 +141,8 @@
                 </div>
             </div>
         </div>
-        <!-- Footer Bottom Section -->
         <p class="footer-bottom">&copy; 2024 Porsche. All rights reserved.</p>
     </footer>
-
-    <script src="Display.js"></script>
+    
 </body>
 </html>
