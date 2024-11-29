@@ -5,28 +5,32 @@ body {
   background-color: #050505;
   color: white;
 }
-.submit-btn{
+
+.submit-btn {
   border-radius: 8px;
   background-color: black;
-  color:white;
-  height:50px;
+  color: white;
+  height: 50px;
   cursor: pointer;
 }
-.submit-btn:hover{
+
+.submit-btn:hover {
   background-color: rgb(55, 53, 53);
 }
-.customer-info-container{
-  flex:1;
+
+.customer-info-container {
+  flex: 1;
   margin-top: 30px;
-  width:35%;
-  padding:18px;
-  border-radius:10px ;
-  color:black;
+  width: 35%;
+  padding: 18px;
+  border-radius: 10px;
+  color: black;
   max-width: 500px;
   background-color: rgb(255, 255, 255);
-  height:650px;
+  height: 650px;
 }
-.main-container{
+
+.main-container {
   display: flex;
   justify-content: center;
   height: 70vh;
@@ -34,55 +38,65 @@ body {
   gap: 20px;
   padding-top: 0 auto;
 }
-input,textarea{
-display: block;
-width:100%;
-padding:12px;
-max-width: 500px;
-box-sizing: border-box;
-background-color: rgb(191, 188, 188);
-border-radius: 5px;
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  max-width: 500px;
+  box-sizing: border-box;
+  background-color: rgb(191, 188, 188);
+  border-radius: 5px;
 }
-.customer-info-container h2{
-text-align: center;
-border-bottom: 18px;
+
+.customer-info-container h2 {
+  text-align: center;
+  border-bottom: 18px;
 }
+
 .image-container {
   flex: 1;
   background-color: #ddd;
   display: flex;
 }
+
 .form-group {
   margin-bottom: 20px;
 }
+
 .payment-logo {
-  width: 40px; 
+  width: 40px;
   height: auto;
-  vertical-align: middle; 
+  vertical-align: middle;
   justify-content: center;
   align-items: center;
 }
+
 .receipt-container {
-flex:1;
-padding:20px;
-width: 400px;
-background-color: white;
-border-radius: 10px;
-text-align: center;
-color:black;
-margin-top: 40px;
+  flex: 1;
+  padding: 20px;
+  width: 400px;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  color: black;
+  margin-top: 40px;
 }
+
 .receipt-container h3 {
   border-top: 1px solid #ddd;
   padding-top: 10px;
   font-size: 1.5rem;
   color: #333;
 }
+
 .receipt-container p {
   font-size: 1.22rem;
   color: #0b0b0b;
   margin: 5px 0;
 }
+
 .receipt-container strong {
   font-weight: bold;
 }
@@ -132,67 +146,90 @@ margin-top: 40px;
   background-position: 0;
   background-color: rgb(78, 75, 75);
 }
+
 .theme-checkbox:checked {
   background-position: 100%;
 }
+
 .light-theme {
   background-color: #ffffff;
 }
+
 .light-mode {
   display: none;
 }
-.light-theme .light-mode{
+
+.light-theme .light-mode {
   display: block;
-  margin-top:80px;
-  height:50vh;
+  margin-top: 80px;
+  height: 50vh;
 }
-.light-theme .dream-machine-section{
-  color:black;
+
+.light-theme .dream-machine-section {
+  color: black;
 
 }
-.light-theme .dark-mode{
-  display:none;
-}
-.light-theme .button{
-  color: black;
-}
-.light-theme .customer-info-container{
-  background-color: rgb(73, 72, 72);
-  color:white;
-}
-.light-theme .receipt-container{
-  background-color: rgb(73, 72, 72);
-}
-.light-theme .dream-machine-section{
-  background-color: white;
-}
-.light-theme .porsche-nav{
+.light-theme .backToTop-btn{
   color: #000;
 }
-.light-theme .receipt-container p{
-color: white;}
-.light-theme .receipt-container h3{
-  color:white;
+
+.light-theme .dark-mode {
+  display: none;
 }
+
+.light-theme .button {
+  color: black;
+}
+
+.light-theme .customer-info-container {
+  background-color: rgb(73, 72, 72);
+  color: white;
+}
+
+.light-theme .receipt-container {
+  background-color: rgb(73, 72, 72);
+}
+
+.light-theme .dream-machine-section {
+  background-color: white;
+}
+
+.light-theme .porsche-nav {
+  color: #000;
+}
+
+.light-theme .receipt-container p {
+  color: white;
+}
+
+.light-theme .receipt-container h3 {
+  color: white;
+}
+
 .light-theme .navbar {
   background: rgba(255, 255, 255, 0.9);
 }
+
 .nav-links li a {
   color: #fff;
 }
+
 .light-theme .nav-links li a {
   color: #000;
 }
+
 .image-gallery {
   display: flex;
   gap: 20px;
   justify-content: center;
   align-items: center;
-  width:100%;
- flex-wrap: wrap;
- position: relative;
- top:0
+  width: 100%;
+  flex-wrap: wrap;
+  position: relative;
+  top: 0;
+  margin-top: 5vh;
 }
+
 .image-container {
   position: relative;
   overflow: hidden;
@@ -200,6 +237,7 @@ color: white;}
   border-radius: 10px;
   cursor: pointer;
 }
+
 .image-container img {
   width: 100%;
   height: 400px;
@@ -207,59 +245,67 @@ color: white;}
   object-fit: cover;
   transition: transform 0.5s ease;
 }
+
 .image-container.active {
   z-index: 2;
   transform: scale(1.1);
 }
+
 .image-container:not(.active) {
   /* filter: blur(5px); */
   transform: scale(0.9);
 }
+
 .video-grid {
   display: flex;
   justify-content: space-around;
-  gap:18px;
+  gap: 18px;
   align-items: center;
   flex-wrap: wrap;
   /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  */
   margin-top: 50px;
 }
+
 .video-item {
   position: relative;
   overflow: hidden;
-  width:80vh;
+  width: 80vh;
   overflow: hidden;
-  transition: transform 0.3s ease,box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 8px;
   height: 400px;
 }
+
 .video-item video {
-  width:100%;
-  height: 100%; 
-  object-fit: cover; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 10px;
-  object-fit:cover;
+  object-fit: cover;
 }
+
 @media (max-width: 768px) {
   .video-item {
-     width: 60%;
-     height: 30vh;
+    width: 60%;
+    height: 30vh;
   }
 }
 
 @media (max-width: 480px) {
   .video-item {
-      width: 100%; 
+    width: 100%;
   }
 }
-.container input{
+
+.container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
-  height:0;
-  width:0;
+  height: 0;
+  width: 0;
 }
-.container{
+
+.container {
   display: flex;
   align-items: center;
   position: relative;
@@ -267,24 +313,27 @@ color: white;}
   padding-left: 3em;
   font-size: 16px;
   line-height: 1.5;
-  gap:10px;
+  gap: 10px;
   user-select: none;
 }
-.checkmark{
+
+.checkmark {
   position: absolute;
   top: 0;
   left: 0;
   height: 1.2em;
   width: 1.2em;
   background-color: #e8e8e8;
-  border-radius: 5px; 
+  border-radius: 5px;
   box-shadow: 3px 3px 5px #c5c5c5, -3px -3px 5px #ffffff;
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
-input:checked ~ .checkmark {
-  background-color: #525852; 
+
+input:checked~.checkmark {
+  background-color: #525852;
   box-shadow: inset 3px 3px 5px #c5c5c5, inset -3px -3px 5px #ffffff;
 }
+
 .checkmark:after {
   content: "";
   position: absolute;
@@ -295,14 +344,17 @@ input:checked ~ .checkmark {
   border: solid white;
   border-width: 0 0.15em 0.15em 0;
   transform: rotate(45deg);
-  opacity: 0; 
+  opacity: 0;
   transition: opacity 0.3s ease;
 }
-input:checked ~ .checkmark:after{
-  opacity:1;
+
+input:checked~.checkmark:after {
+  opacity: 1;
 }
+
 .dream-machine-section {
   width: 100%;
+  margin-top: 10vw;
   background-color: #0a0a0a;
   color: #ffffff;
   padding: 50px 0;
@@ -409,10 +461,6 @@ input:checked ~ .checkmark:after{
 }
 
 /* nav bar */
-@font-face {
-  font-family: 'Ultra911';
-  src: url('Ultra911-ow8rA.otf') format('opentype');
-}
 .navbar {
   position: fixed;
   width: 100%;
@@ -434,8 +482,8 @@ input:checked ~ .checkmark:after{
 }
 
 .logo {
-  width: 70px;
-  height: auto;
+  height: 50px;
+  width: auto;
 }
 
 .porsche-nav {
@@ -444,6 +492,7 @@ input:checked ~ .checkmark:after{
   color: #fff;
   letter-spacing: 2px;
 }
+
 .nav-links {
   display: flex;
   justify-content: center;
@@ -452,20 +501,25 @@ input:checked ~ .checkmark:after{
   list-style: none;
   padding: 1.5vw;
 }
-
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  margin-right: 3vw;
+}
 .nav-links li a {
-  text-decoration: none;
   font-size: 1.5rem;
-  color: #fff;
   display: flex;
   align-items: center;
   gap: 5px;
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
   color: #b91111;
 }
+
 .services {
   position: relative;
 }
@@ -478,6 +532,7 @@ input:checked ~ .checkmark:after{
 .services:hover .arrow {
   transform: rotate(-180deg);
 }
+
 .dropdown {
   position: absolute;
   top: 120%;
@@ -498,6 +553,7 @@ input:checked ~ .checkmark:after{
 .services:hover .dropdown {
   display: flex;
 }
+
 .dropdown-item {
   display: flex;
   align-items: center;
@@ -521,9 +577,9 @@ input:checked ~ .checkmark:after{
   flex-direction: column;
   gap: 5px;
 }
+
 .dropdown-title {
   font-size: 1.3rem;
-  color: #fff;
   font-weight: bold;
 }
 
@@ -532,55 +588,56 @@ input:checked ~ .checkmark:after{
   color: #ccc;
 }
 
-.navbar-right {
-  display: flex;
-  align-items: center;
-  gap: 17px;
-}
 @media (max-width: 1171px) {
   .navbar {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
   }
-  .image-gallery{
+
+  .image-gallery {
     margin-top: 20vh;
   }
- 
+
   .logo-container {
-      display: flex;
-      align-items: center;
-      text-align: center;
-      gap: 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
   }
 
   .navbar-right {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      margin-top: 10px;
-  }
-  .services:hover ~ .navbar-right .button {
-      display: none;
-  }
-  
-  
-  .nav-links.active {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-      background: rgba(0, 0, 0, 0.9);
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      padding: 15px;
-      border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
   }
 
+  .services:hover~.navbar-right .button {
+    display: none;
+  }
+
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+}
+@font-face {
+  font-family: 'Ultra911';
+  src: url('Ultra911-ow8rA.otf') format('opentype');
 }
 .button {
   padding: 15px 55px;
@@ -599,4 +656,199 @@ input:checked ~ .checkmark:after{
   background: #b91111;
   color: #fff;
   border-color: #b91111;
+}
+
+/* footer */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 20px 0;
+}
+
+.footer-left {
+  flex: 1;
+  margin-right: 60px;
+}
+
+.footer-logo img {
+  width: 180px;
+  height: auto;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.footer-left p {
+  font-size: 16px;
+  margin: 10px 0 0;
+  line-height: 1.6;
+}
+
+.footer-links {
+  flex: 4;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 180px;
+  padding: 0 10px;
+}
+
+.footer-column h4 {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  text-align: center;
+  width: 100%;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+}
+
+.footer-bottom p {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #a8a8a8;
+}
+
+footer {
+  background-color: #000000;
+  color: #fff;
+}
+
+footer h4 {
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+footer a {
+  text-decoration: none;
+  font-size: 14px;
+  color: white;
+}
+
+footer a:hover {
+  color: #ae1111;
+}
+
+/* back to top btn */
+.backToTop-btn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 140px;
+  height: 56px;
+  overflow: hidden;
+  border: none;
+  color: #fff;
+  background: none;
+  z-index: 1000;
+  display: none;
+  padding-bottom: 2em;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+
+.backToTop-btn>div,
+.backToTop-btn>svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.backToTop-btn:before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  background: currentColor;
+  transition: transform 0.25s ease-out;
+}
+
+.backToTop-btn:hover:before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.backToTop-btn .clone>*,
+.backToTop-btn .text>* {
+  opacity: 1;
+  font-size: 1.3rem;
+  transition: 0.2s;
+  margin-left: 4px;
+}
+
+.backToTop-btn .clone>* {
+  transform: translateY(60px);
+}
+
+.backToTop-btn:hover .clone>* {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.backToTop-btn:hover .text>* {
+  opacity: 1;
+  transform: translateY(-60px);
+  transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.backToTop-btn:hover .clone> :nth-child(1) {
+  transition-delay: 0.15s;
+}
+
+button:hover .clone> :nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.backToTop-btn:hover .clone> :nth-child(3) {
+  transition-delay: 0.25s;
+}
+
+.backToTop-btn:hover .clone> :nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+.backToTop-btn svg {
+  width: 20px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(-50deg);
+  transition: 0.2s ease-out;
+}
+
+.backToTop-btn:hover svg {
+  transform: translateY(-50%) rotate(-90deg);
 }

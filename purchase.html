@@ -5,65 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Purchase Page</title>
   <link rel="stylesheet" href="purchase.css">
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.min.js"></script>
   <script src="authenticate.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" defer></script>
+  <script src="purcahse.js" defer></script>
 </head>
-<header>
-  <nav class="navbar">
-    <div class="logo-container">
-      <img src="imgs/white-logo-final.png" class="logo">
-      <h1 class="porsche-nav">Porsche</h1>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#cards-section">Features</a></li>
-      <li class="services">
-        <a href="#services-section">
-          Services
-          <img src="imgs/arrow-icon.png" alt="Down Arrow" class="arrow">
-        </a>
-        <ul class="dropdown">
-          <li>
-            <div class="dropdown-item">
-              <a href="customize.html">
-              <img src="images/customize-icon.png" alt="Customize Icon">
-            </a>
-              <div class="dropdown-text">
-                <span class="dropdown-title">Customize</span>
-                <span class="dropdown-subtext">Personalize your ride</span>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="dropdown-item">
-              <a href="renting.html">
-              <img src="images/rent-icon.png" alt="Rent Icon">
-            </a>
-              <div class="dropdown-text">
-                <span class="dropdown-title">Rent</span>
-                <span class="dropdown-subtext">Drive for a day</span>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="dropdown-item">
-              <a href="purchase.html">
-              <img src="images/buy-icon.png" alt="Purchase Icon">
-            </a>
-              <div class="dropdown-text">
-                <span class="dropdown-title">Purchase</span>
-                <span class="dropdown-subtext">Own your dream car</span>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </li>
-      <li><a href="#porsche-models-section">Explore</a></li>
-      <li><a href="#footer">Contact Us</a></li>
-    </ul>
-    <div class="navbar-right">
-      <input type="checkbox" class="theme-checkbox" id="theme-toggle" />
-    </div>
-  </nav>
+<header class="navbar">
+  <a href="homePage.html"><div class="logo-container">
+       <img src="images/229-2297494_porsche-white-logo-emblem.png" alt="Porsche Logo" class="logo">
+       <span class="porsche-nav">Porsche</span>
+   </div></a> 
+
+   <nav>
+       <ul class="nav-links">
+           <li><a href="homepage.html">Features</a></li>
+           <li class="services">
+               <a href="">
+                   Services
+                   <img src="images/arrow.png" alt="Down Arrow" class="arrow">
+               </a>
+               <ul class="dropdown">
+                   <li>
+                       <a href="customize.html">
+                           <div class="dropdown-item">
+                               <img src="images/customize-icon.png" alt="Customize Icon">
+                               <div class="dropdown-text">
+                                   <span class="dropdown-title">Customize</span>
+                                   <span class="dropdown-subtext">Personalize your ride</span>
+                               </div>
+                           </div>
+                       </a>
+                   </li>
+                   <li>
+                       <a href="renting.html">
+                           <div class="dropdown-item">
+                               <img src="images/rent-icon.png" alt="Rent Icon">
+                               <div class="dropdown-text">
+                                   <span class="dropdown-title">Rent</span>
+                                   <span class="dropdown-subtext">Drive for a day</span>
+                               </div>
+                           </div>
+                       </a>
+
+                   </li>
+                   <li>
+                       <a href="purchase.html"> <div class="dropdown-item">
+                           <img src="images/buy-icon.png" alt="Purchase Icon">
+                           <div class="dropdown-text">
+                               <a href="purchase.html"><span class="dropdown-title">Purchase</span></a>
+                               <span class="dropdown-subtext">Own your dream car</span>
+                           </div>
+                       </div></a>
+                   </li>
+               </ul>
+           </li>
+           <li><a href="homepage.html">Explore</a></li>
+           <li><a href="#footer">Contact Us</a></li>
+       </ul>
+   </nav>
+   <div class="navbar-right">
+       <a href="login.html" class="login-btn button type1">
+           <span class="btn-txt">Log In</span>
+       </a>
+       <input type="checkbox" class="theme-checkbox" id="theme-toggle" />
+   </div>
 </header>
 <body>
   <div class="image-gallery">
@@ -187,15 +191,71 @@
 </div>
 </div>
 
+<!-- back to top button -->
+<button class="backToTop-btn">
+  <div class="text">
+      <span>Back</span>
+      <span>to</span>
+      <span>top</span>
+  </div>
+  <div class="clone">
+      <span>Back</span>
+      <span>to</span>
+      <span>top</span>
+  </div>
+  <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-6 w-6"
+      xmlns="http://www.w3.org/2000/svg" width="20px">
+      <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linejoin="round" stroke-linecap="round"></path>
+  </svg>
+</button>
+
+<!-- footer -->
+<footer id="main-footer">
+  <div class="footer-container">
+      <div class="footer-logo">
+          <a href="homePage.css">
+              <img src="images/229-2297494_porsche-white-logo-emblem.png" alt="Porsche Logo">
+          </a>
+      </div>
+      <div class="footer-links">
+          <div class="footer-column">
+              <h4>Features</h4>
+              <ul>
+                  <li><a href=".porsche-gallery-section">Explore Models</a></li>
+                  <li><a href="customize.html">Customize</a></li>
+                  <li><a href="renting.html">Rent</a></li>
+                  <li><a href="purchase.html">Purchase</a></li>
+              </ul>
+          </div>
+          <div class="footer-column">
+              <h4>Resources</h4>
+              <ul>
+                  <li><a href="#video-section">Promotional Video</a></li>
+                  <li><a href="#image-section">Gallery</a></li>
+                  <li><a href="#">FAQs</a></li>
+              </ul>
+          </div>
+          <div class="footer-column">
+              <h4>Community</h4>
+              <ul>
+                  <li><a href="https://x.com/Porsche">Follow us on Twitter</a></li>
+                  <li><a href="https://www.instagram.com/porsche/">Follow Us on Instagram</a></li>
+                  <li><a href="https://www.youtube.com/@Porsche">Visit Our YouTube</a></li>
+              </ul>
+          </div>
+          <div class="footer-column">
+              <h4>Contact Us</h4>
+              <ul>
+                  <li><a href="#">+961 03 999 991</a></li>
+                  <li><a href="#">porsche@outlook.com</a></li>
+                  <li><a href="#">Mechref, Lebanon</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
+  <p class="footer-bottom">&copy; 2024 Porsche. All rights reserved.</p>
+</footer>
 
 
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script src="purcahse.js"></script>
 </body>
 </html>
