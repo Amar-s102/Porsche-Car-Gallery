@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     totalDiv.innerHTML = `<h3>Total: $${basePrice.toFixed(2)}</h3>`;
     receiptItemsContainer.appendChild(totalDiv);
   } else {
-    receiptItemsContainer.innerHTML = '<p>Porsche 911 GT3 RS price = 300,000$ </p>';
+    receiptItemsContainer.innerHTML = '<p>No customization Selected.Please go back a customize you dream machine! </p>';
   }
 });
 document.getElementById('customer-info-form').addEventListener('submit', (event) => {
