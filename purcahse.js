@@ -130,52 +130,38 @@
 //     });
 // });
 document.addEventListener('DOMContentLoaded', () => {
-  const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
-  const selectedCar = JSON.parse(localStorage.getItem('selectedCar'));
+  const selectedCar = JSON.parse(localStorage.getItem('selectedCar')); // Get selected car
   const receiptItemsContainer = document.getElementById('receipt-items');
+  const basePrice = 300000; // Default base price of the car
 
-  if (selectedCar || cartData.length > 0) {
-    let total = 300000; // Base price for the selected car
-    receiptItemsContainer.innerHTML = ''; // Clear the receipt section
+  receiptItemsContainer.innerHTML = ''; // Clear receipt section
 
-    // Add selected car to the receipt
-    if (selectedCar) {
-      const carDiv = document.createElement('div');
-      carDiv.className = 'receipt-item';
-      carDiv.innerHTML = `
-        <div>
-          <p><strong>Selected Car:</strong> ${selectedCar.name}</p>
-          <img src="${selectedCar.image}" alt="${selectedCar.name}" style="width: 300px; border-radius: 10px;">
-        </div>
-      `;
-      receiptItemsContainer.appendChild(carDiv);
-    }
-
-    // Add cart items to the receipt
-    cartData.forEach(item => {
-      const itemDiv = document.createElement('div');
-      itemDiv.className = 'receipt-item';
-      itemDiv.innerHTML = `
-        <div>
-          <p><strong>Item:</strong> ${item.name}</p>
-          <p><strong>Price:</strong> $${item.price.toFixed(2)}</p>
-        </div>
-      `;
-      receiptItemsContainer.appendChild(itemDiv);
-      total += item.price;
-    });
+  if (selectedCar) {
+    // Add the selected car to the receipt
+    const carDiv = document.createElement('div');
+    carDiv.className = 'receipt-item';
+    carDiv.innerHTML = `
+      <div>
+        <p><strong>Selected Car:</strong> ${selectedCar.name}</p>
+        <img src="${selectedCar.image}" alt="${selectedCar.name}" style="width: 300px; border-radius: 10px;">
+        <p><strong>Base Price:</strong> $${basePrice.toFixed(2)}</p>
+      </div>
+    `;
+    receiptItemsContainer.appendChild(carDiv);
 
     // Add total price
     const totalDiv = document.createElement('div');
-    totalDiv.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
+    totalDiv.innerHTML = `<h3>Total: $${basePrice.toFixed(2)}</h3>`;
     receiptItemsContainer.appendChild(totalDiv);
   } else {
-    receiptItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+    // If no car is selected, show a message
+    receiptItemsContainer.innerHTML = '<p>No car selected. Please go back and choose a car.</p>';
   }
 });
 
+// Form submission with validation
 document.getElementById('customer-info-form').addEventListener('submit', (event) => {
-  event.preventDefault(); // Prevent form submission to a new page
+  event.preventDefault(); // Prevent default form submission
 
   // Validate form fields
   const nameField = document.getElementById('customer-name').value.trim();
@@ -223,7 +209,6 @@ document.getElementById('customer-info-form').addEventListener('submit', (event)
 
   alert('Your order has been successfully placed!');
 
-  // Clear cart and selected car data
-  localStorage.removeItem('cartData');
+  // Clear selected car data
   localStorage.removeItem('selectedCar');
 });
