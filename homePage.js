@@ -132,19 +132,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-
+function ShowPopup(){
+    feedbackPopup.classList.toggle("show");
+}
 document.addEventListener("DOMContentLoaded", () => {
     let feedbackButton = document.getElementById("feedback-button");
     let feedbackPopup = document.getElementById("feedback-popup");
     let submitFeedback = document.getElementById("submit-feedback");
     let feedbackText = document.getElementById("feedback-text");
     let closePopup=document.getElementById("close-popup");
-
-    feedbackButton.addEventListener("click", () => {
-        feedbackPopup.classList.remove(".hidden");
-    });
-
-    closePopup.addEventListener("click", (event) => {
+    
+    feedbackPopup.style.display='none';
+        closePopup.addEventListener("click", (event) => {
         feedbackPopup.style.display='none';
     });
 
@@ -162,8 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("feedback",JSON.stringify(feedbackList));
 
             alert("Thank you for your feedback!");
-            feedbackText.value = "";
-            feedbackPopup.classList.add("hidden");
+            feedbackPopup.style.display='none';
         }
         else {
             alert("Please enter your feedback before submiting!");

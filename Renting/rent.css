@@ -46,9 +46,7 @@ body {
 
 .image-section {
     position: relative;
-    /* Makes it a positioning context for absolute elements */
-    height: 100vh;
-    /* Full viewport height */
+    
     background: url('../images/img_14-1600x900.jpeg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
