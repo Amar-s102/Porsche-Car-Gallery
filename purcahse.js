@@ -68,3 +68,58 @@ document.getElementById('customer-info-form').addEventListener('submit', (event)
   alert('Your order has been successfully placed!');
   localStorage.removeItem('selectedCar');
 });
+const backToTopBtn = document.querySelector('.backToTop-btn');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+        backToTopBtn.style.display = 'block';
+        backToTopBtn.style.opacity = '1';
+    } else {
+        backToTopBtn.style.opacity = '0';
+        setTimeout(() => {
+            backToTopBtn.style.display = 'none';
+        }, 300);
+    }
+});
+
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}); 
+let ThemeToggle= document.getElementById('theme-toggle');
+let savedTheme = localStorage.getItem('theme');
+// let lightmodeImages ={
+//   img1:"imgs/lightmode1.jpg",
+//   img2:"imgs/lightmode1.jpg",
+//   img2:"imgs/lightmode1.jpg",
+// };
+// function updateGallery(mode){
+//   let images = document.querySelectorAll('.image-gallery');
+//   images.forEach((img)=>{
+//     let imgId = img.id;
+//     img.src= mode === 'light-theme'? lightmodeImages[imgId]
+//   })
+// }
+document.addEventListener('DOMContentLoaded', () => {
+  const ThemeToggle = document.getElementById('theme-toggle'); 
+  const savedTheme = localStorage.getItem('theme'); 
+
+  if (savedTheme) {
+    document.body.classList.add(savedTheme);
+    ThemeToggle.checked = savedTheme === 'light-theme'; 
+  }
+
+  ThemeToggle.addEventListener('change', () => {
+    if (ThemeToggle.checked) {
+      document.body.classList.add('light-theme');
+      document.body.classList.remove('dark-theme');
+      localStorage.setItem('theme', 'light-theme'); 
+    } else {
+      document.body.classList.add('dark-theme');
+      document.body.classList.remove('light-theme');
+      localStorage.setItem('theme', 'dark-theme'); 
+    }
+  });
+});

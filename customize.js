@@ -176,17 +176,12 @@ function openCustomizationDiv(option, carName) {
         </div>
     `;
   }
-    function proceedToPurchase(selectedCar) {
-      const carData = {
-        name: selectedCar.name,
-        image: selectedCar.image,
-      };
-    
-      localStorage.setItem('selectedCar', JSON.stringify(carData));
-      window.location.href = 'purchase.html'; 
-    }
-    
-  
+  function proceedToPurchase(){
+    let cart= JSON.parse(localStorage.getItem('cart')||[]);
+    let selectedCar= JSON.parse(localStorage.getItem('selectedCar'));
+    let purchaseData=('purchaseDate', JSON.stringify(purchaseData));
+    window.location.href='purchase.html';
+  }
   customizationDetails.innerHTML = content;
   if (option === 'color') {
     const colorBoxes = customizationDetails.querySelectorAll('.color-box');
