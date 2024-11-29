@@ -1,87 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Car Rental Landing Page</title>
-  <link rel="stylesheet" href="renting.css">
-  <script src="authenticate.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porsche Cars</title>
+    <link rel="icon" href="images/R.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="renting.css">
+    <script src="renting.js" defer></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="authenticate.js"></script>
+    
 </head>
 <body>
-
-  <div class="hero">
-    <h1>Find Your Perfect Rental Car</h1>
-    <p>Search and filter to find the best car that suits your journey.</p>
-    <div class="search-container">
-      <input type="text" id="search" placeholder="Search for car model...">
-      <select id="filter" onchange="filterCars()">
-        <option value="all">All Types</option>
-        <option value="SUV">SUV</option>
-        <option value="Sedan">Sedan</option>
-        <option value="Sport">Sport</option>
-      </select>
-    </div>
-  </div>
-
-  <section class="cars-section">
-    <div id="cars-container" class="cars-container"></div>
-  </section>
-  
-  <div class="overlay hidden">
-     <div id="rentPopup" class="popup ">
-    <div class="popup-content">
-      <span id="closePopup" class="close">&times;</span>
-      <div class="car-info">
-        <img id="carImage" src="" alt="Car Image">
-        <div class="car-details">
-          <h2 id="carTitle">Car Model</h2>
-          <p id="carDetails">Details about the car...</p>
-          <p id="carPrice">Price: $0 / day</p>
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="img/white-logo-final.png" alt="Porsche Logo" class="logo">
+            <span class="porsche-nav">Porsche</span>
+        </div>   
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#cards-section">Features</a></li>
+                <li class="services">
+                    <a href="#services-section">
+                        Services
+                        <img src="img/arrow-icon.png" alt="Down Arrow" class="arrow">
+                    </a>
+                    <ul class="dropdown">
+                        <li>
+                            <div class="dropdown-item">
+                                <img src="img/customize-icon.png" alt="Customize Icon">
+                                <div class="dropdown-text">
+                                    <span class="dropdown-title">Customize</span>
+                                    <span class="dropdown-subtext">Personalize your ride</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown-item">
+                                <img src="img/rent-icon.png" alt="Rent Icon">
+                                <div class="dropdown-text">
+                                    <span class="dropdown-title">Rent</span>
+                                    <span class="dropdown-subtext">Drive for a day</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown-item">
+                                <img src="img/buy-icon.png" alt="Purchase Icon">
+                                <div class="dropdown-text">
+                                    <a href="purchase.html"><span class="dropdown-title">Purchase</span></a>
+                                    <span class="dropdown-subtext">Own your dream car</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#porsche-models-section">Explore</a></li>
+                <li><a href="#footer">Contact Us</a></li>
+            </ul>
+        </nav>
+            <div class="navbar-right">
+            <a href="login.html" class="login-btn button type1">
+                <span class="btn-txt">Log In</span>
+            </a>
+            <input type="checkbox" class="theme-checkbox" id="theme-toggle" />
+        </div>
+    </header>
+    
+    <div class="hero">
+        <h1>Find Your Perfect Rental Car</h1>
+      </div>
+    
+      <section class="cars-section">
+        <div id="cars-container" class="cars-container"></div>
+      </section>
+      
+      <div class="overlay hidden">
+         <div id="rentPopup" class="popup ">
+        <div class="popup-content">
+          <span id="closePopup" class="close">&times;</span>
+          <div class="car-info">
+            <img id="carImage" src="" alt="Car Image">
+            <div class="car-details">
+              <h2 id="carTitle">Car Model</h2>
+              <p id="carDetails">Details about the car...</p>
+              <p id="carPrice">Price: $0 / day</p>
+            </div>
+          </div>
+          <div class="checkout">
+            <h3>Checkout Information</h3>
+            <div class="rw">
+              <div class="col">
+                        <label for="name">Full name</label> 
+            <input type="text" id="name" placeholder="Enter Full name">
+            <label for="phone">Phone number</label>
+            <input type="text" id="phone" placeholder="Enter Phone number">
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="Enter Email">
+    
+              </div>
+              <div class="col">
+                 <label for="location">Pickup Location</label>
+            <input type="text" id="location" placeholder="Enter location">
+              <label for="payment">Payment Method</label>
+            <select id="payment">
+              <option value="card">Credit Card</option>
+              <option value="wallet">Digital Wallet</option>
+            </select>
+              </div>
+            </div>
+    
+           
+            <button id="rentButton">Confirm & Rent Now</button>
+          </div>
         </div>
       </div>
-      <div class="checkout">
-        <h3>Checkout Information</h3>
-        <div class="rw">
-          <div class="col">
-                    <label for="name">Full name</label> 
-        <input type="text" id="name" placeholder="Enter Full name">
-        <label for="phone">Phone number</label>
-        <input type="text" id="phone" placeholder="Enter Phone number">
-        <label for="email">Email</label>
-        <input type="text" id="email" placeholder="Enter Email">
-
-          </div>
-          <div class="col">
-             <label for="location">Pickup Location</label>
-        <input type="text" id="location" placeholder="Enter location">
-          <label for="payment">Payment Method</label>
-        <select id="payment">
-          <option value="card">Credit Card</option>
-          <option value="wallet">Digital Wallet</option>
-        </select>
-          </div>
-        </div>
-
-       
-        <button id="rentButton">Confirm & Rent Now</button>
       </div>
-    </div>
-  </div>
-  </div>
- 
-  
-  
-  <footer>
-    <h1>Follow Us:</h1>
-    <nav>
-        <ul>
-            <li><a href="facebook.com">Facebook</a></li>
-            <li><a href="Instagram.com">| Instagram |</a></li>
-            <li><a href="Twitter.com">Twitter</a></li>
-        </ul>
-    </nav>
-</footer>
-
-  <script src="renting.js"></script>
+    
+    <footer id="main-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="index.html">
+                    <img src="img/white-logo-final.png" alt="Porsche Logo">
+                </a>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Features</h4>
+                    <ul>
+                        <li><a href="#cards-section">Explore Models</a></li>
+                        <li><a href="#cards-section">Customize</a></li>
+                        <li><a href="#cards-section">Rent</a></li>
+                        <li><a href="#cards-section">Purchase</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#video-section">Promotional Video</a></li>
+                        <li><a href="#image-section">Gallery</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://x.com/Porsche">Follow us on Twitter</a></li>
+                        <li><a href="https://www.instagram.com/porsche/">Follow Us on Instagram</a></li>
+                        <li><a href="https://www.youtube.com/@Porsche">Visit Our YouTube</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="#">+961 03 999 991</a></li>
+                        <li><a href="#">porsche@outlook.com</a></li>
+                        <li><a href="#">Mechref, Lebanon</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p class="footer-bottom">&copy; 2024 Porsche. All rights reserved.</p>
+    </footer>
+    
 </body>
+
 </html>
