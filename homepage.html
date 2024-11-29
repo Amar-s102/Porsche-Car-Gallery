@@ -15,51 +15,56 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="authenticate.js"></script>
-    
+
 </head>
 
 <body>
     <header class="navbar">
-        <div class="logo-container">
+       <a href="homePage.html"><div class="logo-container">
             <img src="images/229-2297494_porsche-white-logo-emblem.png" alt="Porsche Logo" class="logo">
             <span class="porsche-nav">Porsche</span>
-        </div>
-            
+        </div></a> 
+
         <nav>
             <ul class="nav-links">
                 <li><a href="#cards-section">Features</a></li>
                 <li class="services">
-                    <a href="#services-section">
+                    <a href="">
                         Services
                         <img src="images/arrow.png" alt="Down Arrow" class="arrow">
                     </a>
                     <ul class="dropdown">
                         <li>
-                            <div class="dropdown-item">
-                                <img src="images/customize-icon.png" alt="Customize Icon">
-                                <div class="dropdown-text">
-                                    <span class="dropdown-title">Customize</span>
-                                    <span class="dropdown-subtext">Personalize your ride</span>
+                            <a href="customize.html">
+                                <div class="dropdown-item">
+                                    <img src="images/customize-icon.png" alt="Customize Icon">
+                                    <div class="dropdown-text">
+                                        <span class="dropdown-title">Customize</span>
+                                        <span class="dropdown-subtext">Personalize your ride</span>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </li>
                         <li>
-                            <div class="dropdown-item">
-                                <img src="images/rent-icon.png" alt="Rent Icon">
-                                <div class="dropdown-text">
-                                    <span class="dropdown-title">Rent</span>
-                                    <span class="dropdown-subtext">Drive for a day</span>
+                            <a href="renting.html">
+                                <div class="dropdown-item">
+                                    <img src="images/rent-icon.png" alt="Rent Icon">
+                                    <div class="dropdown-text">
+                                        <span class="dropdown-title">Rent</span>
+                                        <span class="dropdown-subtext">Drive for a day</span>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
+
                         </li>
                         <li>
-                            <div class="dropdown-item">
+                            <a href="purchase.html"> <div class="dropdown-item">
                                 <img src="images/buy-icon.png" alt="Purchase Icon">
                                 <div class="dropdown-text">
                                     <a href="purchase.html"><span class="dropdown-title">Purchase</span></a>
                                     <span class="dropdown-subtext">Own your dream car</span>
                                 </div>
-                            </div>
+                            </div></a>
                         </li>
                     </ul>
                 </li>
@@ -67,18 +72,18 @@
                 <li><a href="#footer">Contact Us</a></li>
             </ul>
         </nav>
-            <div class="navbar-right">
+        <div class="navbar-right">
             <a href="login.html" class="login-btn button type1">
                 <span class="btn-txt">Log In</span>
             </a>
             <input type="checkbox" class="theme-checkbox" id="theme-toggle" />
         </div>
     </header>
-    
-    
+
+
     <div class="video-section" id="video-section">
         <video autoplay muted loop>
-            <source src="images/video-1080p.mp4" type="video/mp4">
+            <source src="images/Video-section.mp4" type="video/mp4">
         </video>
         <div class="video-overlay">
             <h1 class="headline">Experience<br>The Power of Design</h1>
@@ -86,11 +91,11 @@
                 Masterfully engineered luxury,<br>crafted to elevate every journey.
             </p>
             <div class="button-container">
-                <a href="#" class="button">Explore</a>
+                <a href="#porsche-gallery-section" class="button">Explore</a>
             </div>
         </div>
     </div>
-    <section class="image-section" id="image-section">
+    <section class="image-section fade-text" id="image-section">
         <div class="image-overlay">
             <p class="image-description fade-text">
                 A legacy of innovation and performance that defines automotive excellence.
@@ -124,7 +129,7 @@
     <section class="porsche-models-section" id="porsche-models-section">
         <div class="models-text">
             <h1>Discover a World of Porsche 911 GT3 RS</h1>
-            <a href="/customize" class="customize-button">Customize Your Porsche</a>
+            <a href="customize.html" class="customize-button">Customize Your Porsche</a>
         </div>
         <div class="models-gallery">
             <div class="row">
@@ -148,54 +153,39 @@
         </div>
     </section>
     <button class="backToTop-btn">
-      <div class="text">
-        <span>Back</span>
-        <span>to</span>
-        <span>top</span>
-      </div>
-      <div class="clone">
-        <span>Back</span>
-        <span>to</span>
-        <span>top</span>
-      </div>
-      <svg
-        stroke-width="2"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        fill="none"
-        class="h-6 w-6"
-        xmlns="http://www.w3.org/2000/svg"
-        width="20px"
-      >
-        <path
-          d="M14 5l7 7m0 0l-7 7m7-7H3"
-          stroke-linejoin="round"
-          stroke-linecap="round"
-        ></path>
-      </svg>
+        <div class="text">
+            <span>Back</span>
+            <span>to</span>
+            <span>top</span>
+        </div>
+        <div class="clone">
+            <span>Back</span>
+            <span>to</span>
+            <span>top</span>
+        </div>
+        <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg" width="20px">
+            <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linejoin="round" stroke-linecap="round"></path>
+        </svg>
     </button>
-    
+
     <footer id="main-footer">
         <div class="footer-container">
-            <!-- Footer Logo -->
             <div class="footer-logo">
-                <a href="index.html">
+                <a href="homePage.css">
                     <img src="images/229-2297494_porsche-white-logo-emblem.png" alt="Porsche Logo">
                 </a>
             </div>
-            <!-- Footer Links -->
             <div class="footer-links">
-                <!-- Features Section -->
                 <div class="footer-column">
                     <h4>Features</h4>
                     <ul>
-                        <li><a href="#cards-section">Explore Models</a></li>
-                        <li><a href="#cards-section">Customize</a></li>
-                        <li><a href="#cards-section">Rent</a></li>
-                        <li><a href="#cards-section">Purchase</a></li>
+                        <li><a href=".porsche-gallery-section">Explore Models</a></li>
+                        <li><a href="customize.html">Customize</a></li>
+                        <li><a href="renting.html">Rent</a></li>
+                        <li><a href="purchase.html">Purchase</a></li>
                     </ul>
                 </div>
-                <!-- Resources Section -->
                 <div class="footer-column">
                     <h4>Resources</h4>
                     <ul>
@@ -204,7 +194,6 @@
                         <li><a href="#">FAQs</a></li>
                     </ul>
                 </div>
-                <!-- Community Section -->
                 <div class="footer-column">
                     <h4>Community</h4>
                     <ul>
@@ -213,7 +202,6 @@
                         <li><a href="https://www.youtube.com/@Porsche">Visit Our YouTube</a></li>
                     </ul>
                 </div>
-                <!-- Company Section -->
                 <div class="footer-column">
                     <h4>Contact Us</h4>
                     <ul>
@@ -224,10 +212,9 @@
                 </div>
             </div>
         </div>
-        <!-- Footer Bottom Section -->
         <p class="footer-bottom">&copy; 2024 Porsche. All rights reserved.</p>
     </footer>
-    
+
 </body>
 
 </html>

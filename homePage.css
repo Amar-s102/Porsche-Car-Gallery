@@ -1,55 +1,36 @@
-/* Import Modern Fonts */
+/* fonts */
 @font-face {
     font-family: 'Ultra911';
     src: url('Ultra911-ow8rA.otf') format('opentype');
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
-
-
-.fira-sans-bold {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 700;
-    font-style: normal;
+@font-face{
+    font-family: 'GT Walsheim Condensed';
+    src: url(GT-Walsheim-font/GT-Walsheim-Condensed-Black-Trial-BF651b7fc6a5bf5.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal
 }
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
 
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-/* Body Styling */
-body {
+body, .image-description, .headline, .subhead, .fade-text {
     font-family: 'Parkinsans', sans-serif;
-    background-color: #000;
     color: #fff;
-    overflow-x: hidden;
 }
 
-.navbar {
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 40px;
-    transition: background 0.3s ease;
+.nav-links li a, .dropdown-title, .footer a {
+    color: #fff;
+    text-decoration: none;
 }
 
+/* image section */
 .image-section {
     position: relative;
-    /* Makes it a positioning context for absolute elements */
     height: 100vh;
-    /* Full viewport height */
-    background: url('../images/img_14-1600x900.jpeg') no-repeat center center/cover;
+    background: url('images/img_14-1600x900.jpeg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -103,18 +84,6 @@ body {
     transition: opacity 1s ease, transform 1s ease;
 }
 
-.hidden {
-    opacity: 0;
-    transform: translateY(50px);
-}
-
-.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-
 .image-overlay {
     position: absolute;
     bottom: 20px;
@@ -125,14 +94,25 @@ body {
 }
 
 .image-description {
-    font-family: 'Parkinsans', sans-serif;
     font-size: 1.5rem;
-    color: #fff;
     font-weight: 400;
     line-height: 1.5;
 }
 
-
+/* nav bar */
+.navbar {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    transition: background 0.3s ease;
+}
 .logo-container {
     display: flex;
     align-items: center;
@@ -159,11 +139,13 @@ body {
     list-style: none;
     padding: 1.5vw;
 }
-
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
 .nav-links li a {
-    text-decoration: none;
     font-size: 1.5rem;
-    color: #fff;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -234,7 +216,6 @@ body {
 
 .dropdown-title {
     font-size: 1.3rem;
-    color: #fff;
     font-weight: bold;
 }
 
@@ -243,6 +224,7 @@ body {
     color: #ccc;
 }
 
+/* video section */
 .video-section {
     position: relative;
     height: 100vh;
@@ -278,25 +260,21 @@ body {
 }
 
 .headline {
-    font-family: 'Parkinsans', sans-serif;
     font-size: 5.5rem;
     font-weight: 700;
-    color: #fff;
     line-height: 1.2;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     margin-bottom: 20px;
 }
 
 .subhead {
-    font-family: 'Parkinsans', sans-serif;
     font-size: 2rem;
     font-weight: 400;
-    color: #ddd;
     line-height: 1.5;
     margin-bottom: 40px;
 }
 
-
+/* button */
 .button {
     padding: 15px 55px;
     font-size: 1.1rem;
@@ -316,30 +294,9 @@ body {
     border-color: #b91111;
 }
 
-[data-animate] {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-[data-animate].visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-.fade-text.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-
 .fade-text {
-    font-family: 'Parkinsans', sans-serif;
     font-size: 3rem;
     font-weight: 550;
-    color: #fff;
     padding: 530px;
     padding-left: 10vw;
     padding-right: 10vw;
@@ -354,6 +311,7 @@ body {
     padding: 50px;
 }
 
+/* card section */
 .card-container {
     display: flex;
     gap: 5vw;
@@ -365,9 +323,9 @@ body {
 
 .card {
     position: relative;
+    background-color: black;
     width: 400px;
     height: 600px;
-    background-color: #000;
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -428,16 +386,13 @@ body {
 .card:hover::after {
     filter: blur(40px);
     transform: scale(1);
-    transition: filter 1.5s ease;
 }
 
 .card:hover::before {
     transform: rotate(-180deg) scale(1.05);
-    filter: brightness(1.5);
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-
+/* picture gallery */
 .porsche-models-section {
     display: flex;
     flex-direction: column;
@@ -533,12 +488,8 @@ body {
     transform: translateX(45%);
 }
 
-.navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 17px;
-}
 
+/* light theme */
 .theme-checkbox {
     --toggle-size: 16px;
     -webkit-appearance: none;
@@ -585,12 +536,17 @@ body {
     color: #000000;
 }
 
-.light-theme .navbar {
+.light-theme .navbar,
+.light-theme .porsche-models-section {
+
     background: rgba(255, 255, 255, 0.9);
     color: #000;
 }
 
-.light-theme .nav-links li a {
+.light-theme .nav-links li a ,
+.light-theme .login-btn,
+.light-theme .porsche-nav,
+.light-theme .customize-button{
     color: #000;
 }
 
@@ -599,27 +555,26 @@ body {
 }
 
 .light-theme .porsche-models-section {
-    background-color: #ffffff;
     color: #000000;
 }
-
-.light-theme .porsche-models-section .models-text h1,
-.light-theme .porsche-models-section .models-text p,
-.light-theme .porsche-models-section .customize-button,
-.light-theme .porsche-nav,
-.light-theme .button {
-    color: #000;
+.light-theme .image-section{
+    background:url(images/slider-images/car10.jpg) ;
+    background-position: center;
+    background-size: cover;
 }
-
-.light-theme .porsche-models-section .customize-button {
-    border-color: #000;
+.light-theme .image-section p {
+    display: none;
+}
+.light-theme .image-section h2 {
+bottom: 50px;
 }
 
 .light-theme .porsche-models-section .customize-button:hover {
-    background: #000;
+    background: #af0e0e;
     color: #fff;
 }
 
+/* back to top btn */
 .backToTop-btn {
     position: fixed;
     bottom: 80px;
@@ -637,14 +592,6 @@ body {
     transition: opacity 0.3s ease;
 }
 
-
-.backToTop-btn>div,
-.backToTop-btn>svg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-}
 
 .backToTop-btn:before {
     content: "";
@@ -715,7 +662,7 @@ button:hover .clone> :nth-child(2) {
 .backToTop-btn:hover svg {
     transform: translateY(-50%) rotate(-90deg);
 }
-
+/* footer */
 .footer-container {
     display: flex;
     flex-wrap: wrap;
@@ -791,22 +738,6 @@ button:hover .clone> :nth-child(2) {
     color: #a8a8a8;
 }
 
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 10px;
-}
-
-.social-icons a img {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s ease;
-}
-
-.social-icons a img:hover {
-    transform: scale(1.2);
-}
 footer {
     background-color: #000000;
     color: #fff;
@@ -820,7 +751,6 @@ footer h4 {
 }
 
 footer a {
-    color: #a8a8a8;
     text-decoration: none;
     font-size: 14px;
 }
@@ -829,35 +759,6 @@ footer a:hover {
     color: #fff;
 }
 
-/* Light Mode Support */
-body.light-mode footer {
-    background-color: #f9f9f9;
-    color: #333;
-}
-
-body.light-mode footer h4 {
-    color: #000;
-}
-
-body.light-mode footer a {
-    color: #555;
-}
-
-body.light-mode footer a:hover {
-    color: #000;
-}
-
-body.light-mode .footer-bottom p {
-    color: #333;
-}
-
-body,
-html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-}
 
 .navbar,
 .video-section,
@@ -874,8 +775,6 @@ html {
         justify-content: center;
         padding: 10px 20px;
     }
-    
-   
     .logo-container {
         display: flex;
         flex-direction: column;
@@ -883,7 +782,6 @@ html {
         text-align: center;
         gap: 5px;
     }
-
     .navbar-right {
         display: flex;
         justify-content: center;
@@ -894,8 +792,6 @@ html {
     .services:hover ~ .navbar-right .button {
         display: none;
     }
-    
-    
     .nav-links.active {
         display: flex;
         flex-direction: column;
@@ -908,34 +804,10 @@ html {
         padding: 15px;
         border-radius: 8px;
     }
-
-
-
     .models-gallery {
         display: flex;
         flex-direction: column;
         gap: 20px;
         padding: 0 10px;
     }
-
-    .row {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-
-    .box {
-        width: 100%;
-        height: auto;
-    }
-}
-
-footer h1,
-footer h2,
-footer h3,
-footer h4,
-footer h5,
-footer h6 {
-    color: inherit;
-    font-family: inherit;
 }
