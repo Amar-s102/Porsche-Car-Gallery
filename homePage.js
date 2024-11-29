@@ -132,40 +132,45 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-function ShowPopup(){
-    feedbackPopup.classList.toggle("show");
-}
-document.addEventListener("DOMContentLoaded", () => {
-    let feedbackButton = document.getElementById("feedback-button");
-    let feedbackPopup = document.getElementById("feedback-popup");
-    let submitFeedback = document.getElementById("submit-feedback");
-    let feedbackText = document.getElementById("feedback-text");
-    let closePopup=document.getElementById("close-popup");
+// function ShowPopup() {
+//     feedbackPopup.classList.toggle("show");
+// }
+// document.addEventListener("DOMContentLoaded", () => {
+//     let showPopupButton = document.getElementById("showPopupButton");
+//     let feedbackPopup = document.getElementById("feedback-popup");
+//     let submitFeedback = document.getElementById("submit-feedback");
+//     let feedbackText = document.getElementById("feedback-text");
+//     let closePopup = document.getElementById("close-popup");
+
+//     feedbackPopup.style.display = 'none';
     
-    feedbackPopup.style.display='none';
-        closePopup.addEventListener("click", (event) => {
-        feedbackPopup.style.display='none';
-    });
+//     showPopupButton.addEventListener("click",(){
+//        feedbackPopup.style.display='flex';
+//     });
 
-    feedbackPopup.addEventListener("click", (event) => {
-        if (event.target === feedbackPopup) {
-            feedbackPopup.style.display='none';
-        }
-    });
+//     closePopup.addEventListener("click", (event) => {
+//         feedbackPopup.style.display = 'none';
+//     });
 
-    submitFeedback.addEventListener("click", () => {
-        let feedback = feedbackText.value.trim();
-        if (feedback) {
-            let feedbackList=JSON.parse(localStorage.getItem("feedback")) || [];
-            feedbackList.push(feedback);
-            localStorage.setItem("feedback",JSON.stringify(feedbackList));
+//     feedbackPopup.addEventListener("click", (event) => {
+//         if (event.target === feedbackPopup) {
+//             feedbackPopup.style.display = 'none';
+//         }
+//     });
 
-            alert("Thank you for your feedback!");
-            feedbackPopup.style.display='none';
-        }
-        else {
-            alert("Please enter your feedback before submiting!");
-        }
-    });
-});
+//     submitFeedback.addEventListener("click", () => {
+//         let feedback = feedbackText.value.trim();
+//         if (feedback) {
+//             let feedbackList = JSON.parse(localStorage.getItem("feedback")) || [];
+//             feedbackList.push(feedback);
+//             localStorage.setItem("feedback", JSON.stringify(feedbackList));
+
+//             alert("Thank you for your feedback!");
+//             feedbackPopup.style.display = 'none';
+//         }
+//         else {
+//             alert("Please enter your feedback before submiting!");
+//         }
+//     });
+// });
 
