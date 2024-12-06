@@ -1,6 +1,6 @@
-const registerButton = document.getElementById("register");
-const loginButton = document.getElementById("login");
-const container = document.getElementById("container");
+let registerButton = document.getElementById("register");
+let loginButton = document.getElementById("login");
+let container = document.getElementById("container");
 
 registerButton.addEventListener("click", () => {
     container.classList.add("right-panel-active");
@@ -12,11 +12,11 @@ loginButton.addEventListener("click", () => {
 $(document).ready(function () {
     let users = JSON.parse(localStorage.getItem('users')) || [];
     function redirectToPage(page) {
-        window.location.href = page; 
+        window.location.href = page;
     }
 
     $('#registerForm').on('submit', function (e) {
-        e.preventDefault(); 
+        e.preventDefault();
 
         let firstName = $('#firstName').val().trim();
         let lastName = $('#lastName').val().trim();
@@ -25,18 +25,18 @@ $(document).ready(function () {
         let confirmPassword = $('#confirmPassword').val();
 
         if (!firstName || !lastName || !email || !password || !confirmPassword) {
-            alert('All fields are required.');
+            showAlert('All fields are required.');
             return;
         }
 
         if (password !== confirmPassword) {
-            alert('Passwords do not match.');
+            showAlert('Passwords do not match.');
             return;
         }
 
         let existingUser = users.find(user => user.email === email);
         if (existingUser) {
-            alert('Email is already registered.');
+            showAlert('Email is already registered.');
             return;
         }
 
@@ -44,11 +44,11 @@ $(document).ready(function () {
         localStorage.setItem('users', JSON.stringify(users));
 
         alert('Registration successful!');
-        redirectToPage('customize.html'); 
+        redirectToPage('customize.html');
     });
 
     $('#loginForm').on('submit', function (e) {
-        e.preventDefault(); 
+        e.preventDefault();
 
         let email = $('#loginEmail').val().trim();
         let password = $('#loginPassword').val().trim();
@@ -64,9 +64,9 @@ $(document).ready(function () {
             return;
         }
 
-        alert(`Welcome back, ${user.firstName}!`);
+        showAlert(`Welcome back, ${user.firstName}!`);
         localStorage.setItem('isLoggedIn', 'true');
-        redirectToPage('customize.html'); 
+        redirectToPage('customize.html');
     });
     $(document).ready(function () {
         $('.toggle-password').on('click', function () {
@@ -74,7 +74,7 @@ $(document).ready(function () {
             let passwordInput = $(this).siblings('input');
             let eyeIcon = $(this).find('.eye');
             let eyeSlashIcon = $(this).find('.eye-slash');
-    
+
             if (passwordInput.attr('type') === 'password') {
                 passwordInput.attr('type', 'text');
                 eyeIcon.show();
@@ -88,31 +88,31 @@ $(document).ready(function () {
             }
         });
     });
-    
-    });
-    document.addEventListener('DOMContentLoaded', function () {
-        const loginButton = document.querySelector('.login-btn');
-        const logoutButton = document.createElement('button');
-    
-        if (!loginButton) return;
-    
-        logoutButton.textContent = 'Log Out';
-        logoutButton.classList.add('button', 'logout-btn');
-        logoutButton.style.marginLeft = '20px';
+
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const loginButton = document.querySelector('.login-btn');
+    const logoutButton = document.createElement('button');
+
+    if (!loginButton) return;
+
+    logoutButton.textContent = 'Log Out';
+    logoutButton.classList.add('button', 'logout-btn');
+    logoutButton.style.marginLeft = '20px';
+    logoutButton.style.display = 'none';
+    loginButton.parentNode.appendChild(logoutButton);
+
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+        loginButton.style.display = 'none';
+        logoutButton.style.display = 'block';
+    }
+
+    logoutButton.addEventListener('click', function () {
+        localStorage.setItem('isLoggedIn', 'false');
+        loginButton.style.display = 'block';
         logoutButton.style.display = 'none';
-        loginButton.parentNode.appendChild(logoutButton);
-    
-        if (localStorage.getItem('isLoggedIn') === 'true') {
-            loginButton.style.display = 'none';
-            logoutButton.style.display = 'block';
-        }
-    
-        logoutButton.addEventListener('click', function () {
-            localStorage.setItem('isLoggedIn', 'false');
-            loginButton.style.display = 'block';
-            logoutButton.style.display = 'none';
-            alert('You have logged out.');
-            window.location.href = 'index.html'; // Redirect to home page
-        });
+        alert('You have logged out.');
+        window.location.href = 'index.html'; // Redirect to home page
     });
-    
+});
+

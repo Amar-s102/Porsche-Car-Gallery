@@ -125,52 +125,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const links = footer.querySelectorAll("a");
             links.forEach(link => {
-                link.style.color = "#a8a8a8"; // Set link color to light gray
+                link.style.color = "#a8a8a8"; 
                 link.addEventListener("mouseover", () => link.style.color = "#ffffff");
                 link.addEventListener("mouseout", () => link.style.color = "#a8a8a8");
             });
         }
     });
 });
-// function ShowPopup() {
-//     feedbackPopup.classList.toggle("show");
-// }
-// document.addEventListener("DOMContentLoaded", () => {
-//     let showPopupButton = document.getElementById("showPopupButton");
-//     let feedbackPopup = document.getElementById("feedback-popup");
-//     let submitFeedback = document.getElementById("submit-feedback");
-//     let feedbackText = document.getElementById("feedback-text");
-//     let closePopup = document.getElementById("close-popup");
 
-//     feedbackPopup.style.display = 'none';
-    
-//     showPopupButton.addEventListener("click",(){
-//        feedbackPopup.style.display='flex';
-//     });
+function showAlert(message){
+    let alertBox=document.getElementById('customAlert');
+    let alertMessage=document.getElementById('alertMessage');
+    alertMessage.textContent=message;
+    alertBox.classList.remove('hidden');
 
-//     closePopup.addEventListener("click", (event) => {
-//         feedbackPopup.style.display = 'none';
-//     });
+    setTimeout(()=>{
+        closeAlert();
+    },5000);
+}
 
-//     feedbackPopup.addEventListener("click", (event) => {
-//         if (event.target === feedbackPopup) {
-//             feedbackPopup.style.display = 'none';
-//         }
-//     });
-
-//     submitFeedback.addEventListener("click", () => {
-//         let feedback = feedbackText.value.trim();
-//         if (feedback) {
-//             let feedbackList = JSON.parse(localStorage.getItem("feedback")) || [];
-//             feedbackList.push(feedback);
-//             localStorage.setItem("feedback", JSON.stringify(feedbackList));
-
-//             alert("Thank you for your feedback!");
-//             feedbackPopup.style.display = 'none';
-//         }
-//         else {
-//             alert("Please enter your feedback before submiting!");
-//         }
-//     });
-// });
-
+function closeAlert(){
+    let alertBox=document.getElementById('customAlert');
+    alertBox.classList.add('hidden');
+}
