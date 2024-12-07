@@ -81,6 +81,7 @@ function openOuterDiv(carName, carImage) {
       openCustomizationDiv(option, carName); 
     });
   });
+
 }
 function openCustomizationDiv(option, carName) {
   const customizationDetails = document.getElementById('customization-details');
