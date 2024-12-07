@@ -13,12 +13,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
+*{
     box-sizing: border-box;
 }
-
 body,
 .image-description,
 .headline,
@@ -27,7 +24,13 @@ body,
     font-family: 'Parkinsans', sans-serif;
     color: #fff;
 }
-
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
 .nav-links li a,
 .dropdown-title,
 .footer a {
@@ -61,6 +64,7 @@ body,
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
     margin: 0;
     text-align: center;
+    padding: 0;
 }
 
 @keyframes shine {
@@ -880,7 +884,7 @@ a{
         opacity: 1;
     }
 }
-@media (max-width: 1171px) {
+@media (max-width: 1061px) {
     .navbar {
         display: flex;
         flex-direction: column;
