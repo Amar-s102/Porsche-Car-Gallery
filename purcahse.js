@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
-  const receiptItemsContainer = document.getElementById('receipt-items');
-  const basePrice = 300000;
+  let cartData = JSON.parse(localStorage.getItem('cartData')) || [];
+  let receiptItemsContainer = document.getElementById('receipt-items');
+  let basePrice = 300000;
 
   receiptItemsContainer.innerHTML = ''; 
 
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let total = basePrice; 
 
     cartData.forEach(item => {
-      const itemDiv = document.createElement('div');
+      let itemDiv = document.createElement('div');
       itemDiv.className = 'receipt-item';
       itemDiv.innerHTML = `
         <div>
@@ -20,38 +20,36 @@ document.addEventListener('DOMContentLoaded', () => {
       receiptItemsContainer.appendChild(itemDiv);
       total += item.price; 
     });
-    const totalDiv = document.createElement('div');
+    let totalDiv = document.createElement('div');
     totalDiv.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
     receiptItemsContainer.appendChild(totalDiv);
   } else {
     receiptItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
   }
 });
-
-
 document.getElementById('customer-info-form').addEventListener('submit', (event) => {
   event.preventDefault(); 
-  const nameField = document.getElementById('customer-name').value.trim();
-  const emailField = document.getElementById('email').value.trim();
-  const phoneField = document.getElementById('phone').value.trim();
-  const addressField = document.getElementById('address').value.trim();
-  const paymentMethod = document.querySelector('input[name="payment-method"]:checked');
+  let nameField = document.getElementById('customer-name').value.trim();
+  let emailField = document.getElementById('email').value.trim();
+  let phoneField = document.getElementById('phone').value.trim();
+  let addressField = document.getElementById('address').value.trim();
+ let paymentMethod = document.querySelector('input[name="payment-method"]:checked');
 
   if (!nameField || !emailField || !phoneField || !addressField || !paymentMethod) {
     alert('Please fill out all fields and select a payment method.');
     return;
   }
-  const duration = 4 * 1000;
-  const animationEnd = Date.now() + duration;
+ let duration = 4 * 1000;
+  let animationEnd = Date.now() + duration;
 
-  const colors = ["#D7AE5D", "#5B8586", "#FF5733"];
+  let colors = ["#D7AE5D", "#5B8586", "#FF5733"];
 
   function randomInRange(min, max) {
     return Math.random() * (max - min) + min;
   }
 
-  const interval = setInterval(() => {
-    const timeLeft = animationEnd - Date.now();
+  let interval = setInterval(() => {
+    let timeLeft = animationEnd - Date.now();
 
     if (timeLeft <= 0) {
       clearInterval(interval);
@@ -74,7 +72,7 @@ document.getElementById('customer-info-form').addEventListener('submit', (event)
   alert('Your order has been successfully placed!');
   localStorage.removeItem('selectedCar');
 });
-const backToTopBtn = document.querySelector('.backToTop-btn');
+let backToTopBtn = document.querySelector('.backToTop-btn');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 200) {
@@ -97,8 +95,8 @@ backToTopBtn.addEventListener('click', () => {
 let ThemeToggle= document.getElementById('theme-toggle');
 let savedTheme = localStorage.getItem('theme');
 document.addEventListener('DOMContentLoaded', () => {
-  const ThemeToggle = document.getElementById('theme-toggle'); 
-  const savedTheme = localStorage.getItem('theme'); 
+  let ThemeToggle = document.getElementById('theme-toggle'); 
+  let savedTheme = localStorage.getItem('theme'); 
 
   if (savedTheme) {
     document.body.classList.add(savedTheme);
