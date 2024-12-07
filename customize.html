@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,71 +15,85 @@
   <script src="authenticate.js"></script>
 </head>
 <header class="navbar">
-  <div class="logo-container">
+  <a href="index.html">
+    <div class="logo-container">
       <img src="images/229-2297494_porsche-white-logo-emblem.png" alt="Porsche Logo" class="logo">
       <span class="porsche-nav">Porsche</span>
-  </div>
+    </div>
+  </a>
+
   <nav>
-      <ul class="nav-links">
-          <li><a href="#cards-section">Features</a></li>
-          <li class="services">
-              <a href="#services-section">
-                  Services
-                  <img src="images/arrow.png" alt="Down Arrow" class="arrow">
-              </a>
-              <ul class="dropdown">
-                  <li>
-                    <a href="customize.html">
-                      <div class="dropdown-item">
-                          <img src="images/customize-icon.png" alt="Customize Icon">
-                          <div class="dropdown-text">
-                              <span class="dropdown-title">Customize</span>
-                              <span class="dropdown-subtext">Personalize your ride</span>
-                          </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="renting.html">
-                      <div class="dropdown-item">
-                          <img src="images/rent-icon.png" alt="Rent Icon">
-                          <div class="dropdown-text">
-                              <span class="dropdown-title">Rent</span>
-                              <span class="dropdown-subtext">Drive for a day</span>
-                          </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="purchase.html">
-                      <div class="dropdown-item">
-                          <img src="images/buy-icon.png" alt="Purchase Icon">
-                          <div class="dropdown-text">
-                              <span class="dropdown-title">Purchase</span>
-                              <span class="dropdown-subtext">Own your dream car</span>
-                          </div>
-                      </div>
-                    </a>
-                  </li>
-              </ul>
+    <ul class="nav-links">
+      <li><a href="#cards-section">Features</a></li>
+      <li class="services">
+        <a href="#services-section">
+          Services
+          <img src="images/arrow.png" alt="Down Arrow" class="arrow">
+        </a>
+        <ul class="dropdown">
+          <li>
+            <a href="customize.html">
+              <div class="dropdown-item">
+                <img src="images/customize-icon.png" alt="Customize Icon">
+                <div class="dropdown-text">
+                  <span class="dropdown-title">Customize</span>
+                  <span class="dropdown-subtext">Personalize your ride</span>
+                </div>
+              </div>
+            </a>
           </li>
-          <li><a href="#porsche-models-section">Explore</a></li>
-          <li><a href="#footer">Contact Us</a></li>
-      </ul>
+          <li>
+            <a href="Display.html">
+                <div class="dropdown-item">
+                    <img src="images/display-icon.png" alt="display icon" >
+                    <div class="dropdown-text">
+                        <span class="dropdown-title">Display</span>
+                        <span class="dropdown-subtext">Explore your renting options.</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+          <li>
+            <a href="renting.html">
+              <div class="dropdown-item">
+                <img src="images/rent-icon.png" alt="Rent Icon">
+                <div class="dropdown-text">
+                  <span class="dropdown-title">Rent</span>
+                  <span class="dropdown-subtext">Drive for a day</span>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="purchase.html">
+              <div class="dropdown-item">
+                <img src="images/buy-icon.png" alt="Purchase Icon">
+                <div class="dropdown-text">
+                  <span class="dropdown-title">Purchase</span>
+                  <span class="dropdown-subtext">Own your dream car</span>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#porsche-models-section">Explore</a></li>
+      <li><a href="#footer">Contact Us</a></li>
+    </ul>
   </nav>
-      <div class="navbar-right">
-      <a href="login.html" class="login-btn button type1">
-          <span class="btn-txt">Log In</span>
-      </a>
-      <a href="#" id="cart-icon">🛒 Cart (<span id="cart-count">0</span>)</a>
-      <div id="cart-dropdown" class="dropdown hidden">
-        <div id="cart-items"></div>
-        <div class="cart-footer">
-          <p>Total: $<span id="cart-total">0</span></p>
-          <button onclick="checkout()" class="checkout-btn">Checkout</button>
-        </div>
+  <div class="navbar-right">
+    <a href="login.html" class="login-btn button type1">
+      <span class="btn-txt">Log In</span>
+    </a>
+    <a href="#" id="cart-icon">🛒 Cart (<span id="cart-count">0</span>)</a>
+    <div id="cart-dropdown" class="dropdown hidden">
+      <div id="cart-items"></div>
+      <div class="cart-footer">
+        <p>Total: $<span id="cart-total">0</span></p>
+        <button onclick="checkout()" class="checkout-btn">Checkout</button>
       </div>
-      <input type="checkbox" class="theme-checkbox" id="theme-toggle" />
+    </div>
+    <input type="checkbox" class="theme-checkbox" id="theme-toggle" />
   </div>
 </header>
 
@@ -86,30 +101,31 @@
 <body>
   <div class="background-section">
     <div class="counter-overlay">
-        <div class="counter-item">
-            <h1 class="counter" data-target="3.2">0</h1>
-            <span class="unit">s</span>
-            <p class="description">Acceleration 0 – 100 km/h with Launch Control</p>
-        </div>
+      <div class="counter-item">
+        <h1 class="counter" data-target="3.2">0</h1>
+        <span class="unit">s</span>
+        <p class="description">Acceleration 0 – 100 km/h with Launch Control</p>
+      </div>
 
-        <div class="counter-item">
-            <h1 class="counter" data-target="296">0</h1>
-            <span class="unit">km/h</span> /
-            <h1 class="counter" data-target="525">0</h1>
-            <span class="unit">PS</span>
-            <p class="description">Overboost Power with Launch Control up to (kW)/Overboost Power with Launch Control up to (PS)</p>
-        </div>
+      <div class="counter-item">
+        <h1 class="counter" data-target="296">0</h1>
+        <span class="unit">km/h</span> /
+        <h1 class="counter" data-target="525">0</h1>
+        <span class="unit">PS</span>
+        <p class="description">Overboost Power with Launch Control up to (kW)/Overboost Power with Launch Control up to
+          (PS)</p>
+      </div>
 
-        <div class="counter-item">
-            <h1 class="counter" data-target="250">0</h1>
-            <span class="unit">km/h</span>
-            <p class="description">Top speed</p>
-        </div>
+      <div class="counter-item">
+        <h1 class="counter" data-target="250">0</h1>
+        <span class="unit">km/h</span>
+        <p class="description">Top speed</p>
+      </div>
     </div>
     <div class="introPage-p">
       <p>Porsche's 911 GT3 RS</p>
     </div>
-</div>
+  </div>
 
   <section id="tranding">
     <div class="divcontainer">
@@ -192,7 +208,8 @@
             <div class="tranding-slide-content">
               <div class="tranding-slide-content-bottom">
                 <h2>Forest Green</h2>
-                <a href="#targetDiv" class="scroll-btn" data-car="forestGreen" class=".learn-btn" data-color="forestGreen">Learn More</a>
+                <a href="#targetDiv" class="scroll-btn" data-car="forestGreen" class=".learn-btn"
+                  data-color="forestGreen">Learn More</a>
                 <h3 class="car-rating">
                   <span>4.5</span>
                   <div class="rating">
@@ -215,7 +232,8 @@
             <div class="tranding-slide-content">
               <div class="tranding-slide-content-bottom">
                 <h2>Soothing Beige</h2>
-                <a href="#targetDiv" class="scroll-btn" data-car="soothingBeige" class=".learn-btn" data-color="soothingBeige">Learn More</a>
+                <a href="#targetDiv" class="scroll-btn" data-car="soothingBeige" class=".learn-btn"
+                  data-color="soothingBeige">Learn More</a>
                 <h3 class="car-rating">
 
                   <span>4.5</span>
@@ -270,7 +288,8 @@
   </div>
   <div class="engine-sound-container" style="position: relative; text-align: center; color: white;">
     <img src="imgs/BAZ_2954-1drift.webp" alt="Car Image" style="width: 100%; border-radius: 10px;">
-    <h1 class="bold-engine" style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); font-size: 2.5rem;">
+    <h1 class="bold-engine"
+      style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); font-size: 2.5rem;">
       Engine Sound</h1>
     <p
       style="position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); font-size: 1.5rem;color:black;">
@@ -283,53 +302,53 @@
   </div>
   <audio id="page-sound" src="your-sound-file.mp3"></audio>
 
-  
-<footer id="main-footer">
-  <div class="footer-container">
+
+  <footer id="main-footer">
+    <div class="footer-container">
       <div class="footer-logo">
-          <a href="index.html">
-              <img src="images/229-2297494_porsche-white-logo-emblem.png" alt="Porsche Logo">
-          </a>
+        <a href="index.html">
+          <img src="images/229-2297494_porsche-white-logo-emblem.png" alt="Porsche Logo">
+        </a>
       </div>
       <div class="footer-links">
-          <div class="footer-column">
-              <h4>Features</h4>
-              <ul>
-                  <li><a href="#cards-section">Explore Models</a></li>
-                  <li><a href="#cards-section">Customize</a></li>
-                  <li><a href="#cards-section">Rent</a></li>
-                  <li><a href="#cards-section">Purchase</a></li>
-              </ul>
-          </div>
-          <div class="footer-column">
-              <h4>Resources</h4>
-              <ul>
-                  <li><a href="#video-section">Promotional Video</a></li>
-                  <li><a href="#image-section">Gallery</a></li>
-                  <li><a href="#">FAQs</a></li>
-              </ul>
-          </div>
-          <div class="footer-column">
-              <h4>Community</h4>
-              <ul>
-                  <li><a href="https://x.com/Porsche">Follow us on Twitter</a></li>
-                  <li><a href="https://www.instagram.com/porsche/">Follow Us on Instagram</a></li>
-                  <li><a href="https://www.youtube.com/@Porsche">Visit Our YouTube</a></li>
-              </ul>
-          </div>
-          <div class="footer-column">
-              <h4>Contact Us</h4>
-              <ul>
-                  <li><a href="#">+961 03 999 991</a></li>
-                  <li><a href="#">porsche@outlook.com</a></li>
-                  <li><a href="#">Mechref, Lebanon</a></li>
-              </ul>
-          </div>
+        <div class="footer-column">
+          <h4>Features</h4>
+          <ul>
+            <li><a href="#cards-section">Explore Models</a></li>
+            <li><a href="#cards-section">Customize</a></li>
+            <li><a href="#cards-section">Rent</a></li>
+            <li><a href="#cards-section">Purchase</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#video-section">Promotional Video</a></li>
+            <li><a href="#image-section">Gallery</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://x.com/Porsche">Follow us on Twitter</a></li>
+            <li><a href="https://www.instagram.com/porsche/">Follow Us on Instagram</a></li>
+            <li><a href="https://www.youtube.com/@Porsche">Visit Our YouTube</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="#">+961 03 999 991</a></li>
+            <li><a href="#">porsche@outlook.com</a></li>
+            <li><a href="#">Mechref, Lebanon</a></li>
+          </ul>
+        </div>
       </div>
-  </div>
-  <p class="footer-bottom">&copy; 2024 Porsche. All rights reserved.</p>
-</footer>
-</body> 
+    </div>
+    <p class="footer-bottom">&copy; 2024 Porsche. All rights reserved.</p>
+  </footer>
+</body>
 
 
 
