@@ -567,7 +567,8 @@ body,
     color: #b91111;
 }
 
-.light-theme .porsche-models-section {
+.light-theme .porsche-models-section,
+.light-theme .button{
     color: #000000;
 }
 
@@ -842,7 +843,9 @@ footer a:hover {
     color: #333;
     cursor: pointer;
 }
-
+a{
+    text-decoration: none;
+}
 /* alert popup */
 .custom-alert{
    position: fixed;

@@ -351,7 +351,9 @@ input:checked~.checkmark {
 input:checked~.checkmark:after {
   opacity: 1;
 }
-
+a{
+  text-decoration: none;
+}
 .dream-machine-section {
   width: 100%;
   margin-top: 10vw;
