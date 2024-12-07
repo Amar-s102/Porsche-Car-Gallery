@@ -116,3 +116,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.getElementById('switchToLogin').addEventListener('click',function(e){
+    e.preventDefault();
+
+    document.querySelector('.register-container').style.display='none';
+    document.querySelector('.login-container').style.display='flex';
+})
+
+document.getElementById('switchToRegister').addEventListener('click',function(e){
+    e.preventDefault();
+
+    document.querySelector('.login-container').style.display='none';
+    document.querySelector('.register-container').style.display='flex';
+})
