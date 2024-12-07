@@ -216,7 +216,16 @@ textarea {
 .light-theme .nav-links li a {
   color: #000;
 }
-
+.light-theme #main-footer{
+  background-color: #fff;
+  color:#000;
+}
+.light-theme h4{
+  color:#000;
+}
+.light-theme ul li a{
+  color:#000
+}
 .image-gallery {
   display: flex;
   gap: 20px;
