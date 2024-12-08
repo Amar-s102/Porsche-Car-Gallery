@@ -17,16 +17,16 @@ var TrandingSlider = new Swiper('.tranding-slider', {
 });
 document.querySelectorAll('.scroll-btn').forEach(button => {
   button.addEventListener('click', function () {
-    const carItem = this.closest('.tranding-slide'); 
-    const carImage = carItem.querySelector('img').src; 
-    const carName = carItem.querySelector('h2').textContent; 
-    const selectedCarsContainer = document.getElementById('selected-cars-container');
+    let carItem = this.closest('.tranding-slide'); 
+    let carImage = carItem.querySelector('img').src; 
+    let carName = carItem.querySelector('h2').textContent; 
+    let selectedCarsContainer = document.getElementById('selected-cars-container');
     let existingCar = selectedCarsContainer.querySelector(`[data-car-name="${carName}"]`);
 
     if (existingCar) {
       existingCar.remove();
     } else {
-      const selectedCar = document.createElement('div');
+      let selectedCar = document.createElement('div');
       selectedCar.classList.add('selected-car');
       selectedCar.setAttribute('data-car-name', carName);
       selectedCar.innerHTML = `
@@ -77,14 +77,14 @@ function openOuterDiv(carName, carImage) {
   `;
   document.querySelectorAll('.customization-btn').forEach(button => {
     button.addEventListener('click', function () {
-      const option = this.getAttribute('data-option');
+      let option = this.getAttribute('data-option');
       openCustomizationDiv(option, carName); 
     });
   });
 
 }
 function openCustomizationDiv(option, carName) {
-  const customizationDetails = document.getElementById('customization-details');
+  let customizationDetails = document.getElementById('customization-details');
   let content = '';
   if (option === 'wheels') {
     content = `
@@ -185,18 +185,18 @@ function openCustomizationDiv(option, carName) {
   }
   customizationDetails.innerHTML = content;
   if (option === 'color') {
-    const colorBoxes = customizationDetails.querySelectorAll('.color-box');
+    let colorBoxes = customizationDetails.querySelectorAll('.color-box');
     colorBoxes.forEach(box => {
       box.addEventListener('click', function () {
-        const selectedColor = this.getAttribute('data-color');
+        let selectedColor = this.getAttribute('data-color');
         updateCarImageColor(selectedColor); 
       });
     });
   }
 }
 function updateCarImageColor(color) {
-  const carImage = document.getElementById('car-image');
-  const carImages = {
+  let carImage = document.getElementById('car-image');
+  let carImages = {
     darkBlue: 'imgs/porsche1-removebg-preview.png',
     skyBlue: 'imgs/porsche2-removebg-preview.png',
     bloodRed: 'imgs/porsche3-removebg-preview.png',
@@ -207,13 +207,13 @@ function updateCarImageColor(color) {
 }
 document.querySelectorAll('.scroll-btn').forEach(button => {
   button.addEventListener('click', function () {
-    const car = this.getAttribute('data-car'); 
+    let car = this.getAttribute('data-car'); 
     updateCarInfo(car); 
   });
 });
 function updateCarInfo(car) {
-  const carInfoDiv = document.querySelector('.carinfo');
-  const carData = {
+  let carInfoDiv = document.querySelector('.carinfo');
+  let carData = {
     darkBlue: {
       name: 'Dark Blue',
       description: 'This car has a stunning dark blue exterior with a sleek design and powerful engine.',
@@ -247,7 +247,7 @@ function updateCarInfo(car) {
   };
   carInfoDiv.innerHTML = '';  
   if (carData[car]) {
-    const { name, description, specs, color } = carData[car];
+    let { name, description, specs, color } = carData[car];
     carInfoDiv.innerHTML = `
       <h2 style="color: ${color};">${name}</h2>
       <p style="font-weight: bold;">${description}</p>
@@ -257,9 +257,9 @@ function updateCarInfo(car) {
     carInfoDiv.innerHTML = '<p>Car information not available.</p>';
   }
 }
-const registerButton = document.getElementById("register");
-const loginButton = document.getElementById("login");
-const container = document.getElementById("container");
+let registerButton = document.getElementById("register");
+let loginButton = document.getElementById("login");
+let container = document.getElementById("container");
 
 registerButton.addEventListener("click", () => {
     container.classList.add("right-panel-active");
@@ -267,19 +267,19 @@ registerButton.addEventListener("click", () => {
 loginButton.addEventListener("click", () => {
     container.classList.remove("right-panel-active");
 });
-const selectedCustomizations = {
+let selectedCustomizations = {
   color: null, 
   wheels: null, 
   engine: null, 
   seats: null, 
 };
-const cartIcon = document.getElementById('cart-icon');
-const cartDropdown = document.getElementById('cart-dropdown');
-const cartItemsContainer = document.getElementById('cart-items');
-const cartCount = document.getElementById('cart-count');
-const cartTotal = document.getElementById('cart-total');
-const cart = []; 
-const basePrice = 300000; 
+let cartIcon = document.getElementById('cart-icon');
+let cartDropdown = document.getElementById('cart-dropdown');
+let cartItemsContainer = document.getElementById('cart-items');
+let cartCount = document.getElementById('cart-count');
+let cartTotal = document.getElementById('cart-total');
+let cart = []; 
+let basePrice = 300000; 
 cartIcon.addEventListener('click', (e) => {
   e.preventDefault(); 
   cartDropdown.classList.toggle('visible'); 
@@ -302,7 +302,7 @@ function updateCartDisplay() {
   cartItemsContainer.innerHTML = ''; 
   let total = basePrice; 
   cart.forEach((item, index) => {
-    const cartItem = document.createElement('div');
+    let cartItem = document.createElement('div');
     cartItem.className = 'cart-item';
     cartItem.innerHTML = `
       <span>${item.name}</span>
@@ -321,12 +321,12 @@ function checkout() {
     return;
   }
   localStorage.setItem('cartData', JSON.stringify(cart));
-  const totalAmount = cart.reduce((sum, item) => sum + item.price, basePrice);
+  let totalAmount = cart.reduce((sum, item) => sum + item.price, basePrice);
   alert(`Your total is $${totalAmount.toFixed(2)}. Redirecting to payment...`);
   window.location.href = 'purchase.html';
 }
-const holdSoundBtn = document.getElementById('hold-sound-btn');
-const engineSound = document.getElementById('engine-sound');
+let holdSoundBtn = document.getElementById('hold-sound-btn');
+let engineSound = document.getElementById('engine-sound');
 holdSoundBtn.addEventListener('mousedown', () => {
   engineSound.currentTime = 0; 
   engineSound.play(); 
@@ -338,13 +338,13 @@ holdSoundBtn.addEventListener('mouseleave', () => {
   engineSound.pause(); 
 });
 window.addEventListener('load', () => {
-  const audio = document.getElementById('page-sound');
+  let audio = document.getElementById('page-sound');
   audio.play().catch((error) => {
     console.log('Auto-play prevented:', error);
   });
 });
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
+let themeToggle = document.getElementById('theme-toggle');
+let body = document.body;
 themeToggle.addEventListener('change', () => {
   if (themeToggle.checked) {
     body.classList.add('light-theme');
@@ -358,18 +358,18 @@ window.addEventListener('scroll', () => {
   navbar.style.zIndex = '1000'; 
 });
 document.addEventListener("DOMContentLoaded", () => {
-  const themeToggle = document.querySelector(".theme-checkbox");
-  const footer = document.getElementById("main-footer");
+  let themeToggle = document.querySelector(".theme-checkbox");
+  let footer = document.getElementById("main-footer");
   themeToggle.addEventListener("change", () => {
       if (themeToggle.checked) {
           footer.style.backgroundColor = "#ffffff"; 
           footer.style.color = "#000000"; 
 
-          const headings = footer.querySelectorAll("h1, h2, h3, h4, h5, h6");
+          let headings = footer.querySelectorAll("h1, h2, h3, h4, h5, h6");
           headings.forEach(heading => {
               heading.style.color = "#000000"; 
           });
-          const links = footer.querySelectorAll("a"); 
+          let links = footer.querySelectorAll("a"); 
           links.forEach(link => {
               link.style.color = "#000000"; 
               link.addEventListener("mouseover", () => link.style.color = "#555555"); 
@@ -379,11 +379,11 @@ document.addEventListener("DOMContentLoaded", () => {
           footer.style.backgroundColor = "#000000";
           footer.style.color = "#ffffff"; 
 
-          const headings = footer.querySelectorAll("h1, h2, h3, h4, h5, h6");
+          let headings = footer.querySelectorAll("h1, h2, h3, h4, h5, h6");
           headings.forEach(heading => {
               heading.style.color = "#ffffff";
           });
-          const links = footer.querySelectorAll("a"); 
+          let links = footer.querySelectorAll("a"); 
           links.forEach(link => {
               link.style.color = "#a8a8a8";
               link.addEventListener("mouseover", () => link.style.color = "#ffffff"); 
@@ -392,12 +392,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   });
 });
-  const counters = document.querySelectorAll('.counter');
-  const animateCounter = (counter) => {
-      const target = +counter.getAttribute('data-target');
-      const speed = 100; 
+  let counters = document.querySelectorAll('.counter');
+  let animateCounter = (counter) => {
+      let target = +counter.getAttribute('data-target');
+      let speed = 100; 
       let count = 0;
-      const updateCount = () => {
+      let updateCount = () => {
           count += Math.ceil(target / speed);
           if (count > target) count = target;
           counter.textContent = count;
@@ -407,7 +407,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
       updateCount();
   };
-  const observer = new IntersectionObserver(
+  let observer = new IntersectionObserver(
       (entries, observer) => {
           entries.forEach(entry => {
               if (entry.isIntersecting) {

@@ -1158,7 +1158,6 @@ footer a:hover {
   }
   
 }
-
 @media (max-width: 1171px) {
   .navbar {
     display: flex;
@@ -1167,18 +1166,15 @@ footer a:hover {
     justify-content: center;
     padding: 10px 20px;
   }
-
   .image-gallery {
     margin-top: 20vh;
   }
-
   .logo-container {
     display: flex;
     align-items: center;
     text-align: center;
     gap: 5px;
   }
-
   .navbar-right {
     display: flex;
     justify-content: center;
@@ -1186,12 +1182,9 @@ footer a:hover {
     gap: 10px;
     margin-top: 10px;
   }
-
   .services:hover~.navbar-right .button {
     display: none;
   }
-
-
   .nav-links.active {
     display: flex;
     flex-direction: column;
@@ -1204,6 +1197,4 @@ footer a:hover {
     padding: 15px;
     border-radius: 8px;
   }
-
-
 }
