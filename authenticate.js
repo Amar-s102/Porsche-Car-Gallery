@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const loginButton = document.querySelector('.login-btn');
-    const navbarRight = document.querySelector('.navbar-right');
+    let loginButton = document.querySelector('.login-btn');
+    let navbarRight = document.querySelector('.navbar-right');
 
     if (!navbarRight) return; 
-    const logoutButton = document.createElement('button');
+    let logoutButton = document.createElement('button');
     logoutButton.textContent = 'Log Out';
     logoutButton.classList.add('button', 'logout-btn');
     logoutButton.style.marginLeft = '20px';

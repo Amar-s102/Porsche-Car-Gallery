@@ -24,32 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    let section = document.querySelector('.image-section h2');
 
-    let observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            } else {
-                entry.target.classList.remove('visible');
-            }
-        });
-    });
-
-    observer.observe(section);
-});
-document.addEventListener("DOMContentLoaded", () => {
-    let nextSection = document.querySelector(".next-section");
-    let observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-            }
-        });
-    });
-    observer.observe(nextSection);
-});
 let themeToggle = document.getElementById('theme-toggle');
 
 themeToggle.addEventListener('change', () => {
