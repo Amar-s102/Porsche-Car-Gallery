@@ -703,10 +703,7 @@ button:hover .clone> :nth-child(2) {
     gap: 40px;
     padding: 20px 0;
 }
-footer #feedback-button{
-    align-items: center;
-    justify-content: center;
-}
+
 .footer-left {
     flex: 1;
     margin-right: 60px;
@@ -802,35 +799,6 @@ footer a:hover {
     width: 100%;
 }
 
-/* feedback box */
-#feedback-button{
-    cursor: pointer;
-}
-
-#submit-feedback {
-    position: static;
-    right: 2vw;
-    bottom: 2vw;
-    padding: 1vw 2vw;
-    background-color: #000000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 1000;
-    box-shadow: 0px 4px 6px rgba(9, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-/* top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    margin-left: 800px ;
-} */
-#submit-feedback:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
 
 .hidden {
     display: none;
