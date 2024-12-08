@@ -91,8 +91,8 @@ $(document).ready(function () {
 
 });
 document.addEventListener('DOMContentLoaded', function () {
-    const loginButton = document.querySelector('.login-btn');
-    const logoutButton = document.createElement('button');
+    let loginButton = document.querySelector('.login-btn');
+    let logoutButton = document.createElement('button');
 
     if (!loginButton) return;
 
