@@ -257,8 +257,8 @@ body {
   padding: 15px 55px;
   font-size: 1.1rem;
   border: 2px solid #b91111;
-  background-color: #fff;
-  color: #000;
+  background-color: transparent;
+  color:  white;
   text-transform: uppercase;
   border-radius: 50px;
   text-decoration: none;
