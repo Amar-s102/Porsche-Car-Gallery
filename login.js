@@ -25,18 +25,18 @@ $(document).ready(function () {
         let confirmPassword = $('#confirmPassword').val();
 
         if (!firstName || !lastName || !email || !password || !confirmPassword) {
-            showAlert('All fields are required.');
+            alert('All fields are required.');
             return;
         }
 
         if (password !== confirmPassword) {
-            showAlert('Passwords do not match.');
+            alert('Passwords do not match.');
             return;
         }
 
         let existingUser = users.find(user => user.email === email);
         if (existingUser) {
-            showAlert('Email is already registered.');
+            alert('Email is already registered.');
             return;
         }
 
@@ -64,7 +64,7 @@ $(document).ready(function () {
             return;
         }
 
-        showAlert(`Welcome back, ${user.firstName}!`);
+        alert(`Welcome back, ${user.firstName}!`);
         localStorage.setItem('isLoggedIn', 'true');
         redirectToPage('customize.html');
     });

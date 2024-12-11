@@ -391,7 +391,7 @@ html,body{
 }
 
 .h-card {
-    font-size: 25px;
+    font-size: 55px;
     color: rgb(144, 128, 249);
 }
 
@@ -421,7 +421,7 @@ html,body{
 
 .models-text {
     position: absolute;
-    top: 120px;
+    top: 80px;
     left: 20px;
     z-index: 10;
     padding: 20px;
@@ -694,6 +694,7 @@ button:hover .clone> :nth-child(2) {
 
 
 /* footer */
+
 .footer-container {
     display: flex;
     flex-wrap: wrap;
@@ -763,11 +764,7 @@ button:hover .clone> :nth-child(2) {
     border-top: 1px solid #333;
 }
 
-.footer-bottom p {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #a8a8a8;
-}
+
 
 footer {
     background-color: #000000;
@@ -907,4 +904,11 @@ a{
         gap: 20px;
         padding: 0 10px;
     }
+}
+
+p.footer-bottom{
+    margin-top: 15px;
+    font-size: 14px;
+    color: #a8a8a8;
+    margin-bottom: 0;
 }
